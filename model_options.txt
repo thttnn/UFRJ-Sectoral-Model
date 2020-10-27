@@ -1,0 +1,6 @@
+TARGET=LSD
+FUN=fun_UFRJ_Sectoral_Model
+FUN_EXTRA= fun_capital_goods.h fun_finance.h fun_investment.h fun_price.h fun_production.h fun_profits.h fun_rnd.h fun_sales.h fun_sector.h fun_entry_exit.h
+SWITCH_CC=-O3 
+SWITCH_CC_LNK=
+

@@ -1,0 +1,3664 @@
+	
+Label Root
+{
+	Son: SECTORS
+	Label SECTORS
+	{
+		Son: FIRMS
+		Label FIRMS
+		{
+			Son: CAPITALS
+			Label CAPITALS
+			{
+				Var: Capital_Good_Acumulated_Production
+				Var: Capital_Good_Production
+				Var: Capital_Good_Productivity
+				Param: capital_good_date_birth
+				Param: capital_good_depreciation_period
+				Param: capital_good_productive_capacity
+				Param: capital_good_productivity_initial
+				Param: capital_good_to_replace
+				Param: id_capital_good_number
+				Param: capital_fixed_object
+
+			}
+
+			Son: LOANS
+			Label LOANS
+			{
+				Param: firm_loan_fixed_amortization
+				Param: firm_loan_fixed_object
+				Param: firm_loan_interest_rate
+				Param: firm_loan_total_amount
+				Param: id_firm_loan_long_term
+				Param: id_firm_loan_short_term
+
+			}
+
+			Var: Firm_Available_Funds_After_Replacement
+			Var: Firm_Available_Funds_Replacement
+			Var: Firm_Available_Loans
+			Var: Firm_Avg_Debt_Rate
+			Var: Firm_Avg_Market_Share
+			Var: Firm_Avg_Potential_Markup
+			Var: Firm_Avg_Productivity
+			Var: Firm_Capacity_Utilization
+			Var: Firm_Capital
+			Var: Firm_Competitiveness
+			Var: Firm_Debt_Payment
+			Var: Firm_Debt_Rate
+			Var: Firm_Delivery_Delay
+			Var: Firm_Demand_Capital_Goods
+			Var: Firm_Demand_Loans
+			Var: Firm_Demand_Productive_Capacity_Expansion
+			Var: Firm_Demand_Productive_Capacity_Replacement
+			Var: Firm_Deposits_Return
+			Var: Firm_Desired_Debt_Rate
+			Var: Firm_Desired_Expansion_Investment_Expenses
+			Var: Firm_Desired_Investment_Expenses
+			Var: Firm_Desired_Market_Share
+			Var: Firm_Desired_Markup
+			Var: Firm_Desired_Replacement_Investment_Expenses
+			Var: Firm_Distributed_Profits
+			Var: Firm_Effective_Expansion_Investment_Expenses
+			Var: Firm_Effective_Investment_Expenses
+			Var: Firm_Effective_Loans
+			Var: Firm_Effective_Market_Share
+			Var: Firm_Effective_Orders
+			Var: Firm_Effective_Production
+			Var: Firm_Expected_Sales
+			Var: Firm_Expected_Sales_Long_Term
+			Var: Firm_Financial_Obligations
+			Var: Firm_Frontier_Productivity
+			Var: Firm_Imitation_Productivity
+			Var: Firm_Imitation_Quality
+			Var: Firm_Indirect_Tax
+			Var: Firm_Innovation_Productivity
+			Var: Firm_Innovation_Quality
+			Var: Firm_Input_Demand_Next_Period
+			Var: Firm_Interest_Payment
+			Var: Firm_Interest_Rate_Long_Term
+			Var: Firm_Interest_Rate_Short_Term
+			Var: Firm_Internal_Funds
+			Var: Firm_Investment_Period
+			Var: Firm_Liquidity_Preference
+			Var: Firm_Market_Share
+			Var: Firm_Max_Productivity
+			Var: Firm_Net_Profits
+			Var: Firm_Net_Revenue
+			Var: Firm_Planned_Production
+			Var: Firm_Potential_Markup
+			Var: Firm_Price
+			Var: Firm_Productive_Capacity
+			Var: Firm_Productive_Capacity_Depreciation
+			Var: Firm_Quality
+			Var: Firm_Effective_Replacement_Investment_Expenses
+			Var: Firm_Retained_Deposits
+			Var: Firm_Retained_Profits
+			Var: Firm_Revenue
+			Var: Firm_RND_Expenses
+			Var: Firm_Sales
+			Var: Firm_Stock_Deposits
+			Var: Firm_Stock_Inputs
+			Var: Firm_Stock_Inventories
+			Var: Firm_Stock_Loans
+			Var: Firm_Stock_Loans_Long_Term
+			Var: Firm_Stock_Loans_Short_Term
+			Var: Firm_Total_Funds
+			Var: Firm_Variable_Cost
+			Var: Firm_Wage
+			Param: id_firm_number
+			Param: firm_date_birth
+			Var: Firm_Demand_Capital_Goods_Expansion
+			Var: Firm_Demand_Capital_Goods_Replacement
+			Var: Firm_Innovation_RND_Share
+			Var: Firm_Process_RND_Share
+			Var: Firm_Effective_Markup
+
+		}
+
+		Param: amortization_period
+		Param: annual_period
+		Param: antecipation
+		Param: bargain_power_adjustment
+		Param: capital_output_ratio
+		Param: capital_price_growth
+		Param: capital_price_passthrough_productivity
+		Param: demand_elasticity
+		Param: demand_shock_average
+		Param: demand_shock_standard_deviation
+		Param: depreciation_period
+		Param: desired_degree_capacity_utilization
+		Param: desired_inventories_proportion
+		Param: elascitity_delay
+		Param: elasticity_price
+		Param: elasticity_quality
+		Param: expectations
+		Param: firm_debt_rate_adjustment
+		Param: firm_liquidity_preference_adjustment
+		Param: indirect_tax_rate
+		Param: initial_capital_price
+		Param: initial_input_price
+		Param: initial_markup
+		Param: initial_productivity
+		Param: initial_quality
+		Param: initial_wage
+		Param: innovation_imitation_adjustment
+		Param: input_price_growth
+		Param: input_tech_coefficient
+		Param: inputs_price_passthrough_productivity
+		Param: interest_rate_deposits
+		Param: interest_rate_long_term
+		Param: interest_rate_short_term
+		Param: investment_period
+		Param: learning_adjustment
+		Param: learning_speed
+		Param: market_share_expansion
+		Param: markup_apropriation
+		Param: markup_period
+		Param: number_object_firms
+		Param: payback_period
+		Param: process_product_adjustment
+		Param: profits_distribution_rate
+		Param: quality_demand
+		Param: risk_premium_adjustment
+		Param: rnd_revenue_proportion
+		Param: sector_initial_demand
+		Param: sector_real_demand_growth
+		Param: std_dev_innovation
+		Param: strategic_price_weight
+		Param: survival_period
+		Param: switch_interest_payment
+		Param: tech_opportunity
+		Param: wage_passthrough_productivity
+		Param: wage_passthrough_inflation
+		Var: Exit
+		Var: Exit_Defaulted_Loans
+		Var: Exit_Deposits_Distributed
+		Var: Exit_Productive_Capacity
+		Var: Price_Capital_Goods
+		Var: Price_Inputs
+		Var: Sector_Avg_Competitiveness
+		Var: Sector_Avg_Debt_Rate
+		Var: Sector_Avg_Desired_Debt_Rate
+		Var: Sector_Avg_Markup
+		Var: Sector_Avg_Price
+		Var: Sector_Avg_Productivity
+		Var: Sector_Avg_Quality
+		Var: Sector_Avg_Wage
+		Var: Sector_Demand_Met
+		Var: Sector_Effective_Orders
+		Var: Sector_Effective_Production
+		Var: Sector_Indirect_Tax
+		Var: Sector_Inventories
+		Var: Sector_Max_Productivity
+		Var: Sector_Max_Quality
+		Var: Sector_Normalized_HHI
+		Var: Sector_Productive_Capacity
+		Var: Sector_Productive_Capacity_Exit
+		Var: Sector_Profit_Rate
+		Var: Sector_Sales
+		Var: Sector_Stock_Deposits
+		Var: Sector_Stock_Loans
+		Var: Sector_Sum_Market_Share
+		Var: Sector_Turbulence
+		Var: Sector_Profits
+		Var: Sector_Wages
+		Var: Sector_Income
+		Var: Sector_Income_Growth
+		Var: Sector_Inflation
+		Var: Sector_Capacity_Utilization
+		Var: Sector_Entry_Condition
+		Var: Sector_Productive_Capacity_Available
+		Var: Sector_Productive_Capacity_Entry
+
+	}
+
+	Var: Initialization
+	Var: Time_Step
+
+}
+
+
+DATA
+
+Object: Root C	1
+Var: Initialization 0 n + d n
+Var: Time_Step 0 n + d n
+
+Object: SECTORS C	1
+Param: amortization_period 0 n + n n	40
+Param: annual_period 0 n + n n	4
+Param: antecipation 0 n + n n	0.5
+Param: bargain_power_adjustment 0 n + n n	0
+Param: capital_output_ratio 0 n + n n	1
+Param: capital_price_growth 0 n + n n	0
+Param: capital_price_passthrough_productivity 0 n + n n	0
+Param: demand_elasticity 0 n + n n	0
+Param: demand_shock_average 0 n + n n	0
+Param: demand_shock_standard_deviation 0 n + n n	0.01
+Param: depreciation_period 0 n + n n	40
+Param: desired_degree_capacity_utilization 0 n + n n	0.9
+Param: desired_inventories_proportion 0 n + n n	0
+Param: elascitity_delay 0 n + n n	0.25
+Param: elasticity_price 0 n + n n	1
+Param: elasticity_quality 0 n + n n	0.5
+Param: expectations 0 n + n n	0.5
+Param: firm_debt_rate_adjustment 0 n + n n	0
+Param: firm_liquidity_preference_adjustment 0 n + n n	0
+Param: indirect_tax_rate 0 n + n n	0
+Param: initial_capital_price 0 n + n n	5
+Param: initial_input_price 0 n + n n	1
+Param: initial_markup 0 n + n n	1.5
+Param: initial_productivity 0 n + n n	1
+Param: initial_quality 0 n + n n	1
+Param: initial_wage 0 n + n n	1
+Param: innovation_imitation_adjustment 0 n + n n	0
+Param: input_price_growth 0 n + n n	0
+Param: input_tech_coefficient 0 n + n n	0.4
+Param: inputs_price_passthrough_productivity 0 n + n n	0
+Param: interest_rate_deposits 0 n + n n	0
+Param: interest_rate_long_term 0 n + n n	0
+Param: interest_rate_short_term 0 n + n n	0
+Param: investment_period 0 n + n n	4
+Param: learning_adjustment 0 n + n n	0
+Param: learning_speed 0 n + n n	1
+Param: market_share_expansion 0 n + n n	0
+Param: markup_apropriation 0 n + n n	0
+Param: markup_period 0 n + n n	2
+Param: number_object_firms 0 n + n n	30
+Param: payback_period 0 n + n n	30
+Param: process_product_adjustment 0 n + n n	0
+Param: profits_distribution_rate 0 n + n n	0.9
+Param: quality_demand 0 n + n n	0.01
+Param: risk_premium_adjustment 0 n + n n	0
+Param: rnd_revenue_proportion 0 n + n n	0.05
+Param: sector_initial_demand 0 n + n n	100
+Param: sector_real_demand_growth 0 n + n n	0.005
+Param: std_dev_innovation 0 n + n n	0.001
+Param: strategic_price_weight 0 n + n n	0.5
+Param: survival_period 0 n + n n	0
+Param: switch_interest_payment 0 n + n n	0
+Param: tech_opportunity 0 n + n n	0.001
+Param: wage_passthrough_productivity 0 n + n n	1
+Param: wage_passthrough_inflation 0 n + n n	0
+Var: Exit 0 n + n n
+Var: Exit_Defaulted_Loans 0 n + n n
+Var: Exit_Deposits_Distributed 0 n + n n
+Var: Exit_Productive_Capacity 0 n + n n
+Var: Price_Capital_Goods 1 s + n n	0
+Var: Price_Inputs 1 s + n n	0
+Var: Sector_Avg_Competitiveness 1 n + n n	0
+Var: Sector_Avg_Debt_Rate 0 s + n n
+Var: Sector_Avg_Desired_Debt_Rate 0 n + n n
+Var: Sector_Avg_Markup 0 n + n n
+Var: Sector_Avg_Price 5 s + n n	0	0	0	0	0
+Var: Sector_Avg_Productivity 5 s + n n	0	0	0	0	0
+Var: Sector_Avg_Quality 2 s + n n	0	0
+Var: Sector_Avg_Wage 0 s + n n
+Var: Sector_Demand_Met 0 s + n n
+Var: Sector_Effective_Orders 4 s + n n	0	0	0	0
+Var: Sector_Effective_Production 0 s + n n
+Var: Sector_Indirect_Tax 0 n + n n
+Var: Sector_Inventories 0 n + n n
+Var: Sector_Max_Productivity 1 n + n n	0
+Var: Sector_Max_Quality 1 n + n n	0
+Var: Sector_Normalized_HHI 0 s + n n
+Var: Sector_Productive_Capacity 1 s + n n	0
+Var: Sector_Productive_Capacity_Exit 0 n + n n
+Var: Sector_Profit_Rate 0 s + n n
+Var: Sector_Sales 0 n + n n
+Var: Sector_Stock_Deposits 0 n + n n
+Var: Sector_Stock_Loans 0 n + n n
+Var: Sector_Sum_Market_Share 0 n + n n
+Var: Sector_Turbulence 0 n + n n
+Var: Sector_Profits 0 s + n n
+Var: Sector_Wages 0 s + n n
+Var: Sector_Income 0 s + n n
+Var: Sector_Income_Growth 0 s + n p
+Var: Sector_Inflation 0 s + n p
+Var: Sector_Capacity_Utilization 0 s + n n
+Var: Sector_Entry_Condition 0 n + n n
+Var: Sector_Productive_Capacity_Available 0 n + n n
+Var: Sector_Productive_Capacity_Entry 0 n + n n
+
+Object: FIRMS C	1
+Var: Firm_Available_Funds_After_Replacement 0 n + n n
+Var: Firm_Available_Funds_Replacement 0 n + n n
+Var: Firm_Available_Loans 0 n + n n
+Var: Firm_Avg_Debt_Rate 1 n + n n	0
+Var: Firm_Avg_Market_Share 1 n + n n	0
+Var: Firm_Avg_Potential_Markup 1 n + n n	0
+Var: Firm_Avg_Productivity 4 s + n n	0	0	0	0
+Var: Firm_Capacity_Utilization 0 s + n n
+Var: Firm_Capital 1 s + n n	0
+Var: Firm_Competitiveness 1 s + n n	0
+Var: Firm_Debt_Payment 0 n + n n
+Var: Firm_Debt_Rate 6 s + n n	0	0	0	0	0	0
+Var: Firm_Delivery_Delay 1 s + n n	0
+Var: Firm_Demand_Capital_Goods 6 s + n n	0	0	0	0	0	0
+Var: Firm_Demand_Loans 0 s + n n
+Var: Firm_Demand_Productive_Capacity_Expansion 7 s + n n	0	0	0	0	0	0	0
+Var: Firm_Demand_Productive_Capacity_Replacement 6 s + n n	0	0	0	0	0	0
+Var: Firm_Deposits_Return 0 n + n n
+Var: Firm_Desired_Debt_Rate 1 s + n n	0.5
+Var: Firm_Desired_Expansion_Investment_Expenses 0 s + n n
+Var: Firm_Desired_Investment_Expenses 0 s + n n
+Var: Firm_Desired_Market_Share 1 n + n n	0
+Var: Firm_Desired_Markup 1 n + n n	0
+Var: Firm_Desired_Replacement_Investment_Expenses 0 s + n n
+Var: Firm_Distributed_Profits 0 n + n n
+Var: Firm_Effective_Expansion_Investment_Expenses 0 s + n n
+Var: Firm_Effective_Investment_Expenses 0 s + n n
+Var: Firm_Effective_Loans 0 n + n n
+Var: Firm_Effective_Market_Share 1 n + n n	0
+Var: Firm_Effective_Orders 12 s + n n	0	0	0	0	0	0	0	0	0	0	0	0
+Var: Firm_Effective_Production 0 s + n n
+Var: Firm_Expected_Sales 0 s + n n
+Var: Firm_Expected_Sales_Long_Term 0 s + n n
+Var: Firm_Financial_Obligations 0 n + n n
+Var: Firm_Frontier_Productivity 6 n + n n	0	0	0	0	0	0
+Var: Firm_Imitation_Productivity 0 n + n n
+Var: Firm_Imitation_Quality 0 n + n n
+Var: Firm_Indirect_Tax 0 n + n n
+Var: Firm_Innovation_Productivity 0 n + n n
+Var: Firm_Innovation_Quality 0 n + n n
+Var: Firm_Input_Demand_Next_Period 0 n + n n
+Var: Firm_Interest_Payment 0 n + n n
+Var: Firm_Interest_Rate_Long_Term 0 n + n n
+Var: Firm_Interest_Rate_Short_Term 0 n + n n
+Var: Firm_Internal_Funds 0 n + n n
+Var: Firm_Investment_Period 0 s + n n
+Var: Firm_Liquidity_Preference 1 n + n n	0
+Var: Firm_Market_Share 6 s + n n	0	0	0	0	0	0
+Var: Firm_Max_Productivity 0 n + n n
+Var: Firm_Net_Profits 6 s + n n	0	0	0	0	0	0
+Var: Firm_Net_Revenue 0 n + n n
+Var: Firm_Planned_Production 0 s + n n
+Var: Firm_Potential_Markup 6 n + n n	0	0	0	0	0	0
+Var: Firm_Price 1 s + n n	0
+Var: Firm_Productive_Capacity 1 s + n n	0
+Var: Firm_Productive_Capacity_Depreciation 0 s + n n
+Var: Firm_Quality 1 s + n n	0
+Var: Firm_Effective_Replacement_Investment_Expenses 0 s + n n
+Var: Firm_Retained_Deposits 0 n + n n
+Var: Firm_Retained_Profits 0 n + n n
+Var: Firm_Revenue 0 n + n n
+Var: Firm_RND_Expenses 0 n + n n
+Var: Firm_Sales 0 s + n n
+Var: Firm_Stock_Deposits 1 n + n n	0
+Var: Firm_Stock_Inputs 1 n + n n	0
+Var: Firm_Stock_Inventories 1 s + n n	0
+Var: Firm_Stock_Loans 1 n + n n	0
+Var: Firm_Stock_Loans_Long_Term 0 n + n n
+Var: Firm_Stock_Loans_Short_Term 0 n + n n
+Var: Firm_Total_Funds 0 s + n n
+Var: Firm_Variable_Cost 0 s + n n
+Var: Firm_Wage 1 s + n n	0
+Param: id_firm_number 0 n + n n	1
+Param: firm_date_birth 0 n + n n	0
+Var: Firm_Demand_Capital_Goods_Expansion 6 s + n n	0	0	0	0	0	0
+Var: Firm_Demand_Capital_Goods_Replacement 6 s + n n	0	0	0	0	0	0
+Var: Firm_Innovation_RND_Share 1 n + n n	0
+Var: Firm_Process_RND_Share 1 n + n n	0
+Var: Firm_Effective_Markup 0 n + n n
+
+Object: CAPITALS C	1
+Var: Capital_Good_Acumulated_Production 1 n + n n	0
+Var: Capital_Good_Production 0 n + n n
+Var: Capital_Good_Productivity 0 n + n n
+Param: capital_good_date_birth 0 n + n n	0
+Param: capital_good_depreciation_period 0 n + n n	0
+Param: capital_good_productive_capacity 0 n + n n	0
+Param: capital_good_productivity_initial 0 n + n n	0
+Param: capital_good_to_replace 0 n + n n	0
+Param: id_capital_good_number 0 n + n n	0
+Param: capital_fixed_object 0 n + n n	1
+
+Object: LOANS C	1
+Param: firm_loan_fixed_amortization 0 n + n n	0
+Param: firm_loan_fixed_object 0 n + n n	1
+Param: firm_loan_interest_rate 0 n + n n	0
+Param: firm_loan_total_amount 0 n + n n	0
+Param: id_firm_loan_long_term 0 n + n n	0
+Param: id_firm_loan_short_term 0 n + n n	0
+
+SIM_NUM 1
+SEED 1
+MAX_STEP 1000
+EQUATION fun_UFRJ_Sectoral_Model.cpp
+MODELREPORT report_Sim1.html
+
+DESCRIPTION
+
+Object_Root
+(no description available)
+END_DESCRIPTION
+
+Variable_Initialization
+***************
+READ CAREFULLY
+***************
+This variable initializes the model.
+It calls all control parameters defined by the user in the control object.
+Then, it perform initial calculations to define other parameters and lagged values based only on the control parameters.
+It also writes the dependent parameters and lagged values. User do not need to do it by hand.
+Finally, it also creates objects based on control parameters. 1 object of each kind must be defined by the user first.
+It is set in a specific simple configuration: 3 sectors and 3 income classes. Next step is to generalize this variable for N sectors.
+Additionally, there is a strong hypothesis here: all sector are equals, except for how their demand is calculated.
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Time_Step
+Root Variable
+Determines the order in which the variables will be calculated in each time step. It is the logical sequence of the model in each time step.
+_INIT_
+
+END_DESCRIPTION
+
+Object_SECTORS
+(no description available)
+_INIT_
+
+END_DESCRIPTION
+
+Parameter_amortization_period
+(no description available)
+_INIT_
+All 1 instances equal to 60.
+END_DESCRIPTION
+
+Parameter_annual_period
+(no description available)
+_INIT_
+All 1 instances equal to 4.
+END_DESCRIPTION
+
+Parameter_antecipation
+(no description available)
+_INIT_
+All 1 instances equal to 0.5.
+END_DESCRIPTION
+
+Parameter_bargain_power_adjustment
+(no description available)
+_INIT_
+All 1 instances equal to 0.
+END_DESCRIPTION
+
+Parameter_capital_output_ratio
+(no description available)
+_INIT_
+All 1 instances equal to 2.
+END_DESCRIPTION
+
+Parameter_capital_price_growth
+(no description available)
+_INIT_
+All 1 instances equal to 0.
+END_DESCRIPTION
+
+Parameter_capital_price_passthrough_productivity
+(no description available)
+_INIT_
+All 1 instances equal to 1.
+END_DESCRIPTION
+
+Parameter_demand_elasticity
+(no description available)
+_INIT_
+All 1 instances equal to 0.
+END_DESCRIPTION
+
+Parameter_demand_shock_average
+(no description available)
+_INIT_
+All 1 instances equal to 0.
+END_DESCRIPTION
+
+Parameter_demand_shock_standard_deviation
+(no description available)
+_INIT_
+All 1 instances equal to 0.01.
+END_DESCRIPTION
+
+Parameter_depreciation_period
+(no description available)
+_INIT_
+All 1 instances equal to 60.
+END_DESCRIPTION
+
+Parameter_desired_degree_capacity_utilization
+(no description available)
+_INIT_
+All 1 instances equal to 0.9.
+END_DESCRIPTION
+
+Parameter_desired_inventories_proportion
+(no description available)
+_INIT_
+All 1 instances equal to 0.
+END_DESCRIPTION
+
+Parameter_elascitity_delay
+(no description available)
+_INIT_
+All 1 instances equal to 0.25.
+END_DESCRIPTION
+
+Parameter_elasticity_price
+(no description available)
+_INIT_
+All 1 instances equal to 1.
+END_DESCRIPTION
+
+Parameter_elasticity_quality
+(no description available)
+_INIT_
+All 1 instances equal to 0.5.
+END_DESCRIPTION
+
+Parameter_expectations
+(no description available)
+_INIT_
+All 1 instances equal to 0.5.
+END_DESCRIPTION
+
+Parameter_firm_debt_rate_adjustment
+(no description available)
+_INIT_
+All 1 instances equal to 0.
+END_DESCRIPTION
+
+Parameter_firm_liquidity_preference_adjustment
+(no description available)
+_INIT_
+All 1 instances equal to 0.
+END_DESCRIPTION
+
+Parameter_indirect_tax_rate
+(no description available)
+_INIT_
+All 1 instances equal to 0.1.
+END_DESCRIPTION
+
+Parameter_initial_capital_price
+(no description available)
+_INIT_
+All 1 instances equal to 1.
+END_DESCRIPTION
+
+Parameter_initial_input_price
+(no description available)
+_INIT_
+All 1 instances equal to 1.
+END_DESCRIPTION
+
+Parameter_initial_markup
+(no description available)
+_INIT_
+All 1 instances equal to 1.5.
+END_DESCRIPTION
+
+Parameter_initial_productivity
+(no description available)
+_INIT_
+All 1 instances equal to 1.
+END_DESCRIPTION
+
+Parameter_initial_quality
+(no description available)
+_INIT_
+All 1 instances equal to 1.
+END_DESCRIPTION
+
+Parameter_initial_wage
+(no description available)
+_INIT_
+All 1 instances equal to 1.
+END_DESCRIPTION
+
+Parameter_innovation_imitation_adjustment
+(no description available)
+_INIT_
+All 1 instances equal to 0.01.
+END_DESCRIPTION
+
+Parameter_input_price_growth
+(no description available)
+_INIT_
+All 1 instances equal to 0.
+END_DESCRIPTION
+
+Parameter_input_tech_coefficient
+(no description available)
+_INIT_
+All 1 instances equal to 0.4.
+END_DESCRIPTION
+
+Parameter_inputs_price_passthrough_productivity
+(no description available)
+_INIT_
+All 1 instances equal to 1.
+END_DESCRIPTION
+
+Parameter_interest_rate_deposits
+(no description available)
+_INIT_
+All 1 instances equal to 0.
+END_DESCRIPTION
+
+Parameter_interest_rate_long_term
+(no description available)
+_INIT_
+All 1 instances equal to 0.1.
+END_DESCRIPTION
+
+Parameter_interest_rate_short_term
+(no description available)
+_INIT_
+All 1 instances equal to 0.
+END_DESCRIPTION
+
+Parameter_investment_period
+(no description available)
+_INIT_
+All 1 instances equal to 6.
+END_DESCRIPTION
+
+Parameter_learning_adjustment
+(no description available)
+_INIT_
+All 1 instances equal to 0.2.
+END_DESCRIPTION
+
+Parameter_learning_speed
+(no description available)
+_INIT_
+All 1 instances equal to 1.
+END_DESCRIPTION
+
+Parameter_market_share_expansion
+(no description available)
+_INIT_
+All 1 instances equal to 1.
+END_DESCRIPTION
+
+Parameter_markup_apropriation
+(no description available)
+_INIT_
+All 1 instances equal to 0.
+END_DESCRIPTION
+
+Parameter_markup_period
+(no description available)
+_INIT_
+All 1 instances equal to 2.
+END_DESCRIPTION
+
+Parameter_number_object_firms
+(no description available)
+_INIT_
+All 1 instances equal to 35.
+END_DESCRIPTION
+
+Parameter_payback_period
+(no description available)
+_INIT_
+All 1 instances equal to 30.
+END_DESCRIPTION
+
+Parameter_process_product_adjustment
+(no description available)
+_INIT_
+All 1 instances equal to 0.
+END_DESCRIPTION
+
+Parameter_profits_distribution_rate
+(no description available)
+_INIT_
+All 1 instances equal to 0.9.
+END_DESCRIPTION
+
+Parameter_quality_demand
+(no description available)
+_INIT_
+All 1 instances equal to 0.
+END_DESCRIPTION
+
+Parameter_risk_premium_adjustment
+(no description available)
+_INIT_
+All 1 instances equal to 1.
+END_DESCRIPTION
+
+Parameter_rnd_revenue_proportion
+(no description available)
+_INIT_
+All 1 instances equal to 0.05.
+END_DESCRIPTION
+
+Parameter_sector_initial_demand
+(no description available)
+_INIT_
+All 1 instances equal to 100.
+END_DESCRIPTION
+
+Parameter_sector_real_demand_growth
+(no description available)
+_INIT_
+All 1 instances equal to 0.005.
+END_DESCRIPTION
+
+Parameter_std_dev_innovation
+(no description available)
+_INIT_
+All 1 instances equal to 0.001.
+END_DESCRIPTION
+
+Parameter_strategic_price_weight
+(no description available)
+_INIT_
+All 1 instances equal to 0.5.
+END_DESCRIPTION
+
+Parameter_survival_period
+(no description available)
+_INIT_
+All 1 instances equal to 0.
+END_DESCRIPTION
+
+Parameter_switch_interest_payment
+(no description available)
+_INIT_
+All 1 instances equal to 0.
+END_DESCRIPTION
+
+Parameter_tech_opportunity
+(no description available)
+_INIT_
+All 1 instances equal to 0.001.
+END_DESCRIPTION
+
+Parameter_wage_passthrough_productivity
+(no description available)
+_INIT_
+All 1 instances equal to 1.
+END_DESCRIPTION
+
+Parameter_wage_passthrough_inflation
+(no description available)
+_INIT_
+All 2 instances equal to 0.9.
+END_DESCRIPTION
+
+Variable_Exit
+This variable counts productive capacity that exited the sector in each time step. Firm objects are deleted inside that variable due to two possibilities: small market share or high debt rate. In the second case, if entry conitions are met, the firm can be bought by a new one.
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Exit_Defaulted_Loans
+(no description available)
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Exit_Deposits_Distributed
+(no description available)
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Exit_Productive_Capacity
+(no description available)
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Price_Capital_Goods
+(no description available)
+_INIT_
+All 1 instances equal to 1.
+END_DESCRIPTION
+
+Variable_Price_Inputs
+(no description available)
+_INIT_
+All 1 instances equal to 1.
+END_DESCRIPTION
+
+Variable_Sector_Avg_Competitiveness
+Average competitiveness, weighted by firm's market share
+_INIT_
+All 1 instances equal to 1.
+END_DESCRIPTION
+
+Variable_Sector_Avg_Debt_Rate
+Sector average debt rate will be the average of firms productivity weighted by their market shares
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Sector_Avg_Desired_Debt_Rate
+Sector average debt rate will be the average of firms productivity weighted by their market shares
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Sector_Avg_Markup
+Average markup of the sector, weighted by firm's effective market share
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Sector_Avg_Price
+Average weighted by firm's market share
+_INIT_
+All 1 instances equal to 1.
+END_DESCRIPTION
+
+Variable_Sector_Avg_Productivity
+Sector average productivity will be the average of firms productivity weighted by their market shares
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Sector_Avg_Quality
+(no description available)
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Sector_Avg_Wage
+Sector average nominal wage, weighted by firm's market share
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Sector_Demand_Met
+Percentage of demand fulfilled by each sector
+Percentage of demand fulfilled by each sector
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Sector_Effective_Orders
+Sector Variable.
+Exogenous Real Demand
+_INIT_
+All 1 instances equal to 0.
+END_DESCRIPTION
+
+Variable_Sector_Effective_Production
+Sum of the Effective Production 
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Sector_Indirect_Tax
+Sum of the indirect taxes paid by firms in the sector
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Sector_Inventories
+Sum of the Inventories 
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Sector_Max_Productivity
+Maximum productivity of the sector will be the higher between firm's frontier productivities
+_INIT_
+All 1 instances equal to 0.
+END_DESCRIPTION
+
+Variable_Sector_Max_Quality
+Maximum firm quality of the sector.
+_INIT_
+All 1 instances equal to 0.
+END_DESCRIPTION
+
+Variable_Sector_Normalized_HHI
+Sector Variable for Analysis
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Sector_Productive_Capacity
+Sum of the Productive Capacity 
+_INIT_
+All 1 instances equal to 0.
+END_DESCRIPTION
+
+Variable_Sector_Productive_Capacity_Exit
+(no description available)
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Sector_Profit_Rate
+Sector Variable for Analysis
+Sector Variable for Analysis
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Sector_Sales
+Sum up the sales of all firms in the sector
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Sector_Stock_Deposits
+Sum of the stock of deposits of each firm in the sector
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Sector_Stock_Loans
+Sum of the stock of laons of each firm in the sector
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Sector_Sum_Market_Share
+Sum of the Market shares: this variable works to verify the Fischer Equation
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Sector_Turbulence
+Sector Variable for Analysis
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Sector_Profits
+Sum of the net profits of firms in the sector
+Sum of the net profits of firms in the sector
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Sector_Wages
+Sum of wages of firms in the sector
+Sum of wages of firms in the sector
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Sector_Income
+Sum of wages and profits
+Sum of wages and profits
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Sector_Income_Growth
+Annual growth of generated nominal income by the sector
+Annual growth of generated nominal income by the sector
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Sector_Inflation
+Annual growth of the sector average price
+Annual growth of the sector average price
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Sector_Capacity_Utilization
+Sector Capacity Utilization
+Sector Capacity Utilization
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Sector_Entry_Condition
+Can only be 0 or 1, if all enter conditions are met.
+Can only be 0 or 1, if all enter conditions are met.
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Sector_Productive_Capacity_Available
+This variable acumulates the productive capacity that exited the sector minus the productive capacity used by new possible firms
+This variable acumulates the productive capacity that exited the sector minus the productive capacity used by new possible firms
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Sector_Productive_Capacity_Entry
+Sector Variable
+In this variable a new firm enters if there is market space available and the entry condiion is met
+Sector Variable
+In this variable a new firm enters if there is market space available and the entry condiion is met
+_INIT_
+
+END_DESCRIPTION
+
+Object_FIRMS
+(no description available)
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Firm_Available_Funds_After_Replacement
+Available funds after replacement investment will be the available funds for replacement minus the amount of effective replacmenet investment.
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Firm_Available_Funds_Replacement
+Available funds for replacement investment will be the available funds minus the amount of effective expansion investment.
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Firm_Available_Loans
+Firm available debt depends on the difference between desired stock of debt and current stock of debt. 
+If current stock of debt is greater than desired, the firm must repay some debt reducing the amount of external funds for investment. 
+If the current amount is smaller than desired, that difference is available to the firm as external finance, but that does not mean that the class will increase effective debt by this amount.
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Firm_Avg_Debt_Rate
+Firm's avg debt rate of the last investment period
+_INIT_
+All 1 instances equal to 0.
+END_DESCRIPTION
+
+Variable_Firm_Avg_Market_Share
+Average Market Share between the market share of the firm in the last markup period
+_INIT_
+All 10 instances equal to 0.1.
+END_DESCRIPTION
+
+Variable_Firm_Avg_Potential_Markup
+Average Potential Markup between the potential markup of the firm in the last 8 periods
+_INIT_
+All 1 instances equal to 0.
+END_DESCRIPTION
+
+Variable_Firm_Avg_Productivity
+Firm's productivity will be an average of each capital good productivity weighted by their repective production	
+_INIT_
+All 1 instances equal to 1.
+END_DESCRIPTION
+
+Variable_Firm_Capacity_Utilization
+Firm effective production over firm productive capacity
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Firm_Capital
+Nominal value of firm's total capital
+_INIT_
+All 10 instances equal to 0.
+END_DESCRIPTION
+
+Variable_Firm_Competitiveness
+Competitiveness depends on the quality of the product, the price and the delivery delay of the firm
+_INIT_
+All 1 instances equal to 1.
+END_DESCRIPTION
+
+Variable_Firm_Debt_Payment
+ 
+Sum up total debt payment on all firm's loans. Amortizations are fixed for each loan. 
+This variable also adjusts the total amount of each loan and delete loan objects if all debt is paid.
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Firm_Debt_Rate
+Degree of indebtedness, calculated by the ratio of the debt to the capital of the sector.
+_INIT_
+All 10 instances equal to 0.
+END_DESCRIPTION
+
+Variable_Firm_Delivery_Delay
+Firm Variable
+_INIT_
+All 1 instances equal to 0.
+END_DESCRIPTION
+
+Variable_Firm_Demand_Capital_Goods
+The demand for capital goods in each period will be determined by the sum of 1/6 of the variation of the productive capacity with modernization
+_INIT_
+All 10 instances equal to 0.
+END_DESCRIPTION
+
+Variable_Firm_Demand_Loans
+Firm demand for loans is the amount that internal funds can not pay
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Firm_Demand_Productive_Capacity_Expansion
+Effective productive capacity demanded, in real values 
+_INIT_
+All 1 instances equal to 0.
+END_DESCRIPTION
+
+Variable_Firm_Demand_Productive_Capacity_Replacement
+New productive capacity in aquisition of new equipment to replace obsolete ones.
+_INIT_
+All 10 instances equal to 0.
+END_DESCRIPTION
+
+Variable_Firm_Deposits_Return
+Firm interest receivment on deposits
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Firm_Desired_Debt_Rate
+Firm's desired debt rate as a proportion to total capital. 
+Formulation proposed by Moreira (2010) 
+Evolves based on capacity utilization and profit growth.
+_INIT_
+All 1 instances equal to 0.5.
+END_DESCRIPTION
+
+Variable_Firm_Desired_Expansion_Investment_Expenses
+Nominal value of desired new capital goods. 
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Firm_Desired_Investment_Expenses
+Nominal value of total desired investment expenses, including replacement and expansion.
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Firm_Desired_Market_Share
+Desired Market Share is a simple average between last period's desired market share and firm's average market share
+_INIT_
+All 1 instances equal to 0.
+END_DESCRIPTION
+
+Variable_Firm_Desired_Markup
+Firm Variable
+_INIT_
+All 1 instances equal to 0.
+END_DESCRIPTION
+
+Variable_Firm_Desired_Replacement_Investment_Expenses
+Nominal value of derired new capital goods for modernization replacement
+_INIT_
+All 1 instances equal to 0.
+END_DESCRIPTION
+
+Variable_Firm_Distributed_Profits
+Amount of profits distributed to the income classes
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Firm_Effective_Expansion_Investment_Expenses
+Nominal value of new capital goods, restricted to the amount of funds available.
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Firm_Effective_Investment_Expenses
+Nominal value of total effective investment expenses, including replacement and expansion.
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Firm_Effective_Loans
+Firm effective loans is the amount demanded.
+This variable also creates the object LOAN.
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Firm_Effective_Market_Share
+Effective market share is given by firm's sales over total sales of the sector
+_INIT_
+All 1 instances equal to 0.
+END_DESCRIPTION
+
+Variable_Firm_Effective_Orders
+Firm effective production is calculated in the sectoral demand distribution.
+This variables takes saves the value and clears the temporary parameter.
+_INIT_
+All 10 instances equal to 0.
+END_DESCRIPTION
+
+Variable_Firm_Effective_Production
+This variable calculates the effective production of each firm, based on already constrained planned production. Here, it alocates production in capital goods vintages, in order of productivity.
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Firm_Expected_Sales
+Firm's expected sales are calculated from an average of effective sales from the two previous periods, applying a expected growth rate. This expected growth rate is obtained from comparing the average of the two previous periods with the average of the two before that, adjusted by an expectation parameter.
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Firm_Expected_Sales_Long_Term
+The sectors update their productive capacity from year to year, time it takes for new capacity to be produced and to be available for use. The variation in the desired productive capacity is then defined according to the expected orders for the following year. Expected orders are calculated from the average of actual orders for the last six periods and the growth projection for six periods thereafter. This projection is determined on the basis of the difference between the averages of orders for the last six periods and the six periods prior to them, on which a doubling annual extrapolation factor applies.
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Firm_Financial_Obligations
+Firm Financial Obligations in the current period is the sum of interest payment and debt payment
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Firm_Frontier_Productivity
+The new productivity is the maximum among the previous one and the ones possibly obtained imitation and innovation.  
+_INIT_
+All 10 instances equal to 1.
+END_DESCRIPTION
+
+Variable_Firm_Imitation_Productivity
+Imitation process. The sucess depends on the amount of recources alocated to imitation. Firms search for best productivity and best quality of the sector, trying to copy if succeded.
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Firm_Imitation_Quality
+Imitation process. The sucess depends on the amount of recources alocated to imitation. Firms search for best quality of the sector, trying to copy if succeded.
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Firm_Indirect_Tax
+Indirect Tax of the firm is the revenue multiplied by the tax parameter
+Indirect Tax of the firm is the revenue multiplied by the tax parameter
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Firm_Innovation_Productivity
+Innovation process. The sucess depends on the amount ou recources alocated to innovation. Firms search for new productivity and porduct quality and the result depends on a random distribution with exonegous parameters.
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Firm_Innovation_Quality
+Innovation process. The sucess depends on the amount ou recources alocated to innovation. Firms search for new quality and the result depends on a random distribution with exonegous parameters.
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Firm_Input_Demand_Next_Period
+The demand for inputs of each sector of intermediate goods, which should be produced during current period and to be used in the next period, is calculated based on the necessity of programed production, in which a expected growth rate is applied and the remaing stock is discounted. 
+The expected growth rate is defined by the average of effective orders of the last two periods, extrapolated by a expectation parameter.
+The intermediate goods sectors demand exactly the amount they will need to produce in the next period, without discouting the initial stock, which is now know, since the intermediate goods production in the current period will be defined by the demand for inputs of all sectors and not the programed production of the intermediate sector.
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Firm_Interest_Payment
+ 
+Sum up total interest payment on all firm's loans. Interest rates are fixed for each loan. 
+switch_interest_payment
+0-->pre-fixed interest
+1-->pos-fixed interest
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Firm_Interest_Rate_Long_Term
+Interest rate paid by the firm depends on a individual spread over basic interest rate. The firm's spread is based on the average debt rate of the firm.
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Firm_Interest_Rate_Short_Term
+Interest rate paid by the firm depends on a individual spread over basic interest rate. The firm's spread is based on the average debt rate of the firm.
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Firm_Internal_Funds
+Firm internal funds.
+Current stock of deposits minus retained liquidity. 
+Can be negative, if retained profits is negative (in that case, no retained liquidity). In that case, firm will incur in new debt to finance losses and pay for advanced production costs.
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Firm_Investment_Period
+This variable writes for each firm, if it is investment period or not, assuming 1 or 0.
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Firm_Liquidity_Preference
+Firm's desired deposits to be kept as liquid assets. 
+Formulation proposed by Moreira (2010)
+Proportion of physical capital. 
+Evolves based on average debt rate and profit growth.
+_INIT_
+All 1 instances equal to 0.
+END_DESCRIPTION
+
+Variable_Firm_Market_Share
+Firm Variable
+_INIT_
+All 10 instances equal to 0.1.
+END_DESCRIPTION
+
+Variable_Firm_Max_Productivity
+Maximum productivity among firm's capital goods
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Firm_Net_Profits
+Firm profit, including
+_INIT_
+All 10 instances equal to 0.
+END_DESCRIPTION
+
+Variable_Firm_Net_Revenue
+Firm's net revenue, discounting taxes and R&D expenses.
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Firm_Planned_Production
+It's calculated from expected sales for the period, considering the proportion of sales that is desired to be kept as inventories and discounting the acumulated stock of inventories in the last period. 
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Firm_Potential_Markup
+Potential markup is the sector average price over firm's variable costs
+Potential markup is the sector average price over firm's variable costs
+_INIT_
+All 10 instances equal to 0.
+END_DESCRIPTION
+
+Variable_Firm_Price
+Firm's effective price is a average between the desired price and the sector average price
+Firm's effective price is a average between the desired price and the sector average price
+_INIT_
+All 1 instances equal to 0.
+END_DESCRIPTION
+
+Variable_Firm_Productive_Capacity
+In this variable, the firm receive the new capital goods ordered in the last investment period, including the ones for modernization and the ones for expansion. Then, it counts the total productive capacity of old and new capital goods.
+_INIT_
+All 10 instances equal to 0.
+END_DESCRIPTION
+
+Variable_Firm_Productive_Capacity_Depreciation
+Sum up the firm's productive capacity that was depreciated in each time step, not only investment period, and delete depreciated capital goods.
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Firm_Quality
+The new quality is the maximum among the previous one and the ones possibly obtained imitation and innovation. 
+_INIT_
+All 1 instances equal to 0.
+END_DESCRIPTION
+
+Variable_Firm_Effective_Replacement_Investment_Expenses
+Nominal value of desired new capital goods for modernization. 
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Firm_Retained_Deposits
+Firm retained profits at current period. To be summed in the stock of deposits at the end of period
+Based on the liquidity preference. If liquidity preference is zero, retained deposits is zero.
+Can not be negative, meaning that firm will not incur in new debt to finance retained liquidity.
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Firm_Retained_Profits
+Profit retained by the sector after being distributed to class and paid interest on the debt and separate the expense for depreciation.
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Firm_Revenue
+Revenue depends on sales and price
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Firm_RND_Expenses
+Firm's R&D expenses, subtracted from the revenue after taxes.
+It will be distributed to income class as wages.
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Firm_Sales
+The observed sales are defined by the minimum between the effective orders and the effective production plus inventories of each sector.In the case of intermediate sectors, the sale of inputs from their inventories to meet the extraordinary demand at the beginning of the period should be added to the total sold.In the case of the agricultural sector, the observed sales are equal to the current production.
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Firm_Stock_Deposits
+Firm Stock of Deposits
+_INIT_
+All 1 instances equal to 0.
+END_DESCRIPTION
+
+Variable_Firm_Stock_Inputs
+The stock of inputs of each firm at the end of the period is calculated by summing the stock of inputs in the last period with the amount demanded for the production in the next period minus the amount used in the production of the current period
+_INIT_
+All 1 instances equal to 0.
+END_DESCRIPTION
+
+Variable_Firm_Stock_Inventories
+The finished product stock at the end of the period will be calculated by adding the remaining stock of products at the beginning of the period to which it was produced and discounting the quantity sold. In the case of the agricultural sector, there is no stock of finished products at the end of the period.
+_INIT_
+All 10 instances equal to 0.
+END_DESCRIPTION
+
+Variable_Firm_Stock_Loans
+Firm Stock of Debt, short term +  long term
+_INIT_
+All 1 instances equal to 0.
+END_DESCRIPTION
+
+Variable_Firm_Stock_Loans_Long_Term
+Firm Stock of Long Term Loans
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Firm_Stock_Loans_Short_Term
+Firm Stock of Short Term Loans
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Firm_Total_Funds
+Total available funds for the firm in the current period is the internal funds plus effective new loans
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Firm_Variable_Cost
+Variable unit cost is the wage cost (nominal wages over productivity) plus intermediate costs
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Firm_Wage
+Nominal Wage of the firm. It increases year by year depending on firm's avg productivity.
+To let the nominal wage fixed and equal to all firms, set sector_passthrough_productivity as zero.
+_INIT_
+All 1 instances equal to 0.
+END_DESCRIPTION
+
+Parameter_id_firm_number
+(no description available)
+_INIT_
+All 1 instances equal to 1.
+END_DESCRIPTION
+
+Parameter_firm_date_birth
+(no description available)
+_INIT_
+All 1 instances equal to 0.
+END_DESCRIPTION
+
+Variable_Firm_Demand_Capital_Goods_Expansion
+Effective productive capacity demanded, in real values 
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Firm_Demand_Capital_Goods_Replacement
+
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Firm_Innovation_RND_Share
+This variable defines the allocation of expenses between innovation and imitation.
+If the firm is gaining market share, it decreases imitation and increases innovation. The opposite is valid.
+_INIT_
+All 1 instances equal to 0.
+END_DESCRIPTION
+
+Variable_Firm_Process_RND_Share
+This variable defines the allocation of expenses between process and product rnd.
+If the firm is gaining market share, it decreases product rnd and increases process rnd. The opposite is valid.
+_INIT_
+All 1 instances equal to 0.
+END_DESCRIPTION
+
+Variable_Firm_Effective_Markup
+(no description available)
+_INIT_
+All 1 instances equal to 0.
+END_DESCRIPTION
+
+Object_CAPITALS
+(no description available)
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Capital_Good_Acumulated_Production
+Acumulated Production of one capital good, calculated in the middle of the period
+_INIT_
+All 1 instances equal to 0.
+END_DESCRIPTION
+
+Variable_Capital_Good_Production
+Depends on the rule form using capital goods and the firm's effective production
+_INIT_
+
+END_DESCRIPTION
+
+Variable_Capital_Good_Productivity
+Capital good's productivity increase with accumulated production due to a learning process.
+_INIT_
+
+END_DESCRIPTION
+
+Parameter_capital_good_date_birth
+(no description available)
+_INIT_
+All 1 instances equal to 0.
+END_DESCRIPTION
+
+Parameter_capital_good_depreciation_period
+(no description available)
+_INIT_
+All 1 instances equal to 60.
+END_DESCRIPTION
+
+Parameter_capital_good_productive_capacity
+(no description available)
+_INIT_
+All 1 instances equal to 0.
+END_DESCRIPTION
+
+Parameter_capital_good_productivity_initial
+(no description available)
+_INIT_
+All 1 instances equal to 1.
+END_DESCRIPTION
+
+Parameter_capital_good_to_replace
+(no description available)
+_INIT_
+All 1 instances equal to 0.
+END_DESCRIPTION
+
+Parameter_id_capital_good_number
+(no description available)
+_INIT_
+All 1 instances equal to 0.
+END_DESCRIPTION
+
+Parameter_capital_fixed_object
+(no description available)
+_INIT_
+All 1 instances equal to 1.
+END_DESCRIPTION
+
+Object_LOANS
+(no description available)
+_INIT_
+
+END_DESCRIPTION
+
+Parameter_firm_loan_fixed_amortization
+(no description available)
+_INIT_
+All 1 instances equal to 0.
+END_DESCRIPTION
+
+Parameter_firm_loan_fixed_object
+(no description available)
+_INIT_
+All 10 instances equal to 1.
+END_DESCRIPTION
+
+Parameter_firm_loan_interest_rate
+(no description available)
+_INIT_
+All 1 instances equal to 0.
+END_DESCRIPTION
+
+Parameter_firm_loan_total_amount
+(no description available)
+_INIT_
+All 1 instances equal to 0.
+END_DESCRIPTION
+
+Parameter_id_firm_loan_long_term
+(no description available)
+_INIT_
+All 1 instances equal to 0.
+END_DESCRIPTION
+
+Parameter_id_firm_loan_short_term
+(no description available)
+_INIT_
+All 1 instances equal to 0.
+END_DESCRIPTION
+
+
+DOCUOBSERVE
+Root
+capital_fixed_object
+
+END_DOCUOBSERVE
+
+
+DOCUINITIAL
+
+END_DOCUINITIAL
+
+
+EQ_FILE
+//#define EIGENLIB			// uncomment to use Eigen linear algebra library
+//#define NO_POINTER_INIT	// uncomment to disable pointer checking
+
+#include "fun_head_fast.h"
+
+// do not add Equations in this area
+
+MODELBEGIN
+
+//****************************************FIRM PRODUCTION and INPUTS*************************************//
+
+
+EQUATION("Firm_Expected_Sales")
+/*
+Firm's expected sales are calculated from an average of effective sales from the two previous periods, applying a expected growth rate. This expected growth rate is obtained from comparing the average of the two previous periods with the average of the two before that, adjusted by an expectation parameter.
+*/
+	v[1]=VL("Firm_Effective_Orders", 1);                    										//firm's effective orders lagged 1
+	v[2]=VL("Firm_Effective_Orders", 2);                    										//firm's effective orders lagged 2
+	v[3]=V("expectations");                            												//firm expectations
+
+	if(v[2]!=0)                                           											//if firm's effective orders lagged 2 is not zero
+		{
+		v[4]=v[1]*(1+v[3]*((v[1]-v[2])/v[2]));              										//expected sales will be the effective orders in the last period multiplied by the growth rate between the two periods adjusted by the expectations parameter
+		v[5]=max(0,v[4]);                                  											//expected sales can never be negative
+		}
+	else                                                  											//if firm's effective orders lagged 2 is zero 
+		v[5]=v[1];                                         											//expected sales will be equal to effective orders of the last period
+RESULT(v[5])
+
+
+EQUATION("Firm_Planned_Production")
+/*
+It's calculated from expected sales for the period, considering the proportion of sales that is desired to be kept as inventories and discounting the acumulated stock of inventories in the last period. 
+*/
+   
+	v[1]=V("Firm_Expected_Sales");                          										//calls the firm's expected sales
+	v[2]=V("desired_inventories_proportion");             											//calls the firm's desired inventories ratio as a proportion of sales
+	v[3]=VL("Firm_Stock_Inventories",1);                    										//calls the firm's stock of inventories in the last period
+	v[4]=v[1]*(1+v[2])-v[3];                            											//planned production will be expected sales plus the desired proportion of investories minus the existing stock of inventories
+RESULT(v[4])
+
+
+EQUATION("Firm_Effective_Production")
+/*
+This variable calculates the effective production of each firm, based on already constrained planned production. Here, it alocates production in capital goods vintages, in order of productivity.
+*/
+	v[0]=V("Firm_Planned_Production");                                                              //firm's planned production		
+	
+	v[1]=VL("Firm_Productive_Capacity", 1);                 										//calls the firm's productive capacity of the last period
+	v[2]=V("input_tech_coefficient"); 																//techincal input coefficient
+	v[3]=VL("Firm_Stock_Inputs",1);																	//current stock of inputs
+	v[4]=max(0, min((min(v[1],v[0])),(v[2]*v[3])));          										//planned production can never be more then the maximum productive capacity, never more than input availability, and can never be negative
+
+	SORT("CAPITALS", "Capital_Good_Productivity", "DOWN");                                        	//rule for the use of capital goods, sorts firm's capital goods by productivity in a decreasing order
+	v[5]=0;                                                                                      	//initializes the CYCLE
+	CYCLE(cur, "CAPITALS")                                                                        	//CYCLE trought the capital goods of the firm
+	{
+		v[6]=VS(cur, "capital_good_productive_capacity");                                          	//capital productivity capacity
+		v[7]=max(0,(min(v[6], v[4])));                                                             	//maximum capacity of each capital goods, constrained by effective planned production, and it can not be negative
+		WRITES(cur, "Capital_Good_Production", v[7]);                                              	//the capacity of each capital goods is in fact its production
+		v[4]=v[4]-v[7];                                                                            	//it subracts the production of the first capital good from the effective planned production before going to the next capital good
+		v[5]=v[5]+v[7];                                                                            	//sums up the production of each capital good to determine firm's effective production
+	}
+RESULT(v[5])
+
+
+EQUATION("Firm_Input_Demand_Next_Period")
+/*
+The demand for inputs of each sector of intermediate goods, which should be produced during current period and to be used in the next period, is calculated based on the necessity of programed production, in which a expected growth rate is applied and the remaing stock is discounted. 
+The expected growth rate is defined by the average of effective orders of the last two periods, extrapolated by a expectation parameter.
+The intermediate goods sectors demand exactly the amount they will need to produce in the next period, without discouting the initial stock, which is now know, since the intermediate goods production in the current period will be defined by the demand for inputs of all sectors and not the programed production of the intermediate sector.
+*/
+
+	v[0]=V("Firm_Planned_Production");                     											//firm's planned production for the current period
+	v[1]=V("input_tech_coefficient");           													//input technical coefficient
+	v[2]=V("Firm_Effective_Production");															//firm's effective production
+	
+	v[3]=VL("Firm_Effective_Orders", 1);                   											//firm's effective orders lagged 1 
+	v[4]=VL("Firm_Effective_Orders", 2);                   											//firm's effective orders lagged 1
+	v[5]=V("expectations");                            												//firm's expectation parameter
+	if(v[4]!=0)                                       												//if effective orders is not 0
+		v[6]=1+(v[5]*((v[3]-v[4])/v[4]));               											//gives an expected growth rate, based on the effective orders
+	else                                              												//if effective orders is 0
+		v[6]=1;                                         											//the expected growth rate is 1
+		
+	v[7]=VL("Firm_Stock_Inputs",1);                   												//gives the stock of imputs remaining from the last period
+	
+	v[8]=(v[0]*v[1])*v[6]-(v[7]-(v[2]*v[1]));              											//gives the amount of imputs necessary for the next period, multiplying the current planned production by the exptected growth rate and by the imput techinical relanshionship and subtracting the current stock of inputs minus the amount used in effective produtcion
+	v[9]=max(v[8],0);                               												//the demand of imputs for the next period can never be negative
+RESULT(v[9])
+
+
+EQUATION("Firm_Stock_Inputs")
+/*
+The stock of inputs of each firm at the end of the period is calculated by summing the stock of inputs in the last period with the amount demanded for the production in the next period minus the amount used in the production of the current period
+*/
+	v[0]=V("Firm_Input_Demand_Next_Period");              											//amount of inputs demanded in the current period to be used in the production of the next period                          
+	v[1]=V("input_tech_coefficient");                     											//input technical coefficient               			 
+	v[2]=V("Firm_Effective_Production");                  											//firm's effective production   
+	v[3]=VL("Firm_Stock_Inputs", 1);	                 											//firm's stock of inputs in the last period
+	v[4]=v[3]+v[0]-(v[1]*v[2]);                      	  											//the current stock of inputs is the stock in the last period plus the amount of the demand for the next period that was effetivly met, minus the amount used in effective production                 
+	v[5]=max(v[4],0);                                     											//the current stock can never be negative
+RESULT(v[5])
+
+
+//****************************************FIRM PRICE AND COSTS*************************************//
+
+
+EQUATION("Firm_Wage")
+/*
+Nominal Wage of the firm. It increases year by year depending on firm's avg productivity.
+To let the nominal wage fixed and equal to all firms, set sector_passthrough_productivity as zero.
+*/
+	v[0]=VL("Firm_Wage",1);                                                          	 			//firm wage in the last period
+	v[1]=V("annual_period");
+	v[2]= fmod((double) t,v[1]);                                                         			//divide the time period by the annual period parameter
+	if(v[2]==0)                                                                      	 			//if the rest of the above division is zero (beggining of the year, adjust wages)
+		{
+		v[3]=VL("Firm_Avg_Productivity", 1);                                           	 			//firm average productivity in the last period
+		v[4]=VL("Firm_Avg_Productivity", (v[1]+1));                                      			//firm average productivity five periods before
+		if(v[4]!=0)
+			v[5]=(v[2]-v[4])/v[4];                                                       			//annual growth of sector average productivity
+		else
+			v[5]=1;
+		v[6]=V("sector_passthrough_productivity");                                       			//pass through of productivity to wages
+		v[7]=v[0]*(1+v[5]*v[6]);                                              						//current wage will be the last period's multiplied by a rate of growth which is an expected rate on productivity plus an inflation adjustment in the wage price index
+		}
+	else                                                                             	 			//if the rest of the division is not zero, do not adjust wages
+		v[7]=v[0];                                                                       			//current wages will be the last period's
+RESULT(v[7])
+
+
+EQUATION("Firm_Variable_Cost")
+/*
+Variable unit cost is the wage cost (nominal wages over productivity) plus intermediate costs
+*/
+	v[1]=V("Firm_Wage");
+	v[2]=VL("Firm_Avg_Productivity",1); 
+	v[3]=V("input_tech_coefficient");                               			  
+	v[4]=V("input_price");   
+	             
+	if(v[2]!=0)
+		v[5]=(v[1]/v[2])+(v[3]*v[4]);
+	else
+		v[5]=0;
+RESULT(v[5])
+
+
+EQUATION("Firm_Desired_Markup")
+/*
+Firm Variable
+*/
+	v[11]=V("markup_period");
+	v[0]=VL("Firm_Desired_Markup",1);                                             					//strategic markup in the last period
+	v[1]= fmod((double) t-1, v[11]);                                         						//divides the time period by 8
+
+	if(v[1]==0)                                                              						//if the rest of the above division is zero, adjust strategic markup
+		{
+		v[2]=VL("Firm_Avg_Potential_Markup",1);                                     				//average potential markup of the firm in the last period        
+		v[3]=V("market_share_expansion");                                           				//market-share expantion parameter
+		v[4]=V("markup_apropriation");                                              				//profits apropriation parameter   
+		v[5]=V("Firm_Desired_Market_Share");                                        				//desired market-share 
+		v[6]=VL("Firm_Avg_Market_Share",1);                                    						//firm average market share in the last period   
+		v[7]=VL("Firm_Competitiveness",1);                                          				//firm's competitiveness in the last period
+		v[8]=VL("Sector_Avg_Competitiveness",1);                               						//sector's average competitiveness in the last period
+		v[9]=v[3]*((v[7]-v[8])/v[8]);                                          						//how much to adjust based on the percentual diference between firm's competitiveness and sector's average competitiveness and the expantion parameter
+		if(v[2]*(1+v[9])>v[0]&&v[6]>v[5])                                      						//if the already adjusted average potential markup is higher than desired strategic markup of the last period and firm's average market share is higher than desired market share
+			v[10]=v[0]+v[4]*(v[2]*(1+v[9])-v[0]);                              						//the firm adjusts the strategic markup. 
+		else                                                                   						//if the adjusted average potential markup is not higher than desired nor the firm's average market-share is not higher than desired
+			v[10]=v[0];                                                        						//strategic markup will be the last period's                                            
+		}
+	else                                                                     						//if the rest of the above division is not zero, do not adjust strategic markup
+		v[10]=v[0];                                                            						//strategic markup will be the last period's			
+RESULT(v[10]) 
+
+
+EQUATION("Firm_Desired_Price")
+/*
+Firm's desired price is a desired markup over variable costs.
+*/
+	v[0]=V("Firm_Desired_Markup");                         											//firm's desired markup
+	v[1]=V("Firm_Variable_Cost");                          											//firm's variable cost 
+	v[2]=v[0]*v[1];                                  												//firm's desired price will be the desired markup applied to labor cost plus inputs cost, labor cost defined as wages over productivity
+RESULT(v[2])
+
+
+EQUATION("Firm_Price")
+/*
+Firm's effective price is a average between the desired price and the sector average price
+*/
+	v[0]=VL("Firm_Price",1);                                                   						//firm's price in the last period
+	v[1]=V("Firm_Desired_Price");                                              						//firm's desired price
+	v[2]=V("strategic_price_weight");                                          						//strategic weight parameter
+	v[3]=VL("Sector_Avg_Price", 1);                                            						//sector average price in the last period
+	v[4]=v[2]*(v[1])+(1-v[2])*(v[3]);                                          						//firm's price is a average between the desired price and the sector average price
+	if(v[1]>0)                                                                 						//if desired price is positive
+		v[5]=max(0.01,v[4]);                                                   						//firm's price can never be zero or lower
+	else                                                                       						//if desired price is not positive
+		v[5]=v[0];                                                             						//firm's price will be the last period's
+RESULT(v[5])
+
+
+EQUATION("Firm_Desired_Market_Share")
+/*
+Desired Market Share is a simple average between last period's desired market share and firm's average market share
+*/
+	v[0]=V("markup_period");
+	v[1]=VL("Firm_Desired_Market_Share", 1);                       									//desired market share in the last period
+	v[2]=VL("Firm_Avg_Market_Share", 1);                        									//firm's average market share (desired)
+	v[3]= fmod((double) t-1, v[0]);                               									//devides the last period by eight
+	if(v[3]==0)                                                   									//if the rest of the above division is zero, adjust desired market share
+		v[4]=(v[1]+v[2])/2;                                         								//current desired market share is a simple average between last period's desired market share and firm's average market share
+	else                                                          									//if the rest of the above division is not zero, do not adjust desired market share
+ 		v[4]=v[1];                                                 									//firm's desired market share will be equal to the last period's
+RESULT(v[4])
+
+
+EQUATION("Firm_Avg_Market_Share")
+/*
+Average Market Share between the market share of the firm in the last markup period
+*/
+	v[0]=V("markup_period");
+	v[3]=0;										   													//initializes the sum
+	for (v[1]=0; v[1]<=(v[0]-1); v[1]=v[1]+1)														//from 0 to markup period-1 lags
+		{
+		v[2]=VL("Firm_Market_Share", v[1]);															//computates firm's market share of the current lag
+		v[3]=v[3]+v[2];																				//sum up firm's lagged market share
+		}
+	v[4]=v[3]/v[0];																					//average firm's market share of the last investment period
+RESULT(v[4])
+
+
+EQUATION("Firm_Potential_Markup")
+/*
+Potential markup is the sector average price over firm's variable costs
+*/
+	v[0]=V("Sector_Avg_Price");                                       								//sector average price
+	v[1]=V("Firm_Variable_Cost");                                     								//firm's variable cost
+	if(v[1]!=0)                                                       								//if firm's variable cost is not zero
+		v[2]=v[0]/v[1];                                               								//potential markup is the sector average price over firm's variable costs
+	else                                                             								//if firm's variable cost is zero
+		v[2]=0;                                                       								//potential markup is zero
+RESULT(v[2])
+
+
+EQUATION("Firm_Avg_Potential_Markup")
+/*
+Average Potential Markup between the potential markup of the firm in the last 8 periods
+*/
+	v[0]=V("markup_period");
+	v[3]=0;																							//initializes the sum
+	for (v[1]=0; v[1]<=(v[0]-1); v[1]=v[1]+1)														//from 0 to markup period-1 lags
+		{
+		v[2]=VL("Firm_Potential_Markup", v[1]);														//computates firm's potential markup of the current lag
+		v[3]=v[3]+v[2];																				//sum up firm's lagged potential markup
+		}
+	v[4]=v[3]/v[0];																					//average firm's market share of the last potential markup
+RESULT(v[4])
+
+
+//****************************************FIRM SALES AND INVENTORIES*************************************//
+
+
+EQUATION("Sector_Effective_Orders")
+/*
+Sector Variable.
+Exogenous Real Demand
+*/
+	v[0]=V("sector_scale");																			    //defines the scale of the sector
+	v[1]=V("sector_real_demand_growth");																//rate of growth									
+	v[2]=V("demand_shock_standard_deviation");															//sd of demand shocks, set to zero if no demand shocks
+	v[3]=V("demand_shock_average");                     												//average demand shock, baseline=0;
+	v[4]=norm(v[3], v[2]);																				//demand shock at each time step
+	v[5]=VL("Sector_Avg_Price", 1);																		//average price in the last period
+	v[6]=V("demand_elasticity");																		//demand elasticity parameter. set to zero to eliminate the influence of price
+	if(v[5]!=0)
+		v[7]=(v[0]*exp(t*v[1]+v[4]))/pow(v[5],v[6]);
+	else
+		v[7]=0;
+RESULT(v[7])
+
+
+EQUATION("Sector_Demand_Distribution")
+/*
+Sector Variable
+*/
+v[1]=V("Sector_Sum_Market_Share");
+v[2]=V("Sector_Effective_Orders");
+	for(v[3]=0,v[4]=v[2],v[5]=0; (v[2]-v[3])>0&&v[5]<v[1]; v[4]=(v[2]-v[3]),v[5]=v[6])
+ 		{	
+		v[7]=v[5];
+		v[8]=0;
+		v[9]=0;
+		CYCLE(cur, "FIRMS")
+		{
+			v[11]=VS(cur, "Firm_Market_Share");
+			v[12]=VS(cur, "Firm_Effective_Production");															//firm effective production	
+			v[13]=VLS(cur, "Firm_Stock_Inventories", 1);														//firm stock of inventories
+			v[14]=v[12]+v[13];																					//total supply of a firm
+			v[15]=VS(cur, "firm_effective_orders_temporary");
+				if (v[15]<v[14])
+					v[17]=v[15]+v[4]*v[11]/(1-v[7]);
+				else
+					v[17]=v[15];
+			WRITES(cur, "firm_effective_orders_temporary", v[17]);
+			v[19]=min(v[17],v[14]);
+			v[9]=v[9]+v[19];
+				if (v[19]==v[14])
+					v[20]=v[11];
+				else
+					v[20]=0;
+			v[8]=v[8]+v[20];
+		}
+		v[3]=v[9];
+		v[6]=v[8];
+		}
+RESULT(v[3])
+
+
+EQUATION("Firm_Effective_Orders")
+/*
+Firm effective production is calculated in the sectoral demand distribution.
+This variables takes saves the value and clears the temporary parameter.
+*/
+	v[0]=V("firm_effective_orders_temporary");
+	WRITE("firm_effective_orders_temporary", 0);
+RESULT(v[0])
+
+
+EQUATION("Firm_Sales")
+/*
+The observed sales are defined by the minimum between the effective orders and the effective production plus inventories of each sector.In the case of intermediate sectors, the sale of inputs from their inventories to meet the extraordinary demand at the beginning of the period should be added to the total sold.In the case of the agricultural sector, the observed sales are equal to the current production.
+*/
+	v[0]=VL("Firm_Stock_Inventories",1);                   												//stock of inventories of the firm
+	v[1]=V("Firm_Effective_Production");                   												//firm's effective production in that period
+	v[2]=V("Firm_Effective_Orders");                       												//firm's effective orders
+	v[3]=v[0]+v[1];                                        												//total amount of available products
+	v[4]=max(0, min(v[3],v[2]));                           												//firm's sales will be the effective orders, constrained by the total amount of available products, and can never be negative
+RESULT(v[4])
+
+
+EQUATION("Firm_Stock_Inventories")
+/*
+The finished product stock at the end of the period will be calculated by adding the remaining stock of products at the beginning of the period to which it was produced and discounting the quantity sold. In the case of the agricultural sector, there is no stock of finished products at the end of the period.
+*/
+	v[0]=V("Firm_Effective_Production");                    											//firm's effective production                 
+	v[1]=V("Firm_Sales");                                   											//firm's sales
+	v[2]=VL("Firm_Stock_Inventories", 1);                  												//stock of inventories in the last period
+	v[3]=v[0]-v[1]+v[2];                                    											//the stock of inventories in the end of the period will be the difference between effective production and sales, added to the current stock of inventories
+RESULT(v[3])
+
+
+EQUATION("Firm_Inventories_Variation")
+/*
+Firm's inventories variation in current nominal values
+*/
+	v[0]=V("Firm_Price");
+	v[1]=VL("Firm_Stock_Inventories", 1);
+	v[2]=V("Firm_Stock_Inventories");
+	v[3]=v[0]*(v[2]-v[1]);
+RESULT(v[3])
+
+
+EQUATION("Firm_Market_Share")
+/*
+Firm Variable
+*/
+	v[0]=VL("Firm_Market_Share", 1);                													//firm's market share in the last period
+	v[1]=V("Sector_Avg_Competitiveness");          														//sector average competitiveness
+	v[3]=V("Firm_Competitiveness");                 													//firm's competitiveness
+	if(v[1]!=0)                                     													//if the sector average competitiveness is not zero
+		v[4]=v[0]+v[0]*((v[3]/v[1])-1);             													//firm's market share will be the last period's inscresed by the adjustment paramter times the ratio between firm's competitiveness and sector average competitiveness
+	else                                            													//if the sector average competitiveness is zero
+		v[4]=0;                                     													//firm's market share will be zero (testar, remover)
+
+RESULT(v[4])
+
+
+EQUATION("Firm_Delivery_Delay")
+/*
+Firm Variable
+*/
+	v[0]=V("Sector_Effective_Orders");              													//effective orders of the sector
+	v[1]=V("Firm_Market_Share");                    													//firm's market share
+	v[2]=v[0]*v[1];                                 													//firm's effective orders
+	v[3]=V("Firm_Sales");                           													//firm's sales
+	if (v[3]!=0)                                    													//if firm's sales is not zero
+		v[4]=v[2]/v[3];                             													//delivery delay will be determined by the ratio between effective orders and sales
+	else                                            													//if firm's sales is zero
+		v[4]=1;                                     													//delivery delay will be one
+RESULT(v[4])
+
+
+EQUATION("Firm_Competitiveness")
+/*
+Competitiveness depends on the quality of the product, the price and the delivery delay of the firm
+*/
+	v[0]=VL("Firm_Price",1);                                           									//firm's price in the last period
+	v[8]=VL("Sector_Avg_Price",1);
+	v[9]=VL("Sector_Avg_Quality",1);
+	v[10]=v[0]/v[8];
+	v[11]=v[2]/v[9];
+	v[1]=V("elasticity_price");                                        									//price elasticity
+	v[2]=VL("Firm_Quality",1);                                         									//product quaility
+	v[3]=V("elasticity_quality");                                      									//quality elasticity
+	v[4]=VL("Firm_Competitiveness",1);                                 									//firm's competitiveness in the last period
+	v[5]=VL("Firm_Delivery_Delay",1);                                  									//firm's delivery delay in the last period
+	v[6]=V("elascitity_delay");                                       									//delay elasticity	
+   	if(v[0]!=0&&v[2]!=0&&v[5]!=0)                                               						//if the price was not zero neither the quality
+     	v[7]=(pow(v[2],v[3]))*(1/pow(v[0],v[1]))*(1/pow(v[5],v[6]));   									//firm's competitiveness will be given by the quality powered by its elasticity over the price, powered by its elasticicty, and the delivery delay, powered by its elasticicty
+   	else                                                               									//if either the price or the quality was zero 
+     	v[7]=v[4];                                                     									//firm's competitiveness will be the competitiveness in the last period
+RESULT(v[7])
+
+
+EQUATION("Firm_Effective_Market_Share")
+/*
+Effective market share is given by firm's sales over total sales of the sector
+*/
+	v[0]=V("Firm_Sales");
+	v[1]=V("Sector_Sales");
+	if (v[1]!=0)
+		v[2]=v[0]/v[1];
+	else
+		v[2]=0;
+RESULT(v[2])
+
+
+//****************************************FIRM PROFITS*************************************//
+
+
+EQUATION("Firm_Revenue")
+/*
+Revenue depends on sales and price
+*/
+	v[0]=V("Firm_Sales");                                             											//firm's sales 
+	v[1]=V("Firm_Price");                                             											//firm's price
+	v[2]=v[0]*v[1];
+RESULT(v[2])
+
+
+EQUATION("Firm_Indirect_Tax")
+/*
+Indirect Tax of the firm is the revenue multiplied by the tax parameter
+*/
+	v[0]=V("Firm_Revenue");
+	v[1]=V("indirect_tax_rate");
+	v[2]=v[0]*v[1];
+RESULT(v[2])
+
+
+EQUATION("Firm_Net_Revenue")
+/*
+Firm's net revenue, discounting taxes and R&D expenses.
+*/
+	v[0]=V("Firm_Revenue");
+	v[1]=V("indirect_tax_rate");
+	v[2]=V("rnd_revenue_proportion");
+	v[4]=v[0]*(1-v[1])*(1-v[2]);
+RESULT(v[4])
+
+
+EQUATION("Firm_RND_Expenses")
+/*
+Firm's R&D expenses, subtracted from the revenue after taxes.
+It will be distributed to income class as wages.
+*/
+	v[0]=V("Firm_Revenue");
+	v[1]=V("indirect_tax_rate");
+	v[2]=V("rnd_revenue_proportion");
+	v[4]=v[0]*(1-v[1])*(v[2]);
+RESULT(v[4])
+
+
+EQUATION("Firm_Interest_Payment")
+/* 
+Sum up total interest payment on all firm's loans. Interest rates are fixed for each loan. 
+switch_interest_payment
+0-->pre-fixed interest
+1-->pos-fixed interest
+*/
+	v[0]=V("switch_interest_payment");
+	v[1]=V("Firm_Interest_Rate_Long_Term");
+	v[2]=V("Firm_Interest_Rate_Short_Term");
+	v[3]=0;												//initializes the CYCLE
+	CYCLE(cur, "FIRM_LOANS")							//CYCLE trough all firm's loans
+	{
+		v[4]=VS(cur, "firm_loan_total_amount");			//debt current amount 
+		v[5]=VS(cur, "firm_loan_interest_rate");		//debt interest rate
+		v[6]=VS(cur, "id_firm_loan_short_term");
+		v[7]=VS(cur, "id_firm_loan_long_term");
+		if(v[0]==0)
+			v[8]=v[4]*v[5];
+		if(v[0]==1)
+		{
+			if(v[6]==1)
+				v[8]=v[4]*v[2];
+			else 
+				v[8]=v[4]*v[1];
+		}
+		v[3]=v[3]+v[8];
+	}                                      			               
+RESULT(v[3])								
+
+
+EQUATION("Firm_Debt_Payment")
+/* 
+Sum up total debt payment on all firm's loans. Amortizations are fixed for each loan. 
+This variable also adjusts the total amount of each loan and delete loan objects if all debt is paid.
+*/
+	v[0]=SUM("firm_loan_fixed_amortization");		 			//sum up all amortizations for current period
+		CYCLE_SAFE(cur, "FIRM_LOANS")							//CYCLE trough all firm's loans
+		{
+		v[4]=VS(cur, "firm_loan_total_amount");					//debt current amount 
+		v[5]=VS(cur, "firm_loan_fixed_amortization");			//debt fixed amortization
+		v[6]=v[4]-v[5]*(1+v[1]);								//new total amount
+		v[7]=VS(cur, "firm_loan_fixed_object");					//identifies if it is fixed object, necessary for model structure
+		if (v[7]!=1)
+			{	
+			if (v[6]>0)											//if there is still amount to be amortized
+				WRITES(cur, "firm_loan_total_amount", v[6]);	//write the new amount
+			else												//if all amount was already amortized
+				DELETE(cur);									//delete current loan
+			}
+		}
+RESULT(v[0])
+
+
+EQUATION("Firm_Financial_Obligations")
+/*
+Firm Financial Obligations in the current period is the sum of interest payment and debt payment
+*/
+	v[1]=V("Firm_Interest_Payment");
+	v[2]=V("Firm_Debt_Payment");
+	v[3]=v[1]+v[2]; 
+RESULT(v[3])
+
+
+EQUATION("Firm_Deposits_Return")
+/*
+Firm interest receivment on deposits
+*/
+v[0]=VL("Firm_Stock_Deposits",1);
+v[1]=V("Interest_Rate_Deposits");
+v[2]=v[0]*v[1];
+RESULT(v[2])
+
+
+EQUATION("Firm_Net_Profits")
+/*
+Firm profit, including
+*/
+	v[0]=V("Firm_Net_Revenue");                                       											//firm's net revenue
+	v[1]=V("Firm_Effective_Production");                              											//firm's effective production
+	v[2]=V("Firm_Variable_Cost");                                     											//firm's variable cost	
+	v[3]=V("Firm_Financial_Obligations");							  											//firm's financial obligations
+	v[4]=V("Firm_Deposits_Return");
+	
+	v[5]=v[0]-(v[2]*v[1])-v[3]+v[4];										  									//firm's operational profits
+RESULT(v[5])
+
+
+EQUATION("Firm_Retained_Profits")
+/*
+Profit retained by the sector after being distributed to class and paid interest on the debt and separate the expense for depreciation.
+*/
+	v[0]=V("Firm_Net_Profits");                                        											//firm's profits            
+	v[1]=V("profits_distribution_rate");                               											//firm's profit distribution parameter                            
+	if(v[0]>0)                                                         											//if net profits is positive
+		v[2]=(1-v[1])*v[0];                                           											//retained profits is positive, to be added to stock of deposits
+	else                                                               											//if net profits is zero or negative                                                                     
+		v[2]=v[0];                                                     											//retained profits equals net profits, to be discounted from stock of deposits                                                         
+RESULT(v[2])
+
+
+EQUATION("Firm_Distributed_Profits")
+/*
+Amount of profits distributed to the income classes
+*/
+	v[0]=V("Firm_Net_Profits");                                        											//firm's profits            
+	v[1]=V("profits_distribution_rate");                               											//firm's profit distribution parameter  
+	if(v[0]>0)                                                         											//if net profits is positive
+		v[2]=v[1]*v[0];                                                											//distributed profits
+	else                                                               											//if net profits is zero or negative                                                                     
+		v[2]=0;																											
+RESULT(v[2])
+
+
+EQUATION("Firm_Profit_Rate")
+/*
+Net profits over total capital (last period)
+Analysis Variable
+*/
+	v[0]=V("Firm_Net_Profits");
+	v[1]=VL("Firm_Capital",1);
+	if(v[1]!=0)
+		v[2]=v[0]/v[1];
+	else
+		v[2]=0;
+RESULT(v[2])
+
+
+//****************************************FIRM RND*************************************//
+
+
+EQUATION("Firm_Frontier_Productivity")
+/*
+The new productivity is the maximum among the previous one and the ones possibly obtained imitation and innovation.  
+*/
+	v[0]=VL("Firm_Frontier_Productivity", 1);       //frontier productivity of the firm in the last period
+	v[1]=V("Firm_Imitation_Productivity");          //productivity achievied with imitation in that period
+	v[2]=V("Firm_Innovation_Productivity");         //productivity achievied with innovation in that period
+	v[3]=max(v[0],max(v[1],v[2]));             		//current frontier productivity is the maximum between the three
+RESULT(v[3])
+
+
+EQUATION("Firm_Quality")
+/*
+The new quality is the maximum among the previous one and the ones possibly obtained imitation and innovation. 
+*/
+	v[0]=VL("Firm_Quality", 1);       				//frontier quality of the firm in the last period
+	v[1]=V("Firm_Imitation_Quality");          		//quality achievied with imitation in that period
+	v[2]=V("Firm_Innovation_Quality");         		//quality achievied with innovation in that period
+	v[3]=max(v[0],max(v[1],v[2]));        			//current frontier quality is the maximum between the three
+RESULT(v[3])
+
+
+EQUATION("Firm_Imitation_Productivity")
+/*
+Imitation process. The sucess depends on the amount of recources alocated to imitation. Firms search for best productivity and best quality of the sector, trying to copy if succeded.
+*/
+	v[0]=V("Firm_RND_Expenses");                    //firm's RND expenses
+	v[1]=V("innovation_proportion");    			//firm's share of RND expenses destinated to innovation
+	v[2]=(v[0]*(1-v[1]));                           //amount of recources for imitation
+	v[3]=1-exp(-v[2]);                   			//probability of success of the imitation depends on amount of recources available
+	
+	if(RND<v[3])                              		//draws a random number. if it is lower then imitation probability
+     	v[4]=VL("Sector_Max_Productivity", 1);  	//imitation has succeded and the firm can copy the maximum probability of the sector in the last perio
+  	else                                      		//if the random number is not lower than imitation probability
+     	v[4]=0;                                 	//imitation failed and return a productivity zero
+RESULT(v[4])
+
+
+EQUATION("Firm_Innovation_Productivity")
+/*
+Innovation process. The sucess depends on the amount ou recources alocated to innovation. Firms search for new productivity and porduct quality and the result depends on a random distribution with exonegous parameters.
+*/
+	v[0]=V("Firm_RND_Expenses");                    //firm's RND expenses                       
+	v[1]=V("innovation_proportion");    			//firm's share of RND expenses destinated to innovation
+	v[2]=(v[0]*v[1]);                           	//amount of recources for innovation
+	v[3]=1-exp(-v[2]);                     			//probability of success of the innovation depends on the parameter and the amount of recources available  
+	
+	if(RND<v[3])                                	//draws a random nuumber. if it is lower then innovation probability 
+		{
+		v[4]=V("std_dev_innovation");           	//innovation standard deviation
+		v[5]=V("initial_productivity");				//initial frontier productivity
+		v[7]=V("tech_opportunity");          		//technological opportunity 
+		v[8]=log(v[5])+(double)t*(v[7]);        	//the average of the innovation distribution will be the initial frontier productivity plus the opportunity parameter times the time period
+		v[10]=exp(norm(v[8],v[4]));             	//the innovation productivity will be a draw from a normal distribution with average depending of the tech regime and std. dev fixed
+		}
+	else                                        	//if the random number is not lower then  the innovation probability
+		v[10]=0;                                	//innovation failed and the productivity is zero
+RESULT(v[10])
+
+
+EQUATION("Firm_Imitation_Quality")
+/*
+Imitation process. The sucess depends on the amount of recources alocated to imitation. Firms search for best quality of the sector, trying to copy if succeded.
+*/
+	v[0]=V("Firm_RND_Expenses");                    //firm's RND expenses
+	v[1]=V("innovation_proportion");    			//firm's share of RND expenses destinated to innovation
+	v[2]=(v[0]*(1-v[1]));                           //amount of recources for imitation
+	v[3]=1-exp(-v[2]);                   			//probability of success of the imitation depends on amount of recources available
+	
+	if(RND<v[3])                              		//draws a random number. if it is lower then imitation probability
+     	v[5]=VL("Sector_Max_Quality", 1);			//imitation has succeded and the firm can copy the maximum quality of the sector in the last period
+  	else                                      		//if the random number is not lower than imitation probability
+     	v[5]=0;										//imitation failed and return a quality zero
+RESULT(v[5])
+
+
+EQUATION("Firm_Innovation_Quality")
+/*
+Innovation process. The sucess depends on the amount ou recources alocated to innovation. Firms search for new quality and the result depends on a random distribution with exonegous parameters.
+*/
+	v[0]=V("Firm_RND_Expenses");                    //firm's RND expenses                       
+	v[1]=V("innovation_proportion");    			//firm's share of RND expenses destinated to innovation
+	v[2]=(v[0]*v[1]);                           	//amount of recources for innovation
+	v[3]=1-exp(-v[2]);                     			//probability of success of the innovation depends on the parameter and the amount of recources available  
+	
+	if(RND<v[3])                                	//draws a random nuumber. if it is lower then innovation probability 
+		{
+		v[4]=V("std_dev_innovation");           	//innovation standard deviation
+		v[6]=V("initial_quality");					//initial quality
+		v[7]=V("tech_opportunity");          		//technological opportunity parameter
+		v[9]=log(v[6])+(double)t*(v[7]);        	//the average of the innovation distribution will be the initial quality plus the opportunity parameter times the time period
+		v[10]=exp(norm(v[9],v[4]));					//the innovation quality will be a draw from a normal distribution with average depending of the tech regime and std. dev fixed
+		}
+	else                                        	//if the random number is not lower then  the innovation probability
+		v[10]=0;									//innovation failed and the quality is zero
+RESULT(v[10])
+
+
+//****************************************FIRM RND*************************************//
+
+
+EQUATION("Firm_Investment_Period")
+/*
+This variable writes for each firm, if it is investment period or not, assuming 1 or 0.
+*/
+	v[0]=V("investment_period");							//sector investment period parameter
+	v[1]=fmod((t+v[0]),v[0]);								//devides the current time step by the investment period and takes the rest
+	v[2]=V("id_firm_number");								//firm number
+	v[3]=fmod((v[2]+v[0]),v[0]);							//divides the firm number by the investment period and takes the rest
+	if (v[3]==v[1])											//if the firm number rest matches the time step rest
+		v[4]=1;												//mark as investment period for the firm	
+	else													//if the rests do not match
+		v[4]=0;												//do not mark as investment period for the firm
+RESULT(v[4])
+
+
+EQUATION("Firm_Expected_Sales_Long_Term")
+/*
+The sectors update their productive capacity from year to year, time it takes for new capacity to be produced and to be available for use. The variation in the desired productive capacity is then defined according to the expected orders for the following year. Expected orders are calculated from the average of actual orders for the last six periods and the growth projection for six periods thereafter. This projection is determined on the basis of the difference between the averages of orders for the last six periods and the six periods prior to them, on which a doubling annual extrapolation factor applies.
+*/
+	v[0]=V("investment_period");
+	v[3]=0;													//initializes the sum
+	for (v[1]=0; v[1]<=(v[0]-1); v[1]=v[1]+1)				//from 0 to investment period-1 lags
+		{
+		v[2]=VL("Firm_Effective_Orders", v[1]);				//computates firm's effective orders of the current lag
+		v[3]=v[3]+v[2];										//sum up firm's lagged effective oders
+		}
+	v[4]=v[3]/v[0];											//average firm's effective orders of the last investment period
+	
+	v[5]=0;													//initializes the sum
+	for (v[6]=v[0]; v[6]<=(2*v[0]-1); v[6]=v[6]+1)			//from investment period lag to twice investment period-1 lags
+		{
+		v[7]=VL("Firm_Effective_Orders", v[6]);				//computates firm's effective orders of the current lag
+		v[5]=v[5]+v[7];										//sum up firm's lagged effective oders
+		}
+	v[8]=v[5]/v[0];											//average firm's effective orders of the investment period prior to the last
+		
+	v[9]=V("expectations");                            		//firm expectations
+	if (v[8]!=0)                                    		//if the average effective orders of the six periods prior to the last six is not zero
+		{
+		v[10]=v[4]*(1+2*v[9]*((v[4]-v[8])/v[8]));     		//expected orders for the next six periods will be the average effective orders of the last six periods multiplied by the growth rate between the averages and the double of the expectation parameter
+		v[11]=max(0,v[10]);                           		//expected orders for the next six periods can never be negative
+		}
+	else                                            		//if the average effective orders of the six periods prior to the last six is zero
+		v[11]=0;                                      		//expected orders for the next six periods will be zero
+RESULT(v[11])
+
+
+EQUATION("Firm_Desired_Expansion_Investment_Expenses")
+/*
+Nominal value of desired new capital goods. 
+*/
+
+	v[9]=V("Firm_Investment_Period");								//investment period for the firm
+	if(v[9]==1)														//if it is investment period for the firm
+		{
+   		v[0]=V("Firm_Expected_Sales_Long_Term");					//firm expected sales																				 	
+   		v[1]=V("Firm_Productive_Capacity"); 						//current productive capacity
+		
+		v[10]=0;													//initializes the cycle
+		v[11]=V("depreciation_period");								//depreciation period
+		v[12]=V("investment_period");								//investment period
+		CYCLE(cur, "CAPITALS")										//cycle trough all capital goods
+		{
+			v[15]=VS(cur, "capital_good_depreciation_period");
+			v[13]=VS(cur, "capital_good_date_birth");				//current capital good date of birth
+			v[14]=VS(cur, "capital_good_productive_capacity");		//current capital good productive capacity
+			if((double)t!=v[13] && ((double)t+v[12]) > v[15])	//if current capital good will depreciate in the next investment period (before new capital goods arrive)
+				v[10]=v[10]+v[14];									//sum up productive capacity to depreciate in the next investment period
+			else													//if current capital good wilnot depreciate in the next investment period
+				v[10]=v[10];										//do not sum up productive capacity
+		}
+		
+   		v[2]=V("desired_inventories_proportion");																										
+   		v[3]=V("desired_degree_capacity_utilization");
+		v[4]=((v[0]*(1+v[2]))/v[3]) - v[1] + v[10];							//desired productive capacity will be the amount needed based on expected sales minus existing plus what will depreciate in the next investment period
+   		v[5]=max(0,v[4]);											//cannot be negative
+   		
+		v[6]=V("Price_Capital_Goods");								//price of capital goods
+		v[7]=V("capital_output_ratio");								//capital output ratio
+   		v[8]=v[5]*v[6]*v[7];										//desired expansion expenses is the nominal value of the capital goods to meet desired productive capacity
+   		}
+   	else
+   		v[8]=0;
+RESULT(v[8])
+
+
+EQUATION("Firm_Desired_Replacement_Investment_Expenses")
+/*
+Nominal value of derired new capital goods for modernization replacement
+*/
+ v[1]=V("investment_period");
+ v[3]=V("Firm_Investment_Period");
+ v[4]=V("Firm_Frontier_Productivity");
+ v[5]=V("learning_adjustment");
+ v[6]=V("antecipation");
+ v[7]=V("Firm_Max_Productivity");
+ v[8]=max(v[4]*(1+v[6]*v[5]),v[7]);
+ 
+ v[9]=V("depreciation_period");
+ v[10]=V("Firm_Wage");
+ v[11]=V("Price_Capital_Goods");
+ v[12]=V("capital_output_ratio");
+ v[13]=V("payback_period");
+  				
+  if(v[3]==1)																																											// if it is investment period for the firm
+  {
+  v[16]=0;																																												// initializes the CYCLE for productive capacity
+  SORT("CAPITALS","Capital_Good_Productivity","UP");																								// sort capital goods from the lowest to highest 
+   CYCLE(cur, "CAPITALS")																																					// CYCLE trought capital goods
+   {
+     v[19]=VS(cur, "capital_good_depreciation_period");																										// capital good date of birth
+     if((double)t!=v[19] && (double)t < v[19]-v[1])																					// if the capitalgood was not created in the current period nor will depreciate in the next investment period
+     {
+     v[17]=VS(cur, "Capital_Good_Productivity");																									// current capital good productivivty
+     v[18]=VS(cur, "capital_good_productive_capacity");   																				// current capital good productive capacity  
+     v[23]=v[11]/(v[10]*((1/(v[17]))-(1/(v[8]))));																								// calculates the payback           
+         if(v[8]>v[17] && v[23]<=v[13])																														// if the cost of replacement is lower than current available funds and the paybakc calculus  is lower than the payback parameter
+        	v[16]=v[16]+v[18];         																															// sum up the productive capacity to replace
+         else																																											// else
+         	v[16]=v[16]; 																																						// do not sum replacement cost  
+      }
+      else																																												// else
+      	v[16]=v[16]; 																																							// do not sum replacement cost
+   }
+  }
+  else																																														// if it is not investmnet period for the firm
+  v[16]=0;																																												// productive capacity to replace is zero
+  
+  v[17]=v[16]*v[11]*v[12];																																				// nominal desired expenses
+RESULT(v[17])
+
+
+EQUATION("Firm_Desired_Investment_Expenses")
+/*
+Nominal value of total desired investment expenses, including replacement and expansion.
+*/
+v[0]=V("Firm_Desired_Expansion_Investment_Expenses");
+v[1]=V("Firm_Desired_Replacement_Investment_Expenses");
+v[2]=v[0]+v[1];
+RESULT(v[2])
+
+
+EQUATION("Firm_Effective_Expansion_Investment_Expenses")
+/*
+Nominal value of new capital goods, restricted to the amount of funds available.
+*/
+	v[0]=V("Firm_Desired_Expansion_Investment_Expenses");
+	v[1]=V("Firm_Total_Funds");
+	if(v[1]<=0)												//no available funds
+		v[2]=0;
+	else
+		{
+		if(v[1]>=v[0]) 										//available funds and enought for the investment
+			v[2]=v[0];
+		else 												//available funds but not enought for the desired investment
+			v[2]=v[1];
+		}
+RESULT(v[2])
+
+
+EQUATION("Firm_Demand_Productive_Capacity_Expansion")
+/*
+Effective productive capacity demanded, in real values 
+*/
+	v[0]=V("Firm_Effective_Expansion_Investment_Expenses");
+	v[1]=V("Price_Capital_Goods");
+	v[2]=V("capital_output_ratio");
+	v[3]=(v[0]/v[1])/v[2];
+RESULT(v[3])
+
+
+EQUATION("Firm_Available_Funds_Replacement")
+/*
+Available funds for replacement investment will be the available funds minus the amount of effective expansion investment.
+*/
+	v[1]=V("Firm_Total_Funds");
+	v[2]=V("Firm_Effective_Expansion_Investment_Expenses");
+	v[3]=max(0, (v[1]-v[2]));
+RESULT(v[3])
+
+
+EQUATION("Firm_Demand_Productive_Capacity_Replacement")
+/*
+New productive capacity in aquisition of new equipment to replace obsolete ones.
+*/
+	v[0]=V("Firm_Available_Funds_Replacement");
+	v[1]=V("investment_period");
+	v[3]=V("Firm_Investment_Period");
+	v[4]=V("Firm_Frontier_Productivity");
+	v[5]=V("learning_adjustment");
+	v[6]=V("antecipation");
+	v[7]=V("Firm_Max_Productivity");
+	v[8]=max(v[4]*(1+v[6]*v[5]),v[7]);
+	v[9]=V("depreciation_period");
+	v[10]=V("Firm_Wage");
+	v[11]=V("Price_Capital_Goods");
+	v[12]=V("capital_output_ratio");
+	v[13]=V("payback_period");
+  				
+	if(v[3]==1)														// if it is investment period for the firm
+	{
+		v[14]=0;													// initializes the CYCLE for expenses 
+		v[15]=v[0];													// count available funds
+		v[16]=0;													// initializes the CYCLE for productive capacity
+		SORT("CAPITALS","Capital_Good_Productivity","UP");			// sort capital goods from the lowest to highest 
+		CYCLE(cur, "CAPITALS")										// CYCLE trought capital goods
+		{
+			v[19]=VS(cur, "capital_good_depreciation_period");				// capital good date of birth
+			if((double)t!=v[19] && (double)t < v[19]-v[1])		// if the capitalgood was not created in the current period nor will depreciate in the next investment period
+				{
+				v[17]=VS(cur, "Capital_Good_Productivity");			// current capital good productivivty
+				v[18]=VS(cur, "capital_good_productive_capacity");  // current capital good productive capacity  
+				v[20]=v[18]*v[12]*v[11];							// current nominal cost of new capital goods to replace that amount of productive capacity
+				v[15]=v[0]-v[14];									// subtract the replacement cost from the available funds to replacement. At the end this will be available funds after replacemenr
+				v[23]=v[11]/(v[10]*((1/(v[17]))-(1/(v[8]))));		// calculates the payback
+                 
+				if(v[8]>v[17] && v[20]<=v[15] && v[23]<=v[13])		// if the cost of replacement is lower than current available funds and the paybakc calculus  is lower than the payback parameter
+					{
+					WRITES(cur, "capital_good_to_replace",1);		// mark the current capital good to replace
+					v[14]=v[14]+v[20];								// sum up the replacement cost
+					v[16]=v[16]+v[18];         						// sum up the productive capacity to replace
+					}
+				else												// else
+					{
+					WRITES(cur, "capital_good_to_replace",0);		// do not mark the current capital good to replace
+					v[16]=v[16]; 									// do not sum replacement cost
+					v[14]=v[14];									// do not sum productive capacity to replace
+					} 
+				}
+			else													// else
+				{
+				WRITES(cur, "capital_good_to_replace",0);			// do not mark the current capital good to replace
+				v[16]=v[16]; 										// do not sum replacement cost
+				v[14]=v[14];										// do not sum productive capacity to replace
+				} 
+		}
+	}
+	else															// if it is not investmnet period for the firm
+		{
+		v[14]=0;      												// nominal replacement expenses is zero																																								
+		v[15]=v[0];													// available funds after replacement is the amount available before
+		v[16]=0;													// productive capacity to replace is zero
+		}	
+RESULT(v[16])
+
+
+EQUATION("Firm_Replacement_Expenses")
+/*
+Nominal value of desired new capital goods for modernization. 
+*/
+	v[1]=V("Firm_Demand_Productive_Capacity_Replacement");
+	v[2]=V("Price_Capital_Goods");
+	v[3]=V("capital_output_ratio");
+	v[4]=v[1]*v[3]*v[2];
+RESULT(v[4])
+
+
+EQUATION("Firm_Effective_Investment_Expenses")
+/*
+Nominal value of total effective investment expenses, including replacement and expansion.
+*/
+v[0]=V("Firm_Effective_Expansion_Investment_Expenses");
+v[1]=V("Firm_Replacement_Expenses");
+v[2]=v[0]+v[1];
+RESULT(v[2])
+
+
+EQUATION("Firm_Available_Funds_After_Replacement")
+/*
+Available funds after replacement investment will be the available funds for replacement minus the amount of effective replacmenet investment.
+*/
+	v[1]=V("Firm_Available_Funds_Replacement");
+	v[2]=V("Firm_Replacement_Expenses");
+	v[3]=max(0, (v[1]-v[2]));
+RESULT(v[3])
+
+
+EQUATION("Firm_Demand_Capital_Goods")
+/*
+The demand for capital goods in each period will be determined by the sum of 1/6 of the variation of the productive capacity with modernization
+*/
+	v[0]=V("investment_period");
+	v[4]=0;																					//initializes the sum
+	for (v[1]=1; v[1]<=v[0]; v[1]=v[1]+1)													//from the last production period until the last investment period
+		{
+		v[2]=VL("Firm_Demand_Productive_Capacity_Replacement", v[1]);						//computates desired productive capacity to replace of the current lag
+		v[3]=VL("Firm_Demand_Productive_Capacity_Expansion", v[1]);							//computates desired productive capacity to expand of the current lag
+		v[4]=v[4]+v[2]+v[3];																//sum up firm's lagged  desired productive capacity to replace plus productive capacity to expand
+		}
+	v[5]=v[4]/v[0];																			//divides the total amount of demand by the invesmet period. This is because capital goods take a whole investment period to be produced. This distributed the demand for the capital goods firms equally during the investment period. It does not mean that each firm demands 1/6 of capital each period, it's just to distribute the production															
+	v[6]=V("capital_output_ratio");															//capital outrput ratio
+	v[7]=v[5]*v[6];																			//number of capital goods to be demanded (produced) in each production period inside the investment period
+RESULT(v[7])
+
+
+EQUATION("Firm_Modernization_Rate")
+/*
+Percentage of productive capacity that is replaced for modernization at each time period.
+*/
+v[0]=V("Firm_Demand_Productive_Capacity_Replacement");
+v[1]=V("Firm_Productive_Capacity");
+if(v[1]!=0)
+	v[2]=v[0]/v[1];
+else
+	v[2]=0;
+RESULT(v[2])
+
+
+EQUATION("Firm_Investment_Rate")
+/*
+Percentage of productive capacity that is replaced for modernization at each time period.
+*/
+v[0]=V("Firm_Demand_Productive_Capacity_Replacement");
+v[1]=V("Firm_Demand_Productive_Capacity_Expansion");
+v[2]=V("Firm_Productive_Capacity");
+if(v[2]!=0)
+	v[3]=(v[0]+v[1])/v[2];
+else
+	v[3]=0;
+RESULT(v[3])
+
+
+//****************************************FIRM RND*************************************//
+
+
+EQUATION("Firm_Avg_Debt_Rate")
+/*
+Firm's avg debt rate of the last investment period
+*/
+	v[0]=V("investment_period");
+	v[3]=0;																				//initializes the sum
+	for (v[1]=1; v[1]<=v[0]; v[1]=v[1]+1)												//from 0 to investment period-1 lags
+		{
+		v[2]=VL("Firm_Debt_Rate", v[1]);												//computates firm's debt rate of the current lag
+		v[3]=v[3]+v[2];																	//sum up firm's lagged effective oders
+		}
+	v[4]=v[3]/v[0];																		//average firm's debt rate of the last investment period
+RESULT(v[4])
+
+
+EQUATION("Firm_Interest_Rate_Short_Term")
+/*
+Interest rate paid by the firm depends on a individual spread over basic interest rate. The firm's spread is based on the average debt rate of the firm.
+*/
+	v[0]=V("risk_premium_adjustment");
+	v[1]=V("Firm_Avg_Debt_Rate");
+	v[2]=VS(cur, "Interest_Rate_Short_Term");
+	v[3]=(1+v[1]*v[0])*v[2];	
+RESULT(v[3])
+
+
+EQUATION("Firm_Interest_Rate_Long_Term")
+/*
+Interest rate paid by the firm depends on a individual spread over basic interest rate. The firm's spread is based on the average debt rate of the firm.
+*/
+	v[0]=V("risk_premium_adjustment");
+	v[1]=V("Firm_Avg_Debt_Rate");
+	v[2]=VS(cur, "Interest_Rate_Long_Term");
+	v[3]=(1+v[1]*v[0])*v[3];	
+RESULT(v[4])
+
+
+EQUATION("Firm_Liquidity_Preference")
+/*
+Firm's desired deposits to be kept as liquid assets. 
+Formulation proposed by Moreira (2010)
+Proportion of physical capital. 
+Evolves based on average debt rate and profit growth.
+*/
+	v[0]=V("investment_period");
+	v[1]=V("Firm_Investment_Period");
+	v[2]=V("Firm_Net_Profits");
+	v[3]=VL("Firm_Net_Profits",v[0]);
+	if(v[3]!=0)
+		v[4]=(v[2]-v[3])/v[3];
+	else
+		v[4]=0;
+	v[5]=V("Firm_Avg_Debt_Rate");
+	v[6]=V("Firm_Desired_Debt_Rate");
+	v[7]=VL("Firm_Liquidity_Preference",1);
+	v[8]=V("firm_liquidity_preference_adjustment");
+	
+	if(v[1]==1)
+	{
+		if(v[4]<0&&v[5]>v[6])
+			v[9]=v[7]+v[8];
+		else if(v[4]>0&&v[5]<v[6])
+			v[9]=v[7]-v[8];
+		else
+			v[9]=v[7];
+	}
+	else
+			v[9]=v[7];
+	
+	v[10]=max(0,(min(1,v[9])));
+RESULT(v[10])
+
+
+EQUATION("Firm_Retained_Deposits")
+/*
+Firm retained profits at current period. To be summed in the stock of deposits at the end of period
+Based on the liquidity preference. If liquidity preference is zero, retained deposits is zero.
+Can not be negative, meaning that firm will not incur in new debt to finance retained liquidity.
+*/
+	v[1]=V("Firm_Retained_Profits");		//current net retained proffits
+	v[2]=VL("Firm_Stock_Deposits",1);		//stock of deposits
+	v[3]=v[1]+v[2];							//total internal funds (can be negative)
+	v[4]=VL("Firm_Capital",1);				//current stock of capital
+	v[5]=V("Firm_Liquidity_Preference");	//current liquidity preference, as a ratio of capital
+	v[6]=v[4]*v[5];							//desired amount of retained deposits (always positive)
+	v[7]=max(0,(min(v[6],v[3])));			//effective retained deposits can not be negative and cannot be higher than current deposits (no new debt to ratain liquidity)
+RESULT(v[7])
+
+
+EQUATION("Firm_Internal_Funds")
+/*
+Firm internal funds.
+Current stock of deposits minus retained liquidity. 
+Can be negative, if retained profits is negative (in that case, no retained liquidity). In that case, firm will incur in new debt to finance losses and pay for advanced production costs.
+*/
+	v[1]=V("Firm_Retained_Profits");		//current net retained proffits
+	v[2]=VL("Firm_Stock_Deposits",1);		//stock of deposits
+	v[3]=V("Firm_Retained_Deposits");		//retained deposits
+	v[4]=v[1]+v[2]-v[3];					//current internal funds.
+RESULT(v[4])
+
+
+EQUATION("Firm_Desired_Debt_Rate")
+/*
+Firm's desired debt rate as a proportion to total capital. 
+Formulation proposed by Moreira (2010) 
+Evolves based on capacity utilization and profit growth.
+*/
+	v[0]=V("investment_period");
+	v[1]=V("Firm_Investment_Period");
+	v[2]=V("Firm_Net_Profits");
+	v[3]=VL("Firm_Net_Profits",v[0]);
+	if(v[3]!=0)
+		v[4]=(v[2]-v[3])/v[3];
+	else
+		v[4]=0;
+		
+	v[9]=V("desired_degree_capacity_utilization");
+	v[10]=VL("Firm_Desired_Debt_Rate",1);
+	v[11]=V("firm_debt_rate_adjustment");
+	
+	if(v[1]==1)
+	{
+		if(v[4]>0)
+			v[12]=v[10]+v[11];
+		else
+			v[12]=v[10]-v[11];
+	}
+	else
+			v[12]=v[10];
+	
+	v[13]=max(0,(min(1,v[12])));
+RESULT(v[13])
+
+
+EQUATION("Firm_Available_Loans")
+/*
+Firm available debt depends on the difference between desired stock of debt and current stock of debt. 
+If current stock of debt is greater than desired, the firm must repay some debt reducing the amount of external funds for investment. 
+If the current amount is smaller than desired, that difference is available to the firm as external finance, but that does not mean that the class will increase effective debt by this amount.
+*/
+	v[0]=V("Firm_Desired_Debt_Rate");
+	v[1]=VL("Firm_Stock_Loans",1);
+	v[2]=VL("Firm_Stock_Deposits",1);
+	v[3]=VL("Firm_Capital",1);
+	v[4]=v[0]*(v[2]+v[3])-v[1];
+	v[5]=max(0,v[4]);
+RESULT(v[5])
+
+
+EQUATION("Firm_Demand_Loans")
+/*
+Firm demand for loans is the amount that internal funds can not pay
+*/
+	v[0]=V("Firm_Desired_Investment_Expenses");
+	v[1]=V("Firm_Internal_Funds");
+	v[2]=V("Firm_Available_Loans");
+	v[3]=v[0]-v[1];													//will demand loans for the amount of desired expenses that internal funds can not pay for
+
+		if(v[2]>0)															//if there is available debt 
+			v[4]=min(v[3],v[2]);											//demand will be the minimum between amount needed and amount available
+		else																//if there is no available debt
+			v[4]=0;															//no demand for debt
+	v[5]=max(0,v[4]);													//demand for new loans can not be negative
+RESULT(v[5])
+
+
+EQUATION("Firm_Effective_Loans")
+/*
+Firm effective loans is the amount demanded.
+This variable also creates the object LOAN.
+*/
+	v[2]=V("annual_period");
+	v[3]=V("Firm_Interest_Rate_Short_Term");
+	v[4]=V("investment_period");
+	v[5]=V("Firm_Interest_Rate_Long_Term");
+	v[8]=V("firm_effective_loans");
+	v[9]=V("amortization_period");
+	v[10]=V("Firm_Desired_Investment_Expenses");
+	
+	cur = ADDOBJ("FIRM_LOANS");
+	WRITES(cur, "firm_loan_total_amount", v[8]);
+	WRITES(cur, "firm_loan_fixed_object", 0);
+	if(v[10]!=0)
+	{
+		WRITES(cur, "firm_loan_fixed_amortization", (v[8]/v[9]));
+		WRITES(cur, "id_firm_loan_long_term", 1);
+		WRITES(cur, "firm_loan_interest_rate", v[5]);
+	}
+	else
+	{
+		WRITES(cur, "firm_loan_fixed_amortization", (v[8]/v[2]));
+		WRITES(cur, "id_firm_loan_short_term", 1);
+		WRITES(cur, "firm_loan_interest_rate", v[3]);
+	}
+	WRITE("firm_effective_loans", -1);
+RESULT(v[8])
+
+
+EQUATION("Firm_Credit_Rationing")
+/*
+Ex post variable for analysis.
+Ratio between effective and demanded loans.
+*/
+v[0]=V("Firm_Effective_Loans");
+v[1]=V("Firm_Demand_Loans");
+if(v[1]!=0)
+	v[2]=v[0]/v[1];
+else	
+	v[2]=0;
+RESULT(v[2])
+
+
+EQUATION("Firm_Total_Funds")
+/*
+Total available funds for the firm in the current period is the internal funds plus effective new loans
+*/
+	v[0]=V("Firm_Internal_Funds");
+	v[1]=V("Firm_Effective_Loans");
+	v[2]=v[0]+v[1];
+RESULT(v[2])
+
+
+EQUATION("Firm_Stock_Loans_Short_Term")
+/*
+Firm Stock of Short Term Loans
+*/
+	v[0]=0;
+	CYCLE(cur, "FIRM_LOANS")
+	{
+		v[1]=VS(cur, "id_firm_loan_short_term");
+		if (v[1]==1)
+			v[2]=VS(cur, "firm_loan_total_amount");
+		else
+			v[2]=0;
+	v[0]=v[0]+v[2];
+	}
+RESULT(v[0])
+
+
+EQUATION("Firm_Stock_Loans_Long_Term")
+/*
+Firm Stock of Long Term Loans
+*/
+	v[0]=0;
+	CYCLE(cur, "FIRM_LOANS")
+	{
+		v[1]=VS(cur, "id_firm_loan_long_term");
+		if (v[1]==1)
+			v[2]=VS(cur, "firm_loan_total_amount");
+		else
+			v[2]=0;
+	v[0]=v[0]+v[2];
+	}
+RESULT(v[0])
+
+
+EQUATION("Firm_Stock_Loans")
+/*
+Firm Stock of Debt, short term +  long term
+*/
+	v[0]=V("Firm_Stock_Loans_Long_Term");
+	v[1]=V("Firm_Stock_Loans_Short_Term");
+	v[2]=v[0]+v[1];
+RESULT(v[2])
+
+
+EQUATION("Firm_Stock_Deposits")
+/*
+Firm Stock of Deposits
+*/
+	v[0]=V("Firm_Available_Funds_After_Replacement");
+	v[1]=V("Firm_Retained_Deposits");
+	v[2]=v[0]+v[1];
+RESULT(v[2])
+
+
+EQUATION("Firm_Debt_Rate")
+/*
+Degree of indebtedness, calculated by the ratio of the debt to the capital of the sector.
+*/
+	v[0]=V("Firm_Stock_Loans");                                                         //firm's stock of debt 
+	v[1]=V("Firm_Capital");                                                            //firm fisical capital
+	v[2]=VL("Firm_Stock_Deposits",1);                                          			//firm's stock of financial assets in the last period
+	if(v[1]+v[2]>0)                                                                    //if the sum of the fisical capital plus the financial assets is positive
+		v[3]=v[0]/(v[1]+v[2]);                                                         //debt rate is the stock of debt over the total capital
+	else                                                                               //if the sum of the fisical capital plus the financial assets is not positive
+		v[3]=1.1;                                                                      //debt rate is 1.1 (dúvida, pq 1.1?)
+RESULT(v[3])
+
+
+EQUATION("Firm_Productive_Capacity_Depreciation")
+/*
+Sum up the firm's productive capacity that was depreciated in each time step, not only investment period, and delete depreciated capital goods.
+*/
+	v[0]=0;																				//initializes the CYCLE on Capital. Will count the productiv capacity to depreciate
+	v[1]=V("depreciation_period");
+	v[4]=COUNT("CAPITALS");
+	CYCLE_SAFE(cur1, "CAPITALS")
+	{
+		v[2]=VS(cur1, "capital_good_date_birth");										//capital good date of birth	
+		v[3]=VS(cur1, "capital_good_productive_capacity");								//capital good's prductive capacity
+		v[5]=VS(cur1, "capital_good_depreciation_period");
+		if((double)t>=v[5]&&v[4]>1)														//if the current time step is higher than the date of birth of the capital good plus the depreciation period, this capital good must be depreciated
+			{
+			v[0]=v[0]+v[3];																//sum up the capital good productive capacity to the total productive capacity to be depreciated
+			DELETE(cur1);																//delete the capital good
+			v[4]=v[4]-1;
+			}
+		else																			//if the current time step is not higher than the date of birth of the capital good plus the depreciation period, this capital good must remain
+			v[0]=v[0];																	//do not sum the capital good productive capacity to the total to be depreiated
+	}                                                                          
+RESULT(v[0])
+
+
+EQUATION("Firm_Effective_Productive_Capacity_Variation")
+/*
+Depends on the demand for productive capacity in the last investment period. This will be added to the firm's productive capacity. Can be restricted by the demand not met of the domestic sector and international reserves
+*/
+	v[0]=V("Firm_Investment_Period");													//if it is investment period for the firm
+	if(v[0]==1)
+		{
+		v[1]=V("investment_period");													//investment period
+		v[2]=0;
+		for (v[3]=0; v[3]<=(v[1]-1); v[3]=v[3]+1)										//for the current production period until the last investment period -1
+			{
+			v[6]=VL("Firm_Demand_Capital_Goods", v[3]);
+			v[2]=v[2]+v[6];
+			}	
+		}
+	else
+		v[2]=0;
+RESULT(v[2])
+
+
+//****************************************FIRM CAPITAL*************************************//
+
+
+EQUATION("Firm_Productive_Capacity")
+/*
+In this variable, the firm receive the new capital goods ordered in the last investment period, including the ones for modernization and the ones for expansion. Then, it counts the total productive capacity of old and new capital goods.
+*/
+	v[0]=V("investment_period");												//investment period
+	v[1]=VL("Firm_Frontier_Productivity",v[0]);									//available technology when the capital good was ordered
+	v[3]=V("Firm_Effective_Productive_Capacity_Variation");						//effective productive capacity variation
+	v[4]=V("capital_output_ratio");												//capital output ratio
+	v[5]=v[3]*v[4];																//amount of Capital Goods bought
+	v[6]=COUNT("CAPITALS");
+	v[7]=V("Firm_Investment_Period");											//if it is investment period for the firm
+	v[8]=V("depreciation_period");
+	if(v[7]==1 && v[3]>0)
+		{
+		CYCLE_SAFE(cur, "CAPITALS")												//CYCLE trought Capital for modernization															
+			{
+			v[11]=VS(cur, "capital_good_to_replace");							//paramter that identifies if the current capital good must be replaced or not
+			if (v[11]==1&&v[6]>1)																																		//if the current capital good must be replaced (this in fact does not create new objects, it simply rewrites the current capital object with the values of a new one
+			DELETE(cur);
+			v[6]=v[6]-1;
+			}																																								//end the CYCLE for modernization
+		for(v[13]=0; v[13]<=v[3]; v[13]=v[13]+1)								//for the amount of new capital goods bought
+			{
+			cur=ADDOBJ("CAPITALS");												//create new capital objects
+			WRITES(cur, "capital_good_productivity_initial", v[1]);				//writes the new capital productivity as the frontier productivity when it was ordered
+			WRITES(cur, "capital_good_productive_capacity", (1/v[4]));			//writes the productive capacity as the inverse of current capital output ratio of the sector
+			WRITES(cur, "capital_good_date_birth", (double)t);					//writes the new capital date of birth as the current time period
+			WRITES(cur, "capital_good_to_replace", 0);							//writes the parameter that identifies the capital goods to be replaced as zero
+			WRITES(cur, "capital_good_depreciation_period", ((double)t+v[8]));
+			WRITELS(cur, "Capital_Good_Acumulated_Production", 0, 1);			//writes the past acumulated production of the current new capital as zero
+			v[6]=v[6]+1;
+			}
+		}												
+	if (v[6]!=0)																																					//if it is not zero
+		v[15] = SUM("capital_good_productive_capacity");						//sum uo their productive capacity
+	else																																							//if its zero
+		v[15]=0;
+																																		//firm's productive capacity will be zero
+RESULT(v[15])
+
+
+EQUATION("Firm_Capital")
+/*
+Nominal value of firm's total capital
+*/
+	v[0]=V("Firm_Productive_Capacity");                       					//firm's productive capacity in the last period   
+	v[1]=V("Price_Capital_Goods");                       						//price of capital goods
+	v[2]=V("capital_output_ratio");                      						//capital output ratio 
+	v[3]=v[0]*v[1]*v[2];                                 						//nominal value of firm's total capital
+RESULT(v[3])
+
+
+EQUATION("Firm_Avg_Productivity")
+/*
+Firm's productivity will be an average of each capital good productivity weighted by their repective production	
+*/
+	v[0]=V("Firm_Effective_Production");                                		//firm's effective production
+	v[1]=VL("Firm_Avg_Productivity", 1);                           				//firm's average productivity in the last period
+	v[2]=0;                                                        				//initializes the CYCLE
+	v[3]=0;                                                        				//initializes the CYCLE
+	CYCLE(cur, "CAPITALS")                                          			//CYCLE trought firm's capital goods
+	{
+		v[4]=VS(cur, "Capital_Good_Productivity");                   			//capital good productivity
+		v[5]=VS(cur, "Capital_Good_Production");                    			//capital good production
+		v[2]=v[2]+v[4]*v[5];                                        			//sums up the product of each capital good productivity and production
+		v[3]=v[3]+v[5];                                             			//sums up the production of each capital good
+	}
+	if (v[3]!=0)                                                   				//if the sum of the production is not zero
+		v[6]=v[2]/v[3];                                             			//firm's average productivity will be the average of each capital good productivity weighted by its respective production
+	else                                                           				//if the sum of the production is zero
+		v[6]=v[1];                                                   			//firm's average production will be the last period's 
+RESULT(v[6])
+
+
+EQUATION("Firm_Max_Productivity")
+/*
+Maximum productivity among firm's capital goods
+*/
+	i=COUNT("CAPITALS");
+	if( i != 0)
+		v[0]=MAX("Capital_Good_Productivity");
+	else
+		v[0]=0;
+RESULT(v[0])
+
+
+EQUATION("Firm_Capacity_Utilization")
+/*
+Firm effective production over firm productive capacity
+*/
+	v[0]=V("Firm_Effective_Production");
+	v[1]=VL("Firm_Productive_Capacity",1);
+	if(v[1]!=0)
+		v[2]=v[0]/v[1];
+	else
+		v[2]=0;
+RESULT(v[2])
+
+
+//****************************************SECTOR AGREGATES*************************************//
+
+
+EQUATION("Sector_Profit_Rate")
+/*
+Sector Variable for Analysis
+*/
+	v[0]=0;                           		//initializes the CYCLE    
+	CYCLE(cur, "FIRMS")               		//CYCLE trought all firms of the sector
+	{
+		v[1]=VS(cur, "Firm_Net_Profits");  		//firm's profits
+		v[2]=VS(cur, "Firm_Capital");		//firm's capital
+		if(v[2]!=0)
+			v[0]=v[0]+(v[1]/v[2]);          //sums up firm's profit rate
+		else
+			v[0]=v[0];
+	}
+	v[3]=COUNT("FIRMS");
+	if (v[3]!=1)
+		v[4]=v[0]/v[3];
+	else	
+		v[4]=0;
+RESULT(v[4])
+
+
+EQUATION("Sector_Normalized_HHI")
+/*
+Sector Variable for Analysis
+*/
+	v[0]=0;                           		//initializes the CYCLE    
+	CYCLE(cur, "FIRMS")               		//CYCLE trought all firms of the sector
+	{
+		v[1]=VS(cur, "Firm_Market_Share");  //firm's market share
+		v[0]=v[0]+v[1]*v[1];            	//sums up firm's market share squared
+	}
+	v[2]=COUNT("FIRMS");
+	if (v[2]!=1)
+		v[3]=(v[0]-(1/v[2]))/(1- (1/v[2]));
+	else	
+		v[3]=1;
+RESULT(v[3])
+
+
+EQUATION("Sector_Number_Firms")
+/*
+Sector Variable for Analysis
+*/
+	v[0]=COUNT("FIRMS");
+RESULT(v[0])
+
+
+EQUATION("Sector_Participation")
+/*
+Sector participation over total gross value of production
+*/
+	v[0]=V("Sector_Sales");
+	v[1]=V("Sector_Avg_Price");
+	v[2]=V("Gross_Value_Production");
+	if(v[2]!=0)
+		v[3]=(v[0]*v[1])/v[2];
+	else
+		v[3]=0;
+RESULT(v[3])
+
+
+EQUATION("Sector_Turbulence")
+/*
+Sector Variable for Analysis
+*/
+	v[0]=0;                                           //initializes the CYCLE 
+	CYCLE(cur, "FIRMS")                               //CYCLE trough all firms 
+	{
+	v[1]=VS(cur,"firm_date_birth");                   //firm's date of birth
+ 	if(v[1]==(double)t)                               //if the time period is the same of the firm's date of birth
+ 		v[4]=0;                                       //use zero
+ 	else                                              //if the time period is no the same of the firm's date of birth
+ 		{
+ 		v[2]=VS(cur,"Firm_Effective_Market_Share");   //firm's effective market share in current period
+ 		v[3]=VLS(cur,"Firm_Effective_Market_Share",1);//firm's effective market share in the last period
+ 		v[4]=abs(v[2]-v[3]);                          //returns the absolute value of the difference
+ 		}
+ 	v[0]=v[0]+v[4];                                   //sums up all absolute values for all firms
+	}
+RESULT(v[0])
+
+
+EQUATION("Sector_Hedge_Share")
+/*
+Sector Variable for Analysis
+*/
+	v[0]=SUM("firm_hedge");
+	v[1]=COUNT("FIRMS");
+	if(v[1]!=0)
+		v[2]=v[0]/v[1];
+	else
+		v[2]=0;
+RESULT(v[2])
+
+
+EQUATION("Sector_Speculative_Share")
+/*
+Sector Variable for Analysis
+*/
+	v[0]=SUM("firm_speculative");
+	v[1]=COUNT("FIRMS");
+	if(v[1]!=0)
+		v[2]=v[0]/v[1];
+	else
+		v[2]=0;
+RESULT(v[2])
+
+
+EQUATION("Sector_Ponzi_Share")
+/*
+Sector Variable for Analysis
+*/
+	v[0]=SUM("firm_ponzi");
+	v[1]=COUNT("FIRMS");
+	if(v[1]!=0)
+		v[2]=v[0]/v[1];
+	else
+		v[2]=0;
+RESULT(v[2])
+
+
+EQUATION("Sector_Hedge_Normalized_Share")
+/*
+Sector Variable for Analysis
+*/
+	v[0]=WHTAVE("firm_hedge", "Firm_Market_Share");		
+	v[1]=COUNT("FIRMS");
+	if(v[1]!=0)
+		v[2]=v[0]/v[1];
+	else
+		v[2]=0;
+RESULT(v[2])
+
+
+EQUATION("Sector_Speculative_Normalized_Share")
+/*
+Sector Variable for Analysis
+*/
+	v[0]=WHTAVE("firm_speculative", "Firm_Market_Share");	
+	v[1]=COUNT("FIRMS");
+	if(v[1]!=0)
+		v[2]=v[0]/v[1];
+	else
+		v[2]=0;
+RESULT(v[2])
+
+
+EQUATION("Sector_Ponzi_Normalized_Share")
+/*
+Sector Variable for Analysis
+*/
+	v[0]=v[0]=WHTAVE("firm_ponzi", "Firm_Market_Share");	
+	v[1]=COUNT("FIRMS");
+	if(v[1]!=0)
+		v[2]=v[0]/v[1];
+	else
+		v[2]=0;
+RESULT(v[2])
+
+
+EQUATION("Sector_Credit_Grating")
+/*
+Sector Variable for Analysis
+*/
+v[0]=SUM("Firm_Effective_Loans");
+RESULT(v[0])
+
+
+EQUATION("Sector_Short_Term_Rate")
+/*
+Sector Variable for Analysis
+Share of  credit grating that is short term
+*/
+v[0]=SUM("Firm_Effective_Loans");
+v[1]=0;
+CYCLE(cur, "FIRMS")
+{
+	v[2]=VS(cur, "Firm_Desired_Investment_Expenses");
+	v[3]=VS(cur, "Firm_Effective_Loans");
+	if(v[2]==0)
+		v[1]=v[1]+v[3];
+	else
+		v[1]=v[1];
+}
+if(v[0]!=0)
+	v[4]=v[1]/v[0];
+else
+	v[4]=v[0];
+RESULT(v[4])
+
+
+
+/*****SECTOR AGGREGATES*****/
+
+
+EQUATION("Sector_Sales")                          
+/*
+Sum up the sales of all firms in the sector
+*/
+	v[0]=SUM("Firm_Sales");                                     
+RESULT(v[0])
+
+
+EQUATION("Sector_Demand_Met")
+/*
+Percentage of demand fulfilled by each sector
+*/
+	v[0]=V("Sector_Effective_Orders");                     	//total effective orders of the sector
+	v[1]=V("Sector_Sales");                                	//total sales of the sector
+  	if(v[0]>0)                                           	//if effective orders is positive
+    	v[2]=v[1]/v[0];                                    	//the percentage of the demand met by the sector will be the total sales over effective orders
+  	else                                                 	//if effective orders is not positive
+    	v[2]=1;                                            	//the percentage of the demand met by the sector is 100%
+RESULT(v[2])
+
+
+EQUATION("Sector_Inventories")
+/*
+Sum of the Inventories 
+*/
+	v[0]=SUM("Firm_Stock_Inventories");                                
+RESULT(v[0])
+
+
+EQUATION("Sector_Effective_Production")
+/*
+Sum of the Effective Production 
+*/
+	v[0]=SUM("Firm_Effective_Production");                        
+RESULT(v[0])
+
+
+EQUATION("Sector_Productive_Capacity")
+/*
+Sum of the Productive Capacity 
+*/
+	v[0]=SUM("Firm_Productive_Capacity");                     
+RESULT(v[0])
+
+
+EQUATION("Sector_Sum_Market_Share")
+/*
+Sum of the Market shares: this variable works to verify the Fischer Equation
+*/
+	v[0]=SUM("Firm_Market_Share");
+RESULT(v[0])
+
+
+EQUATION("Sector_Employment")
+/*
+Sum up firm's employment, given by firm's effective production over firm's avg productivity
+*/
+	v[0]=0;                                        		//initializes the CYCLE
+	CYCLE(cur, "FIRMS")                            		//CYCLE trought the firms
+	{
+		v[1]=VS(cur, "Firm_Effective_Production");      //firm's effective production
+		v[2]=VS(cur, "Firm_Avg_Productivity");   	//firm's productivity in the last period
+		v[0]=v[0]+(v[1]/v[2]);                       	//sums up the ratio between effective production and productivity
+	}
+RESULT(v[0])
+
+
+EQUATION("Sector_Potential_Employment")
+/*
+Sum up firm's potential employment, gigvn by firm's productive capacity over firm's avg productivity
+*/
+v[0]=0;                                        					//initializes the CYCLE
+	CYCLE(cur, "FIRMS")                            					//CYCLE trought the firms
+	{
+		v[1]=VS(cur, "Firm_Productive_Capacity");      //firm's effective production
+		v[2]=VS(cur, "Firm_Avg_Productivity");   	//firm's productivity in the last period
+		v[0]=v[0]+(v[1]/v[2]);
+	}
+	v[4]=V("desired_degree_capacity_utilization");
+	v[5]=v[4]*v[0];
+RESULT(v[0])
+
+
+EQUATION("Sector_Potential_Employment_2")
+/*
+Sum up firm's potential employment, gigvn by firm's productive capacity over firm's avg productivity
+*/
+	v[0]=0;                                        					//initializes the CYCLE
+	CYCLE(cur, "FIRMS")                            					//CYCLE trought the firms
+	{
+		v[1]=VS(cur, "Firm_Productive_Capacity");      //firm's effective production
+		v[2]=VS(cur, "Firm_Avg_Productivity");   	//firm's productivity in the last period
+		v[0]=v[0]+(v[1]/v[2]);
+	}
+	v[4]=V("desired_degree_capacity_utilization");
+	v[5]=v[4]*v[0];
+RESULT(v[0])
+
+
+EQUATION("Sector_Unemployment")
+/*
+Unemployment, calculated as the difference between effective employment and potential employment of the sector, in percentage value
+*/
+	v[0]=V("Sector_Employment");
+	v[1]=V("Sector_Potential_Employment");
+	if (v[1]!=0)
+		v[2]=max(0,((v[1]-v[0])/v[1]));
+	else
+		v[2]=0;
+RESULT(v[2])
+
+
+EQUATION("Sector_Bargain_Power")
+/*
+Determines the productivity passthrough. If the employment in the sector is increasing, it increases the passtrhrough. Otherwise, it decreases.
+*/
+	v[0]=V("annual_period");											//annual period parameters
+	v[1]=fmod((double)t,v[0]);							    			//divides time step by the annual period and takes the rest
+	if (v[1]==0)														//if it is the beggening of a new year
+		{
+		v[2]=VL("Sector_Unemployment",1);									//sector employment in the last period
+		v[3]=VL("Sector_Unemployment",(v[0]+1));							//sector employment in the beggining of the last year
+		v[4]=v[2]-v[3];													//check if sector employment has increased or decreased
+		v[5]=VL("sector_passthrough_productivity", 1);					//productivity passtrought in the last period
+		v[6]=VL("sector_passthrough_inflation", 1);						//inflation passtrought in the last period
+		v[7]=V("bargain_power_adjustment");								//bargain power adjustment
+		v[10]=V("minimum_passthrough");									//minimum accepted passtrought
+			if (v[4]>0)													//if sector employemnt has decreased
+				{
+				v[8]=max((min(1,(v[5]-v[7]))),v[10]);					//reduce productivity passtrought
+				v[9]=max((min(1,(v[6]-v[7]))),v[10]);					//reduce inflation passtrought
+				WRITE("sector_passthrough_productivity", v[8]);			//writes the new passtrought
+				//WRITE("sector_passthrough_inflation", v[9]);			//writes the new passtrought
+				}
+			else														//if sector employment has increased
+				{
+				v[8]=max((min(1,(v[5]+v[7]))),v[10]);					//reduce productivity passtrought
+				v[9]=max((min(1,(v[6]+v[7]))),v[10]);					//reduce inflation passtrought
+				WRITE("sector_passthrough_productivity", v[8]);			//writes the new passtrought
+				//WRITE("sector_passthrough_inflation", v[9]);			//writes the new passtrought
+				}
+		}
+	else
+	{
+	v[8]=0;
+	v[9]=0;
+	}
+RESULT(0)
+
+
+EQUATION("Sector_Indirect_Tax")
+/*
+Sum of the indirect taxes paid by firms in the sector
+*/
+	v[0]=SUM("Firm_Indirect_Tax");
+RESULT(v[0])
+
+
+EQUATION("Sector_Stock_Loans")
+/*
+Sum of the stock of laons of each firm in the sector
+*/
+	v[0]=SUM("Firm_Stock_Loans");
+RESULT(v[0])
+
+
+EQUATION("Sector_Stock_Deposits")
+/*
+Sum of the stock of deposits of each firm in the sector
+*/
+	v[0]=SUM("Firm_Stock_Deposits");
+RESULT(v[0])
+	
+
+/*****SECTOR AVERAGES, SD AND MAX*****/
+
+
+EQUATION("Sector_Avg_Price")
+/*
+Average weighted by firm's market share
+*/
+	v[0]=WHTAVE("Firm_Price", "Firm_Market_Share");
+RESULT(v[0])
+
+
+EQUATION("Sector_Avg_Wage")
+/*
+Sector average nominal wage, weighted by firm's market share
+*/
+	v[0]=WHTAVE("Firm_Wage", "Firm_Market_Share");
+RESULT(v[0])
+
+
+EQUATION("Sector_Avg_Competitiveness")
+/*
+Average competitiveness, weighted by firm's market share
+*/
+	v[0]=0;                                         	//initializes the CYCLE
+	CYCLE(cur, "FIRMS")                             	//CYCLE trought all firms in the sector
+	{
+		v[1]=VS(cur, "Firm_Competitiveness");           //firm's competitiveness
+		v[2]=VLS(cur, "Firm_Market_Share", 1);          //firm's market share in the last period
+		v[0]=v[0]+v[1]*v[2];                          	//sector average competitiveness will be a average of firms competitiveness weighted by their respective market shares
+	}
+RESULT(v[0])
+
+
+EQUATION("Sector_Max_Productivity")
+/*
+Maximum productivity of the sector will be the higher between firm's frontier productivities
+*/
+	v[0]=MAX("Firm_Frontier_Productivity");          
+RESULT(v[0])
+
+
+EQUATION("Sector_Avg_Markup")
+/*
+Average markup of the sector, weighted by firm's effective market share
+*/
+	v[0]=WHTAVE("Firm_Effective_Markup", "Firm_Market_Share");
+RESULT(v[0])
+
+
+EQUATION("Sector_Avg_Productivity")
+/*
+Sector average productivity will be the average of firms productivity weighted by their market shares
+*/
+	v[0]=WHTAVE("Firm_Avg_Productivity", "Firm_Market_Share");
+RESULT(v[0])
+
+
+EQUATION("Sector_Avg_Debt_Rate")
+/*
+Sector average debt rate will be the average of firms productivity weighted by their market shares
+*/
+	v[0]=WHTAVE("Firm_Debt_Rate", "Firm_Market_Share");
+RESULT(v[0])
+
+
+EQUATION("Sector_Avg_Desired_Debt_Rate")
+/*
+Sector average debt rate will be the average of firms productivity weighted by their market shares
+*/
+	v[0]=WHTAVE("Firm_Desired_Debt_Rate", "Firm_Market_Share");
+RESULT(v[0])
+
+
+EQUATION("Sector_Avg_Interest_Rate_Short_Term")
+/*
+Sector average interest rate on short term loans weighted by stock of short term loans
+*/
+	v[0]=WHTAVE("Firm_Interest_Rate_Short_Term", "Firm_Stock_Loans_Short_Term");
+	v[1]=SUM("Firm_Stock_Loans_Short_Term");
+	if(v[1]!=0)
+		v[2]=v[0]/v[1];
+	else
+		v[2]=0;	
+RESULT(v[2])
+
+
+EQUATION("Sector_Avg_Interest_Rate_Long_Term")
+/*
+Sector average interest rate on long term loans weighted by stock of long term loans
+*/
+	v[0]=WHTAVE("Firm_Interest_Rate_Long_Term", "Firm_Stock_Loans_Long_Term");
+	v[1]=SUM("Firm_Stock_Loans_Long_Term");
+	if(v[1]!=0)
+		v[2]=v[0]/v[1];
+	else
+		v[2]=0;	
+RESULT(v[2])
+
+
+EQUATION("Sector_Max_Quality")
+/*
+Maximum firm quality of the sector.
+*/
+	v[0]=MAX("Firm_Quality");
+RESULT(v[0])
+
+
+EQUATION("Sector_Avg_Quality")
+	v[0]=WHTAVE("Firm_Quality", "Firm_Market_Share");
+RESULT(v[0])
+
+
+EQUATION("Sector_Avg_Financial_Position")
+	v[0]=WHTAVE("Firm_Financial_Position", "Firm_Market_Share");
+RESULT(v[0])
+
+
+EQUATION("Sector_Avg_Modernization_Rate")
+	v[0]=WHTAVE("Firm_Modernization_Rate", "Firm_Market_Share");
+RESULT(v[0])
+
+
+EQUATION("Sector_Avg_Investment_Rate")
+	v[0]=WHTAVE("Firm_Investment_Rate", "Firm_Market_Share");
+RESULT(v[0])
+
+
+EQUATION("Sector_SD_Investment_Rate")
+	v[0]=SD("Firm_Investment_Rate");
+RESULT(v[0])
+
+
+
+
+
+
+
+
+
+
+MODELEND
+
+// do not add Equations in this area
+
+void close_sim( void )
+{
+	// close simulation special commands go here
+}
+
+END_EQ_FILE

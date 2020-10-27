@@ -1,0 +1,14 @@
+Model UFRJ Sectoral Model (ver. 1.0)
+
+*******************************************************************
+
+This model is a complete rewrite of the sectoral model developed by the Economic Dynamics Reasearch Group of Federal University of Rio de Janeiro.
+There are some adaptations and innovations in this versions but they can be turned off to have the exactly the same model as in the reference paper.
+
+Main Reference: POSSAS, M. et al. Um modelo evolucionário setorial. Revista Brasileira de Economia, v. 55, n. 3, p. 333-377, 2001.
+
+Coded and Copyright by Matheus Trotta Vianna
+
+*******************************************************************
+
+
