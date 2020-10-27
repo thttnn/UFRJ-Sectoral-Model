@@ -11,7 +11,7 @@ This new version uses the same names, format and style of the new version of the
 The sectoral model represents only one sector of the MMM model, with exogenous demand. However, it is much smaller and quickier than the full MMM model, allowing us to focus on Micro aspects, such as sectoral competition, entry and exit, sectoral dynamics, and so on. Since this version uses the same names used by the MMM, changes made in the sectoral model can be easily implemented in the MMM, so the analysis can go beyond the Micro level. They are both modulars and interlinked. 
 
 
-# THE MODEL (Possas et. al. 2001:
+# THE MODEL (Possas et. al. 2001):
 
 *********************************************************************************************************************************************
 
