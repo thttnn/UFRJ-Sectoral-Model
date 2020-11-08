@@ -259,16 +259,16 @@ RESULT(t)
 
 /**************************VARIABLES******************************/
 
-#include "fun_price.h"				// Firm's Price Variables	
-#include "fun_production.h"			// Firm's Production Variables
-#include "fun_sales.h"				// Firm's Sales Variables
-#include "fun_rnd.h"				// Firm's R&D Variables
-#include "fun_profits.h"			// Firm's Profit Variables
-#include "fun_investment.h"			// Firm's Investment Variables
-#include "fun_finance.h"			// Firm's Finance Variables
-#include "fun_entry_exit.h"  		// Entry and Exit Variables
-#include "fun_sector.h" 			// Sectoral Variables     
-#include "fun_capital_goods.h"  	// Capital Goods Object Variables
+#include "sectoral_model_price.h"			// Firm's Price Variables	
+#include "sectoral_model_production.h"		// Firm's Production Variables
+#include "sectoral_model_sales.h"			// Firm's Sales Variables
+#include "sectoral_model_rnd.h"				// Firm's R&D Variables
+#include "sectoral_model_profits.h"			// Firm's Profit Variables
+#include "sectoral_model_investment.h"		// Firm's Investment Variables
+#include "sectoral_model_finance.h"			// Firm's Finance Variables
+#include "sectoral_model_entry_exit.h"  	// Entry and Exit Variables
+#include "sectoral_model_sector.h" 			// Sectoral Variables     
+#include "sectoral_model_capital_goods.h"  	// Capital Goods Object Variables
 
 
 
