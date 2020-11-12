@@ -49,9 +49,11 @@ demand_shock_average						:defines the average of demand stochastic shocks (base
 COST PARAMETERS:
 initial_wage								:defines the initial wage, with initial markup and other parameters, determines initial price in Initialization (baseline=1)
 initial_input_price							:defines the initial price of inputs, determines initial price in Initialization (baseline=1)
-initial_capital_price						:defines the initial price of capital goods, should be higher than sector initial price (baseline=5)
+initial_capital_price_scale					:defines the initial price of capital goods, as a multiple o the sector's initial price (baseline=2)
 capital_price_growth						:defines an exogenous growth rate for capital prices, adjusted annually (baseline=0.01) (set=0 to fixed capital price)
 input_price_growth							:defines an exogenous growth rate for input prices, adjusted annually (baseline=0.01) (set=0 to fixed input price)
+capital_price_inflation_adjustment			:defines how capital goods price is adjusted based on sector inflation (baseline=0.5) (set=0 to let exogenous growth)
+input_price_inflation_adjustment			:defines how input price is adjusted based on sector inflation (baseline=0.5) (set=0 to let exogenous growth)
 wage_passthrough_productivity				:defines how wages are adjusted annually based on productivity growth (baseline=1) (set=0 to fixed wages)
 wage_passthrough_inflation					:defines how wages are adjusted annually based on price growth (baseline=1) (set=0 to fixed wages)
 wage_passthrough_employment					:defines how wages are adjusted annually based on employment growth (baseline=1) (set=0 to fixed wages)
@@ -63,14 +65,12 @@ markup_passthrough_quality					:defines how firms adjust desired markup on marku
 strategic_price_weight						:defines how firms strategically look to the competitors in price setting. If 1, only look at individual desired price. If 0, only look to sector average price. (baseline=0.5) 
 
 FINANCIAL PARAMETERS:
-switch_interest_payment						:defines if interest on loans is pre-fixed (0) or post-fixed (1) (baseline=0)
 interest_rate_deposits						:defines the interest rate on deposits (baseline=0.005)
 risk_premium_adjustment						:defines the premium added to firm specific interest rate based on firm current debt rate (baseline=1)
 interest_rate_short_term					:defines the interest rate on short term loans (baseline=0.01)
 interest_rate_long_term						:defines the interest rate on long term loans (baseline=0.05)
 firm_debt_rate_adjustment					:defines how firms adjust desired debt rate based on profit growth (baseline=0, fixed desired debt rate at 0.5)
 firm_liquidity_preference_adjustment		:defines how firms adjust liquidity preference based on profit growth and deb rate (baseline-0, fixed liquidity preference at 0.05)
-amortization_period							:defines duration of a long term loan (baseline=40) (goods practice: equal to depreciation period)
 
 R&D PARAMETERS:
 rnd_revenue_proportion						:defines the share of revenue allocated to R&D (baseline=0.05)

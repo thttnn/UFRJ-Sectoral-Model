@@ -29,7 +29,7 @@ CYCLE(cur, "SECTORS")
 	v[12]=VS(cur,"desired_degree_capacity_utilization");
 	v[13]=VS(cur,"sector_initial_demand");
 	v[14]=VS(cur,"initial_input_price");
-	v[15]=VS(cur,"initial_capital_price");
+	v[15]=VS(cur,"initial_capital_price_scale");
 
 	v[20]=v[6]*((v[7]/v[5])+(v[14]*v[9]));														//sector initial price, given initial markup, wage and input cost
 	v[21]=v[13]/v[4]; 																			//initial production of each firm
@@ -47,7 +47,7 @@ CYCLE(cur, "SECTORS")
 		WRITELLS(cur, "Sector_Avg_Quality", v[8], 0,  1);
 		WRITELLS(cur, "Sector_Avg_Quality", v[8], 0,  2);
 		WRITELLS(cur, "Sector_Max_Quality", v[8], 0,  1);
-		WRITELLS(cur, "Price_Capital_Goods", v[15], 0,  1);
+		WRITELLS(cur, "Price_Capital_Goods", v[15]*v[20], 0,  1);
 		WRITELLS(cur, "Price_Inputs", v[14], 0,  1);
 			
 	cur1=SEARCHS(cur, "FIRMS");																	//search the first and only instance of firms below each sector
@@ -65,14 +65,11 @@ CYCLE(cur, "SECTORS")
 	for (i=1 ; i<=(2*v[0]) ; i++)																//for (2*investment period+1) lags
 	  	WRITELLS(cur1, "Firm_Effective_Orders", v[21], 0, i);                     				//firm's effective orders will be sector's effective orders (given by demand_initial) divided by the number of firms
 	for (i=1 ; i<=(v[1]-1) ; i++)																//for (markup_period-1) lags
-		{
 		WRITELLS(cur1, "Firm_Market_Share", (1/v[4]), 0, i);             						//firm's market share will be the inverse of the number of firms in the sector (initial market share)
-	  	WRITELLS(cur1, "Firm_Potential_Markup", v[6], 0, i);                      				//potential markup will be the initial markup
-		}
+
 		WRITELLS(cur1, "Firm_Price", v[20], 0, 1);                  							//firm's price
 	  	WRITELLS(cur1, "Firm_Desired_Market_Share", (1/v[4]), 0, 1);                  			//firm's desired market share will be twice the initial market share  
 	  	WRITELLS(cur1, "Firm_Avg_Market_Share", (1/v[4]), 0, 1);                     			//firm's avg market share will be the initial market share
-	  	WRITELLS(cur1, "Firm_Avg_Potential_Markup", v[6], 0, 1);								//avg potential markup will be the initial markup
 	  	WRITELLS(cur1, "Firm_Desired_Markup", v[6], 0, 1); 										//desired markup will be the initial markup
 	  	WRITELLS(cur1, "Firm_Stock_Inventories", (v[21]*v[11]), 0, 1);                        	//firm's inventories will be the sales times the desired inventories proportion (parameter)
 	  	WRITELLS(cur1, "Firm_Stock_Inputs", (v[9]*v[21]), 0, 1);                      			//firm's stock of imputs will be the sales times the input tech relationship
@@ -141,8 +138,6 @@ V("Firm_Desired_Market_Share");
 V("Firm_Desired_Markup");                                                                      
 V("Firm_Price");                                            
 V("Sector_Avg_Price"); 
-V("Firm_Potential_Markup");
-V("Firm_Avg_Potential_Markup");
 
 V("Firm_Competitiveness");								//autonomous
 V("Sector_Avg_Competitiveness");                               

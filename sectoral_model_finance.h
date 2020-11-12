@@ -178,7 +178,7 @@ This variable also creates the object LOAN.
 	v[4]=V("investment_period");
 	v[5]=V("Firm_Interest_Rate_Long_Term");
 	v[8]=V("Firm_Demand_Loans");
-	v[9]=V("amortization_period");
+	v[9]=V("depreciation_period");
 	v[10]=V("Firm_Desired_Investment_Expenses");
 	
 	cur = ADDOBJ("LOANS");

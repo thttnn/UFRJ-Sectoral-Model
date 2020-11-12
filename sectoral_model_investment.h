@@ -200,7 +200,6 @@ Nominal value of derired new capital goods for modernization replacement
  v[11]=V("Price_Capital_Goods");
  v[12]=V("capital_output_ratio");
  v[13]=V("payback_period");
- v[30]=V("switch_interest_investment");
   				
   if(v[3]==1)																																											// if it is investment period for the firm
   {
@@ -213,8 +212,8 @@ Nominal value of derired new capital goods for modernization replacement
      {
      v[17]=VS(cur, "Capital_Good_Productivity");																									// current capital good productivivty
      v[18]=VS(cur, "capital_good_productive_capacity");   																				// current capital good productive capacity  
-     v[23]=v[11]*(1+v[30]*v[2])/(v[10]*((1/(v[17]))-(1/(v[8]))));																								// calculates the payback           
-         if(v[8]>v[17] && v[23]<=v[13])																														// if the cost of replacement is lower than current available funds and the paybakc calculus  is lower than the payback parameter
+     v[23]=v[11]*(1+v[2])/(v[10]*((1/(v[17]))-(1/(v[8]))));																								// calculates the payback           
+         if(v[8]>v[17] && v[23]<=v[13]*v[9])																														// if the cost of replacement is lower than current available funds and the paybakc calculus  is lower than the payback parameter
         	v[16]=v[16]+v[18];         																															// sum up the productive capacity to replace
          else																																											// else
          	v[16]=v[16]; 																																						// do not sum replacement cost  
@@ -302,7 +301,6 @@ New productive capacity in aquisition of new equipment to replace obsolete ones.
 	v[11]=V("Price_Capital_Goods");
 	v[12]=V("capital_output_ratio");
 	v[13]=V("payback_period");
-	v[30]=V("switch_interest_investment");
   				
 	if(v[3]==1)														// if it is investment period for the firm
 	{
@@ -319,9 +317,9 @@ New productive capacity in aquisition of new equipment to replace obsolete ones.
 				v[18]=VS(cur, "capital_good_productive_capacity");  // current capital good productive capacity  
 				v[20]=v[18]*v[12]*v[11];							// current nominal cost of new capital goods to replace that amount of productive capacity
 				v[15]=v[0]-v[14];									// subtract the replacement cost from the available funds to replacement. At the end this will be available funds after replacemenr
-				v[23]=v[11]*(1+v[30]*v[2])/(v[10]*((1/(v[17]))-(1/(v[8]))));		// calculates the payback
+				v[23]=v[11]*(1+v[2])/(v[10]*((1/(v[17]))-(1/(v[8]))));		// calculates the payback
                  
-				if(v[8]>v[17] && v[20]<=v[15] && v[23]<=v[13])		// if the cost of replacement is lower than current available funds and the paybakc calculus  is lower than the payback parameter
+				if(v[8]>v[17] && v[20]<=v[15] && v[23]<=v[13]*v[9])		// if the cost of replacement is lower than current available funds and the paybakc calculus  is lower than the payback parameter
 					{
 					WRITES(cur, "capital_good_to_replace",1);		// mark the current capital good to replace
 					v[14]=v[14]+v[20];								// sum up the replacement cost

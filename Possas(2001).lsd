@@ -145,11 +145,14 @@ Label Root
 		Param: investment_period
 		Param: learning_adjustment
 		Param: learning_speed
+		Param: market_share_expansion
+		Param: markup_apropriation
 		Param: markup_period
 		Param: number_object_firms
 		Param: payback_period
 		Param: process_product_adjustment
 		Param: profits_distribution_rate
+		Param: quality_demand
 		Param: risk_premium_adjustment
 		Param: rnd_revenue_proportion
 		Param: sector_initial_demand
@@ -200,6 +203,7 @@ Label Root
 		Var: Sector_Employment
 		Param: wage_passthrough_employment
 		Param: tech_opportunity_productivity
+		Param: switch_interest_investment
 		Param: capital_price_inflation_adjustment
 		Param: input_price_inflation_adjustment
 
@@ -221,15 +225,15 @@ Object: SECTORS C	1
 Param: annual_period 0 n + n n	4
 Param: antecipation 0 n + n n	0
 Param: capital_output_ratio 0 n + n n	1
-Param: capital_price_growth 0 n + n n	0.005
+Param: capital_price_growth 0 n + n n	0
 Param: demand_shock_average 0 n + n n	0
 Param: demand_shock_standard_deviation 0 n + n n	0.01
-Param: depreciation_period 0 n + n n	40
+Param: depreciation_period 0 n + n n	60
 Param: desired_degree_capacity_utilization 0 n + n n	0.9
 Param: desired_inventories_proportion 0 n + n n	0.1
 Param: elascitity_delay 0 n + n n	0
 Param: elasticity_price 0 n + n n	1
-Param: elasticity_quality 0 n + n n	1
+Param: elasticity_quality 0 n + n n	0
 Param: expectations 0 n + n n	0.5
 Param: firm_debt_rate_adjustment 0 n + n n	0
 Param: firm_liquidity_preference_adjustment 0 n + n n	0
@@ -241,19 +245,22 @@ Param: initial_productivity 0 n + n n	1
 Param: initial_quality 0 n + n n	1
 Param: initial_wage 0 n + n n	1
 Param: innovation_imitation_adjustment 0 n + n n	0
-Param: input_price_growth 0 n + n n	0.01
+Param: input_price_growth 0 n + n n	0
 Param: input_tech_coefficient 0 n + n n	0.4
-Param: interest_rate_deposits 0 n + n n	0.005
-Param: interest_rate_long_term 0 n + n n	0.05
-Param: interest_rate_short_term 0 n + n n	0.01
-Param: investment_period 0 n + n n	4
-Param: learning_adjustment 0 n + n n	0
-Param: learning_speed 0 n + n n	0
+Param: interest_rate_deposits 0 n + n n	0
+Param: interest_rate_long_term 0 n + n n	0
+Param: interest_rate_short_term 0 n + n n	0
+Param: investment_period 0 n + n n	6
+Param: learning_adjustment 0 n + n n	0.1
+Param: learning_speed 0 n + n n	0.1
+Param: market_share_expansion 0 n + n n	0
+Param: markup_apropriation 0 n + n n	0
 Param: markup_period 0 n + n n	4
-Param: number_object_firms 0 n + n n	30
-Param: payback_period 0 n + n n	0.5
+Param: number_object_firms 0 n + n n	8
+Param: payback_period 0 n + n n	30
 Param: process_product_adjustment 0 n + n n	0
 Param: profits_distribution_rate 0 n + n n	0
+Param: quality_demand 0 n + n n	0
 Param: risk_premium_adjustment 0 n + n n	0
 Param: rnd_revenue_proportion 0 n + n n	0.05
 Param: sector_initial_demand 0 n + n n	100
@@ -261,9 +268,9 @@ Param: sector_real_demand_growth 0 n + n n	0.005
 Param: std_dev_innovation 0 n + n n	0.001
 Param: strategic_price_weight 0 n + n n	0.5
 Param: survival_period 0 n + n n	0
-Param: tech_opportunity_quality 0 n + n n	0.001
-Param: wage_passthrough_productivity 0 n + n n	1
-Param: wage_passthrough_inflation 0 n + n n	0.5
+Param: tech_opportunity_quality 0 n + n n	0
+Param: wage_passthrough_productivity 0 n + n n	0
+Param: wage_passthrough_inflation 0 n + n n	0
 Var: Exit 0 n + n n
 Var: Exit_Defaulted_Loans 0 n + n n
 Var: Exit_Deposits_Distributed 0 n + n n
@@ -300,12 +307,13 @@ Var: Sector_Income 0 s + n n
 Var: Sector_Income_Growth 0 s + n p
 Var: Sector_Inflation 0 s + n p
 Var: Sector_Capacity_Utilization 0 s + n n
-Param: markup_passthrough_quality 0 n + n n	1
+Param: markup_passthrough_quality 0 n + n n	0
 Var: Sector_Employment 4 s + n n	0	0	0	0
-Param: wage_passthrough_employment 0 n + n n	0.5
+Param: wage_passthrough_employment 0 n + n n	0
 Param: tech_opportunity_productivity 0 n + n n	0.001
-Param: capital_price_inflation_adjustment 0 n + n n	0.5
-Param: input_price_inflation_adjustment 0 n + n n	0.5
+Param: switch_interest_investment 0 n + n n	1
+Param: capital_price_inflation_adjustment 0 n + n n	0
+Param: input_price_inflation_adjustment 0 n + n n	0
 
 Object: FIRMS C	1
 Var: Firm_Available_Funds_After_Replacement 0 n + n n
@@ -502,7 +510,7 @@ END_DESCRIPTION
 Parameter_elascitity_delay
 (no description available)
 _INIT_
-All 1 instances equal to 0.25.
+All 1 instances equal to 0.
 END_DESCRIPTION
 
 Parameter_elasticity_price
@@ -631,6 +639,18 @@ _INIT_
 All 1 instances equal to 1.
 END_DESCRIPTION
 
+Parameter_market_share_expansion
+(no description available)
+_INIT_
+All 1 instances equal to 1.
+END_DESCRIPTION
+
+Parameter_markup_apropriation
+(no description available)
+_INIT_
+All 1 instances equal to 0.
+END_DESCRIPTION
+
 Parameter_markup_period
 (no description available)
 _INIT_
@@ -640,13 +660,13 @@ END_DESCRIPTION
 Parameter_number_object_firms
 (no description available)
 _INIT_
-All 1 instances equal to 35.
+All 1 instances equal to 8.
 END_DESCRIPTION
 
 Parameter_payback_period
 (no description available)
 _INIT_
-All 1 instances equal to 0.5.
+All 1 instances equal to 30.
 END_DESCRIPTION
 
 Parameter_process_product_adjustment
@@ -659,6 +679,12 @@ Parameter_profits_distribution_rate
 (no description available)
 _INIT_
 All 1 instances equal to 0.
+END_DESCRIPTION
+
+Parameter_quality_demand
+(no description available)
+_INIT_
+All 1 instances equal to 1.
 END_DESCRIPTION
 
 Parameter_risk_premium_adjustment
@@ -712,7 +738,7 @@ END_DESCRIPTION
 Parameter_wage_passthrough_productivity
 (no description available)
 _INIT_
-All 1 instances equal to 1.
+All 1 instances equal to 0.
 END_DESCRIPTION
 
 Parameter_wage_passthrough_inflation
@@ -969,6 +995,12 @@ Parameter_tech_opportunity_productivity
 (no description available)
 _INIT_
 All 1 instances equal to 0.001.
+END_DESCRIPTION
+
+Parameter_switch_interest_investment
+(no description available)
+_INIT_
+All 1 instances equal to 1.
 END_DESCRIPTION
 
 Parameter_capital_price_inflation_adjustment

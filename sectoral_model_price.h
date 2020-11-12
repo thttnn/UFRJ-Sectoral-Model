@@ -5,13 +5,13 @@ EQUATION("Price_Capital_Goods")
 Price of Capital Goods
 One of the first variables to be computated.
 It is adjusted annually in four possible ways:
-1-By productivity growth
+1-By sector's price growth
 2-By an exogenous growth rate
 3-By a combination of both.
 4-Not adjusted, fixed.
 User Instructions: 
-To use only productivity growth, set "capital_price_growth" paramater to zero and "capital_price_passthrough_productivity" above zero (as desired).
-To use only exogenous growth, set "capital_price_growth" paramater above zero (as desired) and "capital_price_passthrough_productivity" to zero.
+To use only productivity growth, set "capital_price_growth" paramater to zero and "capital_price_inflation_adjustment" above zero (as desired).
+To use only exogenous growth, set "capital_price_growth" paramater above zero (as desired) and "capital_price_inflation_adjustment" to zero.
 To use a combination of both, set both parameters as desired. 
 To use it fixed, set both parameters to zero.
 */
@@ -20,18 +20,19 @@ To use it fixed, set both parameters to zero.
 	v[2]= fmod((double) t,v[1]);                                                         			//divide the time period by the annual period parameter
 	if(v[2]==0)                                                                      	 			//if the rest of the above division is zero (beggining of the year, adjust capital price)
 		{
-		v[3]=VL("Sector_Avg_Productivity", 1);                                           	 		//sector average productivity in the last period
-		v[4]=VL("Sector_Avg_Productivity", (v[1]+1));                                      			//sector average productivity five periods before
-		if(v[4]!=0)
-			v[5]=(v[3]-v[4])/v[4];                                                       			//annual growth of sector average productivity
+		v[3]=V("capital_price_growth");																//exogenous growth of capital price
+		v[4]=V("capital_price_inflation_adjustment");												//how capital price is adjusted based on sector inflation
+		v[6]=VL("Sector_Avg_Price", 1);                                								//sector average price in the last period
+		v[7]=VL("Sector_Avg_Price", (v[1]+1));                        								//sector average price five periods before
+		if(v[7]!=0)
+			v[8]=(v[6]-v[7])/v[7];                                                      			//annual growth of price index (annual inflation)
 		else
-			v[5]=1;
-		v[6]=V("capital_price_growth");																//exogenous growth of capital price
-		v[7]=v[0]*(1+v[6]);                                              							//current price will be the last period's multiplied by a rate of growth which is a combination of endogenous and exogenous growth rates
+			v[8]=0;
+		v[5]=v[0]*(1+v[3]+v[8]*v[4]);                                              					//current price will be the last period's multiplied by a rate of growth which is a combination of endogenous and exogenous growth rates
 		}
 	else                                                                             	 			//if the rest of the division is not zero, do not adjust wages
-		v[7]=v[0];                                                                       			//current capital price will be the last period's
-RESULT(v[7])
+		v[5]=v[0];                                                                       			//current capital price will be the last period's
+RESULT(v[5])
 
 
 EQUATION("Price_Inputs")
@@ -39,13 +40,13 @@ EQUATION("Price_Inputs")
 Price of Inputs
 One of the first variables to be computated.
 It is adjusted annually in four possible ways:
-1-By productivity growth
+1-By sector' price growth
 2-By an exogenous growth rate
 3-By a combination of both above.
 4-Not adjusted, fixed. 
 User Instructions: 
-To use only productivity growth, set "input_price_growth" paramater to zero and "inputs_price_passthrough_productivity" above zero (as desired).
-To use only exogenous growth, set "input_price_growth" paramater above zero (as desired) and "inputs_price_passthrough_productivity" to zero.
+To use only productivity growth, set "input_price_growth" paramater to zero and "input_price_inflation_adjustment" above zero (as desired).
+To use only exogenous growth, set "input_price_growth" paramater above zero (as desired) and "input_price_inflation_adjustment" to zero.
 To use a combination of both, set both parameters as desired. 
 To use it fixed, set both parameters to zero.
 */
@@ -54,18 +55,19 @@ To use it fixed, set both parameters to zero.
 	v[2]= fmod((double) t,v[1]);                                                         			//divide the time period by the annual period parameter
 	if(v[2]==0)                                                                      	 			//if the rest of the above division is zero (beggining of the year, adjust wages)
 		{
-		v[3]=VL("Sector_Avg_Productivity", 1);                                           	 		//sector average productivity in the last period
-		v[4]=VL("Sector_Avg_Productivity", (v[1]+1));                                      			//sector average productivity five periods before
-		if(v[4]!=0)
-			v[5]=(v[3]-v[4])/v[4];                                                       			//annual growth of sector average productivity
+		v[3]=V("input_price_growth");																//exogenous growth of input price
+		v[4]=V("input_price_inflation_adjustment");													//how input price is adjusted based on sector inflation
+		v[6]=VL("Sector_Avg_Price", 1);                                								//sector average price in the last period
+		v[7]=VL("Sector_Avg_Price", (v[1]+1));                        								//sector average price five periods before
+		if(v[7]!=0)
+			v[8]=(v[6]-v[7])/v[7];                                                      			//annual growth of price index (annual inflation)
 		else
-			v[5]=1;
-		v[6]=V("input_price_growth");																//exogenous growth of input price
-		v[7]=v[0]*(1+v[6]);                                              							//current price will be the last period's multiplied by a rate of growth which is a combination of endogenous and exogenous growth rates
+			v[8]=0;
+		v[5]=v[0]*(1+v[3]+v[8]*v[4]);                                              					//current price will be the last period's multiplied by a rate of growth which is a combination of endogenous and exogenous growth rates
 		}
 	else                                                                             	 			//if the rest of the division is not zero, do not adjust wages
-		v[7]=v[0];                                                                       			//current wages will be the last period's
-RESULT(v[7])
+		v[5]=v[0];                                                                       			//current input price will be the last period's
+RESULT(v[5])
 
 
 EQUATION("Firm_Wage")
@@ -84,9 +86,13 @@ To let the nominal wage fixed and equal to all firms, set "wage_passthrough_prod
 			v[5]=(v[3]-v[4])/v[4];                                                      			//annual growth of sector average productivity
 		else
 			v[5]=0;
+		
 		v[6]=VL("Sector_Avg_Price", 1);                                								//sector average price in the last period
 		v[7]=VL("Sector_Avg_Price", (v[1]+1));                        								//sector average price five periods before
+		if(v[7]!=0)
 			v[8]=(v[6]-v[7])/v[7];                                                      			//annual growth of price index (annual inflation)
+		else
+			v[8]=0;
 		
 		v[12]=VL("Sector_Employment", 1);                                							//sector employment in the last period
 		v[13]=VL("Sector_Employment", (v[1]+1));                        							//sector employment five periods before
@@ -124,28 +130,28 @@ EQUATION("Firm_Desired_Markup")
 /*
 Firm Variable
 */
-	v[11]=V("markup_period");
-	v[12]=V("id_firm_number");
-	v[0]=VL("Firm_Desired_Markup",1);                                             				//strategic markup in the last period
-	v[1]= fmod((double)t, v[11]);                                         						//divides the time period by 8
-	v[5]=V("Firm_Desired_Market_Share");                                        				//desired market-share 
-	v[6]=VL("Firm_Avg_Market_Share",1);                                    						//firm average market share in the last period   
-			
-	if(v[1]==0 && v[5]<v[6])                                                                	//if the rest of the above division is zero (beggining of the year, adjust wages)
+	v[0]=V("markup_period");								//sector markup period parameter
+	v[1]=fmod((t+v[0]),v[0]);								//devides the current time step by the markup period and takes the rest
+	v[2]=V("id_firm_number");								//firm number
+	v[3]=fmod((v[2]+v[0]),v[0]);							//divides the firm number by the investment period and takes the rest
+	v[4]=VL("Firm_Desired_Markup",1);                       //strategic markup in the last period
+	v[5]=V("Firm_Desired_Market_Share");                    //desired market-share 
+	v[6]=VL("Firm_Avg_Market_Share",1);                     //firm average market share in the last period   
+	if (v[3]==v[1] && v[5]<v[6])							//if the firm number rest matches the time step rest, its markup adjustment period for that firm
 		{
-		v[26]=VL("Firm_Quality", 1);                                           	 				//firm quality in the last period
-		v[27]=VL("Sector_Avg_Quality", 1);                                     					//firm quality five periods before
-		if(v[27]!=0)
-			v[28]=(v[26]-v[27])/v[27];                                                      	//quality growth
+		v[7]=VL("Firm_Quality", 1);                        	//firm quality in the last period
+		v[8]=VL("Sector_Avg_Quality", 1);                  	//sector average quality
+		if(v[8]!=0)
+			v[9]=(v[7]-v[8])/v[8];                      	//quality difference
 		else
-			v[28]=0;
+			v[9]=0;
 		
-		v[30]=V("markup_passthrough_quality");
-		v[31]=max(v[0],(v[0]*(1+v[30]*v[28])));													//firm increase markup if wages do not increase as productivity and if it had quality increase
-		}
-	else
-		v[31]=v[0];
-RESULT(v[31]) 
+		v[10]=V("markup_passthrough_quality");
+		v[11]=max(v[4],(v[4]*(1+v[10]*v[9])));				//firm increase markup if wages do not increase as productivity and if it had quality increase
+		}												
+	else													//if the rests do not match, do not ajust markup
+		v[11]=v[4];												
+RESULT(v[11]) 
 
 
 EQUATION("Firm_Price")
@@ -165,7 +171,16 @@ The strategic_price_weight parameter determines how firms value their desired pr
 		v[6]=v[0];                                                             						//firm's price will be the last period's
 	v[7]=V("indirect_tax_rate");
 	v[8]=v[6]/(1-v[7]);
-RESULT(v[8])
+	
+	v[9]=V("markup_period");								//sector markup period parameter
+	v[10]=fmod((t+v[9]),v[9]);								//devides the current time step by the markup period and takes the rest
+	v[11]=V("id_firm_number");								//firm number
+	v[12]=fmod((v[11]+v[9]),v[9]);							//divides the firm number by the investment period and takes the rest
+	if (v[10]==v[12])
+		v[13]=v[8];
+	else
+		v[13]=v[0];
+RESULT(v[13])
 
 
 EQUATION("Firm_Effective_Markup")
@@ -185,15 +200,17 @@ EQUATION("Firm_Desired_Market_Share")
 /*
 Desired Market Share is a simple average between last period's desired market share and firm's average market share
 */
-	v[0]=V("markup_period");
-	v[1]=VL("Firm_Desired_Market_Share", 1);                       									//desired market share in the last period
-	v[2]=VL("Firm_Avg_Market_Share", 1);                        									//firm's average market share (desired)
-	v[3]= fmod((double) t-1, v[0]);                               									//devides the last period by eight
-	if(v[3]==0)                                                   									//if the rest of the above division is zero, adjust desired market share
-		v[4]=(v[1]+v[2])/2;                                         								//current desired market share is a simple average between last period's desired market share and firm's average market share
+	v[0]=V("markup_period");								//sector markup period parameter
+	v[1]=fmod((t+v[0]),v[0]);								//devides the current time step by the markup period and takes the rest
+	v[2]=V("id_firm_number");								//firm number
+	v[3]=fmod((v[2]+v[0]),v[0]);							//divides the firm number by the investment period and takes the rest
+	v[4]=VL("Firm_Desired_Market_Share", 1);                       									//desired market share in the last period
+	v[5]=VL("Firm_Avg_Market_Share", 1);                        									//firm's average market share (desired)
+	if(v[3]==v[1])                                                   								//if the rest of the above division is zero, adjust desired market share
+		v[6]=(v[4]+v[5])/2;                                         								//current desired market share is a simple average between last period's desired market share and firm's average market share
 	else                                                          									//if the rest of the above division is not zero, do not adjust desired market share
- 		v[4]=v[1];                                                 									//firm's desired market share will be equal to the last period's
-RESULT(v[4])
+ 		v[6]=v[4];                                                 									//firm's desired market share will be equal to the last period's
+RESULT(v[6])
 
 
 EQUATION("Firm_Avg_Market_Share")
@@ -208,34 +225,6 @@ Average Market Share between the market share of the firm in the last markup per
 		v[3]=v[3]+v[2];																				//sum up firm's lagged market share
 		}
 	v[4]=v[3]/v[0];																					//average firm's market share of the last investment period
-RESULT(v[4])
-
-
-EQUATION("Firm_Potential_Markup")
-/*
-Potential markup is the sector average price over firm's variable costs
-*/
-	v[0]=V("Sector_Avg_Price");                                       								//sector average price
-	v[1]=V("Firm_Variable_Cost");                                     								//firm's variable cost
-	if(v[1]!=0)                                                       								//if firm's variable cost is not zero
-		v[2]=v[0]/v[1];                                               								//potential markup is the sector average price over firm's variable costs
-	else                                                             								//if firm's variable cost is zero
-		v[2]=0;                                                       								//potential markup is zero
-RESULT(v[2])
-
-
-EQUATION("Firm_Avg_Potential_Markup")
-/*
-Average Potential Markup between the potential markup of the firm in the last 8 periods
-*/
-	v[0]=V("markup_period");
-	v[3]=0;																							//initializes the sum
-	for (v[1]=0; v[1]<=(v[0]-1); v[1]=v[1]+1)														//from 0 to markup period-1 lags
-		{
-		v[2]=VL("Firm_Potential_Markup", v[1]);														//computates firm's potential markup of the current lag
-		v[3]=v[3]+v[2];																				//sum up firm's lagged potential markup
-		}
-	v[4]=v[3]/v[0];																					//average firm's market share of the last potential markup
 RESULT(v[4])
 
 
