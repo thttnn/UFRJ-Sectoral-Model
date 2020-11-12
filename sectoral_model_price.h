@@ -170,7 +170,8 @@ The strategic_price_weight parameter determines how firms value their desired pr
 	else                                                                       						//if desired price is not positive
 		v[6]=v[0];                                                             						//firm's price will be the last period's
 	v[7]=V("indirect_tax_rate");
-	v[8]=v[6]/(1-v[7]);
+	v[14]=V("markup_passthrough_tax");
+	v[8]=v[6]/(1-(v[14]*v[7]));
 	
 	v[9]=V("markup_period");								//sector markup period parameter
 	v[10]=fmod((t+v[9]),v[9]);								//devides the current time step by the markup period and takes the rest

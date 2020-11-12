@@ -85,8 +85,6 @@ CYCLE(cur, "SECTORS")
 	  	WRITELLS(cur1, "Firm_Process_RND_Share", 0.5, 0, 1);                       					
 	  	WRITELLS(cur1, "Firm_Innovation_RND_Share", 0.5, 0, 1);                       					
 	  	
-
-		
 	 	//Begin Creating Firms and writting some parameters
 	 	for(i=1; i<=(v[4]-1); i++)																//for the number of firms of each sector (defined by the parameter)
 	 	cur4=ADDOBJ_EXLS(cur,"FIRMS", cur1, 0);                             					//create new firm using the first and only firm as example
@@ -264,16 +262,6 @@ RESULT(t)
 #include "sectoral_model_entry_exit.h"  	// Entry and Exit Variables
 #include "sectoral_model_sector.h" 			// Sectoral Variables     
 #include "sectoral_model_capital_goods.h"  	// Capital Goods Object Variables
-
-
-
-
-
-
-
-
-
-
 
 MODELEND
 

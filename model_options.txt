@@ -1,6 +1,6 @@
 TARGET=LSD
 FUN=fun_UFRJ_Sectoral_Model
-FUN_EXTRA= sectoral_model_capital_goods.h sectoral_model_finance.h sectoral_model_investment.h sectoral_model_price.h sectoral_model_production.h sectoral_model_profits.h sectoral_model_rnd.h sectoral_model_sales.h sectoral_model_sector.h sectoral_model_entry_exit.h sectoral_model_firm_price.h
+FUN_EXTRA= sectoral_model_capital_goods.h sectoral_model_finance.h sectoral_model_investment.h sectoral_model_price.h sectoral_model_production.h sectoral_model_profits.h sectoral_model_rnd.h sectoral_model_sales.h sectoral_model_sector.h sectoral_model_entry_exit.h 
 SWITCH_CC=-O3 
 SWITCH_CC_LNK=
 

@@ -202,6 +202,7 @@ Label Root
 		Param: tech_opportunity_productivity
 		Param: capital_price_inflation_adjustment
 		Param: input_price_inflation_adjustment
+		Param: markup_passthrough_tax
 
 	}
 
@@ -233,7 +234,7 @@ Param: elasticity_quality 0 n + n n	1
 Param: expectations 0 n + n n	0.5
 Param: firm_debt_rate_adjustment 0 n + n n	0
 Param: firm_liquidity_preference_adjustment 0 n + n n	0
-Param: indirect_tax_rate 0 n + n n	0
+Param: indirect_tax_rate 0 n + n n	0.1
 Param: initial_capital_price_scale 0 n + n n	10
 Param: initial_input_price 0 n + n n	1
 Param: initial_markup 0 n + n n	1.5
@@ -306,6 +307,7 @@ Param: wage_passthrough_employment 0 n + n n	0.5
 Param: tech_opportunity_productivity 0 n + n n	0.001
 Param: capital_price_inflation_adjustment 0 n + n n	0.5
 Param: input_price_inflation_adjustment 0 n + n n	0.5
+Param: markup_passthrough_tax 0 n + n n	1
 
 Object: FIRMS C	1
 Var: Firm_Available_Funds_After_Replacement 0 n + n n
@@ -981,6 +983,12 @@ Parameter_input_price_inflation_adjustment
 (no description available)
 _INIT_
 All 1 instances equal to 0.5.
+END_DESCRIPTION
+
+Parameter_markup_passthrough_tax
+(no description available)
+_INIT_
+All 1 instances equal to 1.
 END_DESCRIPTION
 
 Object_FIRMS
