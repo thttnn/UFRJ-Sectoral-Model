@@ -32,6 +32,8 @@ CYCLE(cur, "SECTORS")
 	v[15]=VS(cur,"initial_capital_price_scale");
 	v[16]=VS(cur,"initial_process_product_share");
 	v[17]=VS(cur,"initial_innovation_imitation_share");
+	v[18]=VS(cur,"initial_desired_debt_rate");
+	v[19]=VS(cur,"initial_liquidity_preference");
 
 	v[20]=v[6]*((v[7]/v[5])+(v[14]*v[9]));														//sector initial price, given initial markup, wage and input cost
 	v[21]=v[13]/v[4]; 																			//initial production of each firm
@@ -85,7 +87,9 @@ CYCLE(cur, "SECTORS")
 	  	WRITELLS(cur1, "Firm_Stock_Loans", 0, 0, 1);                                    		//no debt initially
 	  	WRITELLS(cur1, "Firm_Avg_Debt_Rate", 0, 0, 1);                       					//no debt initially
 	  	WRITELLS(cur1, "Firm_Process_RND_Share", v[16], 0, 1);                       					
-	  	WRITELLS(cur1, "Firm_Innovation_RND_Share", v[17], 0, 1);                       					
+	  	WRITELLS(cur1, "Firm_Innovation_RND_Share", v[17], 0, 1); 
+	  	WRITELLS(cur1, "Firm_Desired_Debt_Rate", v[18], 0, 1); 
+	  	WRITELLS(cur1, "Firm_Liquidity_Preference", v[19], 0, 1);                       					
 	  	
 	 	//Begin Creating Firms and writting some parameters
 	 	for(i=1; i<=(v[4]-1); i++)																//for the number of firms of each sector (defined by the parameter)
