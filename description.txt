@@ -1,14 +1,120 @@
-Model UFRJ Sectoral Model (ver. 1.0)
-
-*******************************************************************
+*******************************
+UFRJ Sectoral Model (ver. 1.0)
+*******************************
+_________________________________________________________________________________________________
 
 This model is a complete rewrite of the sectoral model developed by the Economic Dynamics Reasearch Group of Federal University of Rio de Janeiro.
 There are some adaptations and innovations in this versions but they can be turned off to have the exactly the same model as in the reference paper.
 
-Main Reference: POSSAS, M. et al. Um modelo evolucionário setorial. Revista Brasileira de Economia, v. 55, n. 3, p. 333-377, 2001.
-
 Coded and Copyright by Matheus Trotta Vianna
 
-*******************************************************************
+Main References: 
+POSSAS, M. et al (2001). Um modelo evolucionário setorial. Revista Brasileira de Economia, v. 55, n. 3, p. 333-377.
+MELO, T., POSSAS, M., & DWECK, E (2016). Um modelo setorial baseado na abordagem kaleckiana da distribuição setorial funcional da renda e na teoria schumpeteriana da concorrência. Economia e Sociedade, 25(1), 109-145.
+_________________________________________________________________________________________________
 
+**********
+THE MODEL:
+**********
+
+The model is based on Keynesian, Kaleckian and Schumpeterian theoretical foundations.
+The model represents a theoretical productive sector, composed by N number of firms. 
+Firms compete is this market (sector) via Prices and via Product Differentiation (Quality, in a broad sense).
+In line with the Keynesian Effective Demand Principle, firms produce based on expected sales, under adaptative expectation rules, and there is no required equilibrium between production and effective sales.
+Firms set price in line with Kaleckian theory of price setting under oligopolistic competition, meaning that firms take into consideration their competitive position in the market and look at the others to set their price.
+Firms also perform R&D, in line with a Neo-schumpeterian approach. The amount of resources to R&D is a fixed share of revenue and is allocated between process R&D and product R&D. In its turn, the resourcers allocated to each type is again divided between innovation and imitation.
+Process R&D searches for new levels of productivity while Product R&D searches for new levels of product quality. Innovation depends on exogenous technological opportunities while imitation depends on the current maximum level in the sector.
+Finally, firms make investment decisions, divided in expansion investment (to adjust productive capacity to a desired level based on expected sales) and replacement investment (to modernize current technologically obsolete capital goods).
+Investment decisions can be financially constrained, and irms prioritize internal sources of funds in relation to external sources (credit). If total funds are not enough, firms prioritize expantion investment.
+Firm's price and quality affect its competitiveness index, which defines the firm's market share. The market share serves to distribute sectoral demand in a quasi-replicator dynamics.
+Total sectoral demand in semi-endogenous: it depends on a exogenous growth rate with a random shock plus the growth rate of sectoral average quality. 
+Success in product R&D (quality increase) also allow firms to increase their desired markup, affecting functional income distribution in a sectoral level.
+_________________________________________________________________________________________________
+
+****************
+MODEL PARMETERS:
+****************
+
+FREQUENCY PARAMETERS
+annual_period								:defines how many time steps is considered a year (baseline=4)
+investment_period							:defines how many time steps is an investment period (baseline=4)
+markup_period								:defines how many time steps is an markup period (baseline=4)
+
+DEMAND PARAMETERS:
+sector_initial_demand						:defines the initial demand, the scale of the model (baseline=100)
+sector_real_demand_growth					:defines an exogenous growth rate for demand (baseline=0.005) (set=0 to let demand fully endogenous)
+demand_shock_standard_deviation				:defines the size of demand stochastic shocks (baseline=0.01) (set=0 to eliminate random shocks)
+demand_shock_average						:defines the average of demand stochastic shocks (baseline=0)
+
+COST PARAMETERS:
+initial_wage								:defines the initial wage, with initial markup and other parameters, determines initial price in Initialization (baseline=1)
+initial_input_price							:defines the initial price of inputs, determines initial price in Initialization (baseline=1)
+initial_capital_price						:defines the initial price of capital goods, should be higher than sector initial price (baseline=5)
+capital_price_growth						:defines an exogenous growth rate for capital prices, adjusted annually (baseline=0.01) (set=0 to fixed capital price)
+input_price_growth							:defines an exogenous growth rate for input prices, adjusted annually (baseline=0.01) (set=0 to fixed input price)
+wage_passthrough_productivity				:defines how wages are adjusted annually based on productivity growth (baseline=1) (set=0 to fixed wages)
+wage_passthrough_inflation					:defines how wages are adjusted annually based on price growth (baseline=1) (set=0 to fixed wages)
+wage_passthrough_employment					:defines how wages are adjusted annually based on employment growth (baseline=1) (set=0 to fixed wages)
+input_tech_coefficient						:defines the amount of physical inputs to produce one goods (baseline=0.4)
+
+PRICE PARAMETERS:
+initial_markup								:defines the initial markup over variable costs, determines funcional income distribution (baseline=1.5)
+markup_passthrough_quality					:defines how firms adjust desired markup on markup periods based on relative quality gains (baseline=1) (set=0 to fized markups)
+strategic_price_weight						:defines how firms strategically look to the competitors in price setting. If 1, only look at individual desired price. If 0, only look to sector average price. (baseline=0.5) 
+
+FINANCIAL PARAMETERS:
+switch_interest_payment						:defines if interest on loans is pre-fixed (0) or post-fixed (1) (baseline=0)
+interest_rate_deposits						:defines the interest rate on deposits (baseline=0.005)
+risk_premium_adjustment						:defines the premium added to firm specific interest rate based on firm current debt rate (baseline=1)
+interest_rate_short_term					:defines the interest rate on short term loans (baseline=0.01)
+interest_rate_long_term						:defines the interest rate on long term loans (baseline=0.05)
+firm_debt_rate_adjustment					:defines how firms adjust desired debt rate based on profit growth (baseline=0, fixed desired debt rate at 0.5)
+firm_liquidity_preference_adjustment		:defines how firms adjust liquidity preference based on profit growth and deb rate (baseline-0, fixed liquidity preference at 0.05)
+amortization_period							:defines duration of a long term loan (baseline=40) (goods practice: equal to depreciation period)
+
+R&D PARAMETERS:
+rnd_revenue_proportion						:defines the share of revenue allocated to R&D (baseline=0.05)
+initial_productivity						:defines the initial productivity (baseline=1)
+initial_quality								:defines the initial quality (baseline=1)
+std_dev_innovation							:defines the standard deviation of the normal distribution used to draw innovations, both quality and productvity (baseline=0.01)
+tech_opportunity_productivity				:defines the exogenous technological opportunity growth for productivity (baseline-0.001)
+tech_opportunity_quality					:defines the exogenous technological opportunity growth for quality (baseline-0.001)
+process_product_adjustment					:defines how firms adjust the allocation between proces and product innovation based on market share expantion (baseline=0, fixed allocation)
+innovation_imitation_adjustment				:defines how firms adjust the allocation between innovation and imitation based on market share expation (baseline=0, fixed allocation)
+
+FIRMS DECISIONS PARAMETERS:
+desired_degree_capacity_utilization			:defines the desired degree of capacity utilization (baseline=0.85)
+desired_inventories_proportion				:defines the desired invstories share of sales (baseline=0.1)
+expectations								:defines the expectation adjustment parameter (baseline=0.5)
+profits_distribution_rate					:defines the proportion of profits that are distributed, therefore determines the amount of retained profits (baseline=0.9)
+
+INVESTMENT PARAMETERS:
+capital_output_ratio						:defines the capital intensity (baseline=1)
+depreciation_period							:defines the lifetime of a capital goods (baseline=40)
+payback_period								:defines the number of periods to payback replacement investment (baseline=20)
+
+SECTORAL STRUCTURE PARAMETERS:
+number_object_firms							:defines the initial number of firms (baseline=30)
+learning_speed								:defines the speed of learneing (baseline=0, no learning)
+learning_adjustment							:defines the the learning adjustment to productivity (baseline=0, no learning)
+survival_period								:defines how many periods a new firm forcedlly survive (baseline=0)
+indirect_tax_rate							:defines the indirect tax rate of the sector (baseline=0, no tax)
+elasticity_price							:defines the price elasticity of competitiveness (baseline=1)
+elasticity_quality							:defines the quality elasticicty of competitivness and quality demand adjustment (baseline=1)
+elascitity_delay							:defines the delivery delay elasticity of competitiveness (baseline=0, no delivery delay effect)
+
+**********************************
+OUTPUT VARIABLES - SECTORAL LEVEL:
+********************************** 
+
+Sector_Profit_Rate							:sector profit rate on capital
+Sector_Normalized_HHI						:sector concentration index
+Sector_Turbulence							:sector turbulence index
+Sector_Capacity_Utilization					:sector average rate of capacity utilization
+Sector_Profits								:sector mass of profits
+Sector_Wages								:sector mass of wages
+Sector_Income								:sector nominal income (wages+profits)
+Sector_Income_Growth						:sector annual growth rate of nominal income
+Sector_Inflation							:sector annual growth rate of average prices
+Sector_Employment							:sector employment, production over productivity
 
