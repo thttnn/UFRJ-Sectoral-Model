@@ -54,7 +54,7 @@ Process Innovation. The sucess depends on the amount ou recources alocated to in
 		{
 		v[5]=V("std_dev_innovation");           //innovation standard deviation
 		v[6]=V("initial_productivity");			//initial frontier productivity
-		v[7]=V("tech_opportunity");             //technological opportunity parameter
+		v[7]=V("tech_opportunity_productivity");//technological opportunity parameter
 		v[10]=log(v[6])+(double)t*(v[7]);   	//the average of the innovation distribution will be the initial frontier productivity plus the opportunity parameter of the science park times the time period
 		v[11]=exp(norm(v[10],v[5]));            //the innovation productivity will be a draw from a normal distribution with average depending of the tech regime and std. dev fixed
 		}
@@ -94,7 +94,7 @@ Product Innovation. The sucess depends on the amount ou recources alocated to pr
 		{
 		v[5]=V("std_dev_innovation");           //innovation standard deviation
 		v[6]=V("initial_quality");				//initial frontier productivity
-		v[7]=V("tech_opportunity");             //technological opportunity parameter
+		v[7]=V("tech_opportunity_quality");     //technological opportunity parameter
 		v[10]=log(v[6])+(double)t*(v[7]);   	//the average of the innovation distribution will be the initial quality plus the opportunity parameter of the science park times the time period
 		v[11]=exp(norm(v[10],v[5]));            //the innovation productivity will be a draw from a normal distribution with average depending of the tech regime and std. dev fixed
 		}

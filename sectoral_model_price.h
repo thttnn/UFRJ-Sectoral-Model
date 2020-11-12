@@ -6,7 +6,7 @@ Price of Capital Goods
 One of the first variables to be computated.
 It is adjusted annually in four possible ways:
 1-By productivity growth
-2-By an exogenous groth rate
+2-By an exogenous growth rate
 3-By a combination of both.
 4-Not adjusted, fixed.
 User Instructions: 
@@ -26,13 +26,12 @@ To use it fixed, set both parameters to zero.
 			v[5]=(v[3]-v[4])/v[4];                                                       			//annual growth of sector average productivity
 		else
 			v[5]=1;
-		v[6]=V("capital_price_passthrough_productivity");                                       	//passthrough of productivity parameter
-		v[7]=V("capital_price_growth");																//exogenous growth of capital price
-		v[8]=v[0]*(1+v[5]*v[6]+v[7]);                                              					//current price will be the last period's multiplied by a rate of growth which is a combination of endogenous and exogenous growth rates
+		v[6]=V("capital_price_growth");																//exogenous growth of capital price
+		v[7]=v[0]*(1+v[6]);                                              							//current price will be the last period's multiplied by a rate of growth which is a combination of endogenous and exogenous growth rates
 		}
 	else                                                                             	 			//if the rest of the division is not zero, do not adjust wages
-		v[8]=v[0];                                                                       			//current capital price will be the last period's
-RESULT(v[8])
+		v[7]=v[0];                                                                       			//current capital price will be the last period's
+RESULT(v[7])
 
 
 EQUATION("Price_Inputs")
@@ -41,7 +40,7 @@ Price of Inputs
 One of the first variables to be computated.
 It is adjusted annually in four possible ways:
 1-By productivity growth
-2-By an exogenous groth rate
+2-By an exogenous growth rate
 3-By a combination of both above.
 4-Not adjusted, fixed. 
 User Instructions: 
@@ -61,13 +60,12 @@ To use it fixed, set both parameters to zero.
 			v[5]=(v[3]-v[4])/v[4];                                                       			//annual growth of sector average productivity
 		else
 			v[5]=1;
-		v[6]=V("inputs_price_passthrough_productivity");                                       		//passthrough of productivity parameter
-		v[7]=V("input_price_growth");																//exogenous growth of input price
-		v[8]=v[0]*(1+v[5]*v[6]+v[7]);                                              					//current price will be the last period's multiplied by a rate of growth which is a combination of endogenous and exogenous growth rates
+		v[6]=V("input_price_growth");																//exogenous growth of input price
+		v[7]=v[0]*(1+v[6]);                                              							//current price will be the last period's multiplied by a rate of growth which is a combination of endogenous and exogenous growth rates
 		}
 	else                                                                             	 			//if the rest of the division is not zero, do not adjust wages
-		v[8]=v[0];                                                                       			//current wages will be the last period's
-RESULT(v[8])
+		v[7]=v[0];                                                                       			//current wages will be the last period's
+RESULT(v[7])
 
 
 EQUATION("Firm_Wage")
@@ -83,15 +81,24 @@ To let the nominal wage fixed and equal to all firms, set "wage_passthrough_prod
 		v[3]=VL("Firm_Avg_Productivity", 1);                                           	 			//firm average productivity in the last period
 		v[4]=VL("Firm_Avg_Productivity", (v[1]+1));                                     			//firm average productivity five periods before
 		if(v[4]!=0)
-			v[5]=(v[3]-v[4])/v[4];                                                      			 //annual growth of sector average productivity
+			v[5]=(v[3]-v[4])/v[4];                                                      			//annual growth of sector average productivity
 		else
 			v[5]=0;
 		v[6]=VL("Sector_Avg_Price", 1);                                								//sector average price in the last period
 		v[7]=VL("Sector_Avg_Price", (v[1]+1));                        								//sector average price five periods before
 			v[8]=(v[6]-v[7])/v[7];                                                      			//annual growth of price index (annual inflation)
+		
+		v[12]=VL("Sector_Employment", 1);                                							//sector employment in the last period
+		v[13]=VL("Sector_Employment", (v[1]+1));                        							//sector employment five periods before
+		if(v[13]!=0)
+			v[14]=(v[12]-v[13])/v[13];                                                      		//annual growth of sector employment
+		else
+			v[14]=0;
+		
 		v[9]=V("wage_passthrough_productivity");                                       				//pass through of productivity to wages
 		v[10]=V("wage_passthrough_inflation");														//pass through of inflation to wages
-		v[11]=v[0]*(1+v[5]*v[9]+v[8]*v[10]);                                            			//current wage 
+		v[15]=V("wage_passthrough_employment");														//pass through of employment to wages
+		v[11]=v[0]*(1+v[5]*v[9]+v[8]*v[10]+v[15]*v[14]);                                            //current wage 
 		}
 	else                                                                             	 			//if the rest of the division is not zero, do not adjust wages
 		v[11]=v[0];                                                                       			//current wages will be the last period's
@@ -119,52 +126,25 @@ Firm Variable
 */
 	v[11]=V("markup_period");
 	v[12]=V("id_firm_number");
-	v[0]=VL("Firm_Desired_Markup",1);                                             					//strategic markup in the last period
+	v[0]=VL("Firm_Desired_Markup",1);                                             				//strategic markup in the last period
 	v[1]= fmod((double)t, v[11]);                                         						//divides the time period by 8
-
-	if(v[1]==0)                                                              						//if the rest of the above division is zero, adjust strategic markup
-		{
-		v[2]=VL("Firm_Avg_Potential_Markup",1);                                     				//average potential markup of the firm in the last period        
-		v[3]=V("market_share_expansion");                                           				//market-share expantion parameter
-		v[4]=V("markup_apropriation");                                              				//profits apropriation parameter   
-		v[5]=V("Firm_Desired_Market_Share");                                        				//desired market-share 
-		v[6]=VL("Firm_Avg_Market_Share",1);                                    						//firm average market share in the last period   
-		v[7]=VL("Firm_Competitiveness",1);                                          				//firm's competitiveness in the last period
-		v[8]=VL("Sector_Avg_Competitiveness",1);                               						//sector's average competitiveness in the last period
-		v[9]=v[3]*((v[7]-v[8])/v[8]);                                          						//how much to adjust based on the percentual diference between firm's competitiveness and sector's average competitiveness and the expantion parameter
-		if(v[2]*(1+v[9])>v[0]&&v[6]>v[5])                                      						//if the already adjusted average potential markup is higher than desired strategic markup of the last period and firm's average market share is higher than desired market share
-			v[10]=v[0]+v[4]*(v[2]*(1+v[9])-v[0]);                              						//the firm adjusts the strategic markup. 
-		else                                                                   						//if the adjusted average potential markup is not higher than desired nor the firm's average market-share is not higher than desired
-			v[10]=v[0];                                                        						//strategic markup will be the last period's                                            
-		}
-	else                                                                     						//if the rest of the above division is not zero, do not adjust strategic markup
-		v[10]=v[0];                                                            						//strategic markup will be the last period's	
-		
-		
-		
-		if(v[1]==0)                                                                      	 			//if the rest of the above division is zero (beggining of the year, adjust wages)
-		{
-		v[23]=VL("Firm_Avg_Productivity", 1);                                           	 			//firm average productivity in the last period
-		v[24]=VL("Firm_Avg_Productivity", (v[11]+1));                                     				//firm average productivity five periods before
-		if(v[24]!=0)
-			v[25]=(v[23]-v[24])/v[24];                                                      			//productivity growth
-		else
-			v[25]=0;
+	v[5]=V("Firm_Desired_Market_Share");                                        				//desired market-share 
+	v[6]=VL("Firm_Avg_Market_Share",1);                                    						//firm average market share in the last period   
 			
-		v[26]=VL("Firm_Quality", 1);                                           	 						//firm quality in the last period
-		v[27]=VL("Firm_Quality", (v[11]+1));                                     						//firm quality five periods before
+	if(v[1]==0 && v[5]<v[6])                                                                	//if the rest of the above division is zero (beggining of the year, adjust wages)
+		{
+		v[26]=VL("Firm_Quality", 1);                                           	 				//firm quality in the last period
+		v[27]=VL("Sector_Avg_Quality", 1);                                     					//firm quality five periods before
 		if(v[27]!=0)
-			v[28]=(v[26]-v[27])/v[27];                                                      			//quality growth
+			v[28]=(v[26]-v[27])/v[27];                                                      	//quality growth
 		else
 			v[28]=0;
 		
-		v[29]=V("wage_passthrough_productivity"); 
 		v[30]=V("markup_passthrough_quality");
-		v[31]=v[0]*(1+(1-v[29])*v[25]+v[30]*v[28]);														//firm increase markup if wages do not increase as productivity and if it had quality increase
+		v[31]=max(v[0],(v[0]*(1+v[30]*v[28])));													//firm increase markup if wages do not increase as productivity and if it had quality increase
 		}
-		else
+	else
 		v[31]=v[0];
-			
 RESULT(v[31]) 
 
 

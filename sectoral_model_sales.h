@@ -3,14 +3,15 @@
 EQUATION("Sector_Effective_Orders")
 /*
 Sector Variable.
-Exogenous Real Demand
+Semi-Endogenous Real Demand
+Exogenous fixed rate of growth + quality growth + random shock
 */
 	v[0]=VL("Sector_Effective_Orders",1);																//effective orders in the last period
 	v[1]=V("sector_real_demand_growth");																//exogenous rate of growth									
 	v[2]=V("demand_shock_standard_deviation");															//sd of demand shocks, set to zero if no demand shocks
 	v[3]=V("demand_shock_average");                     												//average demand shock, baseline=0;
 	v[4]=norm(v[3], v[2]);																				//demand shock at each time step
-	v[5]=V("quality_demand");
+	v[5]=V("elasticity_quality");
 	v[6]=VL("Sector_Avg_Quality", 1);																	//average quality in the last period
 	v[7]=VL("Sector_Avg_Quality", 2);																	//average quality in the last period in t-2
 	if(v[7]!=0)

@@ -239,6 +239,23 @@ else
 RESULT(v[3])
 
 
+EQUATION("Sector_Employment")
+/*
+Sum up firm's employment, given by firm's effective production over firm's avg productivity
+*/
+	v[0]=0;                                        		//initializes the CYCLE
+	CYCLE(cur, "FIRMS")                            		//CYCLE trought the firms
+	{
+		v[1]=VS(cur, "Firm_Effective_Production");      //firm's effective production
+		v[2]=VS(cur, "Firm_Avg_Productivity");   		//firm's productivity in the last period
+		if(v[2]!=0)
+			v[0]=v[0]+v[1];                       		//sums up the ratio between effective production and productivity
+		else
+			v[0]=v[0];
+	}
+RESULT(v[0])
+
+
 /*****SECTOR AVERAGES, SD AND MAX*****/
 
 

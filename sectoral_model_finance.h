@@ -34,8 +34,8 @@ Interest rate paid by the firm depends on a individual spread over basic interes
 	v[0]=V("risk_premium_adjustment");
 	v[1]=V("Firm_Avg_Debt_Rate");
 	v[2]=V("interest_rate_long_term");
-	v[3]=(1+v[1]*v[0])*v[3];	
-RESULT(v[4])
+	v[3]=(1+v[1]*v[0])*v[2];	
+RESULT(v[3])
 
 
 EQUATION("Firm_Desired_Debt_Rate")
