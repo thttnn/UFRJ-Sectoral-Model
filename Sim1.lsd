@@ -273,7 +273,7 @@ Param: rnd_revenue_proportion 0 n + n n	0.05
 Param: std_dev_innovation 0 n + n n	0.001
 Param: strategic_price_weight 0 n + n n	0.5
 Param: survival_period 0 n + n n	0
-Param: switch_entry 0 n + n n	1
+Param: switch_entry 0 n + n n	0
 Param: tech_opportunity_productivity 0 n + n n	0.001
 Param: tech_opportunity_quality 0 n + n n	0.001
 Param: wage_passthrough_employment 0 n + n n	0.5
@@ -750,7 +750,7 @@ END_DESCRIPTION
 Parameter_switch_entry
 (no description available)
 _INIT_
-All 1 instances equal to 1.
+All 1 instances equal to 0.
 END_DESCRIPTION
 
 Parameter_tech_opportunity_productivity
