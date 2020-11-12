@@ -150,6 +150,7 @@ Label Root
 		Param: interest_rate_short_term
 		Param: investment_period
 		Param: learning_adjustment
+		Param: learning_speed
 		Param: markup_passthrough_quality
 		Param: markup_passthrough_tax
 		Param: markup_period
@@ -260,6 +261,7 @@ Param: interest_rate_long_term 0 n + n n	0.05
 Param: interest_rate_short_term 0 n + n n	0.01
 Param: investment_period 0 n + n n	4
 Param: learning_adjustment 0 n + n n	0
+Param: learning_speed 0 n + n n	0
 Param: markup_passthrough_quality 0 n + n n	1
 Param: markup_passthrough_tax 0 n + n n	1
 Param: markup_period 0 n + n n	4
@@ -273,7 +275,7 @@ Param: rnd_revenue_proportion 0 n + n n	0.05
 Param: std_dev_innovation 0 n + n n	0.001
 Param: strategic_price_weight 0 n + n n	0.5
 Param: survival_period 0 n + n n	0
-Param: switch_entry 0 n + n n	1
+Param: switch_entry 0 n + n n	0
 Param: tech_opportunity_productivity 0 n + n n	0.001
 Param: tech_opportunity_quality 0 n + n n	0.001
 Param: wage_passthrough_employment 0 n + n n	0.5
@@ -669,6 +671,12 @@ _INIT_
 All 1 instances equal to 0.2.
 END_DESCRIPTION
 
+Parameter_learning_speed
+(no description available)
+_INIT_
+All 1 instances equal to 1.
+END_DESCRIPTION
+
 Parameter_markup_passthrough_quality
 (no description available)
 _INIT_
@@ -750,7 +758,7 @@ END_DESCRIPTION
 Parameter_switch_entry
 (no description available)
 _INIT_
-All 1 instances equal to 1.
+All 1 instances equal to 0.
 END_DESCRIPTION
 
 Parameter_tech_opportunity_productivity

@@ -27,15 +27,17 @@ CYCLE(cur, "SECTORS")
 	v[10]=VS(cur,"capital_output_ratio");
 	v[11]=VS(cur,"desired_inventories_proportion");	
 	v[12]=VS(cur,"desired_degree_capacity_utilization");
-	v[13]=VS(cur,"sector_initial_demand");
+	v[13]=VS(cur,"initial_demand_proportion");
 	v[14]=VS(cur,"initial_input_price");
 	v[15]=VS(cur,"initial_capital_price_scale");
+	v[16]=VS(cur,"initial_process_product_share");
+	v[17]=VS(cur,"initial_innovation_imitation_share");
 
 	v[20]=v[6]*((v[7]/v[5])+(v[14]*v[9]));														//sector initial price, given initial markup, wage and input cost
 	v[21]=v[13]/v[4]; 																			//initial production of each firm
 	v[22]=((v[21]*(1+v[11]))/v[12])*v[10];														//number of capital goods of each firm
-	
-		WRITELLS(cur, "Sector_Effective_Orders", v[13], 0, 1);               					//Effective_Orders_Sectors equals demand_initial		
+	for(i=1; i<v[2]; i++)
+		WRITELLS(cur, "Sector_Effective_Orders", v[13]*v[4], 0, i);               				//Effective_Orders_Sectors equals demand_initial		
 		WRITELLS(cur, "Sector_Avg_Competitiveness", 1, 0, 1);                     				//if all firms are the same, equals 1 by definition
 		WRITELLS(cur, "Sector_Productive_Capacity", ((v[13]*(1+v[11]))/v[12]), 0, 1);           //if all firms are the same, equals 1 by definition
 	for(i=1 ; i<=v[2]+1 ; i++)
@@ -82,8 +84,8 @@ CYCLE(cur, "SECTORS")
 		WRITELLS(cur1, "Firm_Stock_Deposits", 0, 0, 1);											//no financial assets initially
 	  	WRITELLS(cur1, "Firm_Stock_Loans", 0, 0, 1);                                    		//no debt initially
 	  	WRITELLS(cur1, "Firm_Avg_Debt_Rate", 0, 0, 1);                       					//no debt initially
-	  	WRITELLS(cur1, "Firm_Process_RND_Share", 0.5, 0, 1);                       					
-	  	WRITELLS(cur1, "Firm_Innovation_RND_Share", 0.5, 0, 1);                       					
+	  	WRITELLS(cur1, "Firm_Process_RND_Share", v[16], 0, 1);                       					
+	  	WRITELLS(cur1, "Firm_Innovation_RND_Share", v[17], 0, 1);                       					
 	  	
 	 	//Begin Creating Firms and writting some parameters
 	 	for(i=1; i<=(v[4]-1); i++)																//for the number of firms of each sector (defined by the parameter)
@@ -93,7 +95,6 @@ CYCLE(cur, "SECTORS")
 			{
 			v[70]=SEARCH_INSTS(cur, cur1);														//search current firm position in the total economy
 			WRITES(cur1, "id_firm_number", v[70]);                         						//write the firm number as the current position (only initial difference between firms)
-			v[71]=fmod((double) (v[70]+v[0]), v[0]);                                 			//divide the firm's number plus investment period by the investment period and takes the rest (possible results if investment period =6 are 0, 5, 4, 3, 2, 1)
 			
 			//Begin creating capital goods and writting "capital_good_date_birth"		
 			for(i=1; i<=v[22]-1; i++)                        									//for the number of capital goods of each firm
@@ -103,8 +104,6 @@ CYCLE(cur, "SECTORS")
 				}
 				CYCLES(cur1, cur3, "CAPITALS")
 					{
-					v[72]=VS(cur3, "id_capital_good_number");
-					v[73]=(-v[3]+v[71]+1)+(v[72]-1)*v[0];                                           	//calculates the capital good date of birth based on the firm number and the number of the capital good
 					WRITELLS(cur3, "Capital_Good_Acumulated_Production", 0, 0, 1);      			//zero by definition
 					WRITES(cur3, "capital_good_productive_capacity", (1/v[10]));     				//inverse of capital output ratio  
 					WRITES(cur3, "capital_good_productivity_initial", v[5]);       		  			//defined in the control parameters
