@@ -68,7 +68,7 @@ In this variable, the firm receive the new capital goods ordered in the last inv
 			cur=ADDOBJ("CAPITALS");												//create new capital objects
 			WRITES(cur, "capital_good_productivity_initial", v[1]);				//writes the new capital productivity as the frontier productivity when it was ordered
 			WRITES(cur, "capital_good_productive_capacity", (1/v[5]));			//writes the productive capacity as the inverse of current capital output ratio of the sector
-			WRITES(cur, "capital_good_date_birth", t);					//writes the new capital date of birth as the current time period
+			WRITES(cur, "capital_good_date_birth", t);							//writes the new capital date of birth as the current time period
 			WRITES(cur, "capital_good_to_replace", 0);							//writes the parameter that identifies the capital goods to be replaced as zero
 			WRITES(cur, "capital_good_depreciation_period", (t+v[8]));
 			WRITELS(cur, "Capital_Good_Acumulated_Production", 0, 1);			//writes the past acumulated production of the current new capital as zero
@@ -85,7 +85,7 @@ In this variable, the firm receive the new capital goods ordered in the last inv
      		if(v[9]==1)
      			{
      			WRITES(cur, "capital_good_productivity_initial", v[1]);				//writes the new capital productivity as the frontier productivity when it was ordered
-				WRITES(cur, "capital_good_date_birth", t);					//writes the new capital date of birth as the current time period
+				WRITES(cur, "capital_good_date_birth", t);							//writes the new capital date of birth as the current time period
 				WRITES(cur, "capital_good_to_replace", 0);							//writes the parameter that identifies the capital goods to be replaced as zero
 				WRITES(cur, "capital_good_depreciation_period", (t+v[8]));
 				WRITELS(cur, "Capital_Good_Acumulated_Production", 0, 1);			//writes the past acumulated production of the current new capital as zero
@@ -106,7 +106,7 @@ EQUATION("Firm_Capital")
 Nominal value of firm's total capital
 */
 	v[0]=COUNT("CAPITALS");                       								//firm's productive capacity in the last period   
-	v[1]=V("Price_Capital_Goods");                       								//price of capital goods
+	v[1]=V("Price_Capital_Goods");                       						//price of capital goods
 	v[2]=v[0]*v[1];                                 							//nominal value of firm's total capital
 RESULT(v[2])
 
@@ -204,7 +204,6 @@ Nominal value of derired new capital goods for modernization replacement
   if(v[3]==1)																																											// if it is investment period for the firm
   {
   v[16]=0;																																												// initializes the CYCLE for productive capacity
-  SORT("CAPITALS","Capital_Good_Productivity","UP");																								// sort capital goods from the lowest to highest 
    CYCLE(cur, "CAPITALS")																																					// CYCLE trought capital goods
    {
      v[19]=VS(cur, "capital_good_depreciation_period");																										// capital good date of birth

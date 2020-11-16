@@ -6,12 +6,11 @@ This variable counts productive capacity that exited the sector in each time ste
 */
 
 v[0]=V("survival_period");
-v[17]=v[18]=v[19]=v[21]=v[23]=0;
-CYCLE(cur1, "SECTORS")
-{
-	i = COUNTS(cur1, "FIRMS" );									// count the existing number of firms 
+v[9]=V("switch_exit");
+
+	i = COUNT( "FIRMS" );										// count the existing number of firms 
 	v[11]=v[12]=v[14]=v[24]=0;									// initialize the cycles
-	CYCLE_SAFES( cur1, cur, "FIRMS" )							// use a robust cycle to delete objects
+	CYCLE_SAFE( cur, "FIRMS" )									// use a robust cycle to delete objects
 	{
      v[1]=VS(cur, "Firm_Market_Share");							//firm's curent market share
      v[2]=VS(cur, "Firm_Productive_Capacity");					//firm's current productive capacity																				
@@ -22,7 +21,7 @@ CYCLE(cur1, "SECTORS")
      v[7]=VS(cur, "Firm_Stock_Deposits");
      v[8]=VS(cur, "Firm_Capital");
     
-     if ( v[1] <= 0.001 && i > 1 && t>(v[0]+v[3]))				//if firm's market share is near zero
+     if ( v[9]==1 && v[1] <= 0.001 && i > 1 && t>(v[0]+v[3]))				//if firm's market share is near zero
      {
       	if (v[7]>=v[6])											//firm pays current debt with current deposits 
       		{
@@ -42,7 +41,7 @@ CYCLE(cur1, "SECTORS")
      }
      else														//if firm's current market share is not near zero																																						//if firm's avg debt rate is not higher than 1 (do not delete current firm						
      {
-		if(v[4]>1 && i>1 && t>(v[0]+v[3]))
+		if( v[9]==1 && v[4]>1 && i>1 && t>(v[0]+v[3]))
 		{
       	if (v[7]>=v[6])											//firm pays current debt with current deposits 
       		{
@@ -68,27 +67,17 @@ CYCLE(cur1, "SECTORS")
       	v[24]=v[24];
       	}
 	 }
-	WRITES(cur1, "Sector_Productive_Capacity_Exit", v[12]);
-	}
-v[17]=v[17]+v[11];
-v[18]=v[18]+v[12];
-v[19]=v[19]+v[14];
-v[23]=v[23]+v[24];
-}
-WRITE("Exit_Deposits_Distributed", v[17]);
-WRITE("Exit_Productive_Capacity", v[18]);
-WRITE("Exit_Defaulted_Loans", v[19]);																													
-RESULT(v[23])
+	WRITE("Sector_Productive_Capacity_Exit", v[12]);
+	WRITE("Exit_Deposits_Distributed", v[11]);
+	WRITE("Exit_Productive_Capacity", v[12]);
+	WRITE("Exit_Defaulted_Loans", v[14]);
+	}																													
+RESULT(v[24])
 
-EQUATION("Exit_Deposits_Distributed")
-RESULT(CURRENT)
-EQUATION("Exit_Productive_Capacity")
-RESULT(CURRENT)
-EQUATION("Exit_Defaulted_Loans")
-RESULT(CURRENT)
-EQUATION("Sector_Productive_Capacity_Exit")
-RESULT(CURRENT)
-
+EQUATION_DUMMY("Exit_Deposits_Distributed", "Exit")
+EQUATION_DUMMY("Exit_Productive_Capacity", "Exit")
+EQUATION_DUMMY("Exit_Defaulted_Loans", "Exit")
+EQUATION_DUMMY("Sector_Productive_Capacity_Exit", "Exit")
 
 
 EQUATION("Sector_Entry_Condition")

@@ -41,7 +41,8 @@ investment_period							:defines how many time steps is an investment period for
 markup_period								:defines how many time steps is an markup period for firms specifically (baseline=4)
 
 SECTORAL STRUCTURE PARAMETERS:
-switch_entry								:defines if entry is allowed (1) oe not (0) (baseline=0)
+switch_randomize_initialization				:defines if firm variables should be randomized at the beginning (1) or not (0) (baseline=0)
+switch_entry								:defines if entry is allowed (1) or not (0) (baseline=0)
 number_object_firms							:defines the initial number of firms (baseline=30)
 learning_adjustment							:defines the the learning adjustment to productivity (baseline=0, no learning)
 survival_period								:defines how many periods a new firm forcedlly survive (baseline=0)

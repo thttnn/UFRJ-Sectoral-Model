@@ -93,8 +93,15 @@ CYCLE(cur, "SECTORS")
 	  	
 	 	//Begin Creating Firms and writting some parameters
 	 	for(i=1; i<=(v[4]-1); i++)																//for the number of firms of each sector (defined by the parameter)
-	 	cur4=ADDOBJ_EXLS(cur,"FIRMS", cur1, 0);                             					//create new firm using the first and only firm as example
-	 			
+	 	{
+		cur4=ADDOBJ_EXLS(cur,"FIRMS", cur1, 0);                             					//create new firm using the first and only firm as example
+			if(V("switch_randomize_initialization")==1)
+			{
+			WRITELLS(cur4, "Firm_Process_RND_Share", uniform(0.1,0.9), 0, 1);
+			WRITELLS(cur4, "Firm_Innovation_RND_Share", uniform(0.1,0.9), 0, 1);
+			}
+		}		
+				
 	 	CYCLES(cur, cur1, "FIRMS")                                                 				//CYCLE trough all firms
 			{
 			v[70]=SEARCH_INSTS(cur, cur1);														//search current firm position in the total economy
