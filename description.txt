@@ -25,7 +25,7 @@ Firms set price in line with Kaleckian theory of price setting under oligopolist
 Firms also perform R&D, in line with a Neo-schumpeterian approach. The amount of resources to R&D is a fixed share of revenue and is allocated between process R&D and product R&D. In its turn, the resourcers allocated to each type is again divided between innovation and imitation.
 Process R&D searches for new levels of productivity while Product R&D searches for new levels of product quality. Innovation depends on exogenous technological opportunities while imitation depends on the current maximum level in the sector.
 Finally, firms make investment decisions, divided in expansion investment (to adjust productive capacity to a desired level based on expected sales) and replacement investment (to modernize current technologically obsolete capital goods).
-Investment decisions can be financially constrained, and irms prioritize internal sources of funds in relation to external sources (credit). If total funds are not enough, firms prioritize expantion investment.
+Investment decisions can be financially constrained, and firms prioritize internal sources of funds in relation to external sources (credit). If total funds are not enough, firms prioritize expantion investment.
 Firm's price and quality affect its competitiveness index, which defines the firm's market share. The market share serves to distribute sectoral demand in a quasi-replicator dynamics.
 Total sectoral demand in semi-endogenous: it depends on a exogenous growth rate with a random shock plus the growth rate of sectoral average quality. 
 Success in product R&D (quality increase) also allow firms to increase their desired markup, affecting functional income distribution in a sectoral level.

@@ -255,7 +255,7 @@ Param: initial_process_product_share 0 n + n n	0.5
 Param: initial_productivity 0 n + n n	1
 Param: initial_quality 0 n + n n	1
 Param: initial_wage 0 n + n n	1
-Param: innovation_imitation_adjustment 0 n + n n	0
+Param: innovation_imitation_adjustment 0 n + n n	0.01
 Param: input_price_growth 0 n + n n	0
 Param: input_price_inflation_adjustment 0 n + n n	1
 Param: input_tech_coefficient 0 n + n n	0.4
@@ -269,7 +269,7 @@ Param: markup_passthrough_tax 0 n + n n	0
 Param: markup_period 0 n + n n	4
 Param: number_object_firms 0 n + n n	30
 Param: payback_period 0 n + n n	0.5
-Param: process_product_adjustment 0 n + n n	0
+Param: process_product_adjustment 0 n + n n	0.01
 Param: profits_distribution_rate 0 n + n n	0
 Param: real_demand_growth 0 n + n n	0.0025
 Param: risk_premium_adjustment 0 n + n n	0
@@ -710,7 +710,7 @@ END_DESCRIPTION
 Parameter_process_product_adjustment
 (no description available)
 _INIT_
-All 1 instances equal to 0.
+All 1 instances equal to 0.01.
 END_DESCRIPTION
 
 Parameter_profits_distribution_rate
@@ -734,7 +734,7 @@ END_DESCRIPTION
 Parameter_rnd_revenue_proportion
 (no description available)
 _INIT_
-All 1 instances equal to 0.05.
+All 1 instances equal to 0.01.
 END_DESCRIPTION
 
 Parameter_std_dev_innovation
