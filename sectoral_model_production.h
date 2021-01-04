@@ -34,24 +34,24 @@ EQUATION("Firm_Effective_Production")
 This variable calculates the effective production of each firm, based on already constrained planned production. Here, it alocates production in capital goods vintages, in order of productivity.
 */
 	v[0]=V("Firm_Planned_Production");                                                              //firm's planned production		
-	v[1]=VL("Firm_Productive_Capacity", 1);                 										//calls the firm's productive capacity of the last period
-	v[2]=V("input_tech_coefficient"); 																//techincal input coefficient
-	v[3]=VL("Firm_Stock_Inputs",1);																	//current stock of inputs
-	if(v[2]!=0)
-		v[4]=max(0, min((min(v[1],v[0])),(v[3]/v[2])));          									//planned production can never be more then the maximum productive capacity, never more than input availability, and can never be negative
-	else
-		v[4]=max(0, (min(v[1],v[0])));
+	v[1]=V("input_tech_coefficient"); 																//techincal input coefficient
+	v[2]=VL("Firm_Stock_Inputs",1);																	//current stock of inputs
+	if(v[1]!=0)																						//if input tech coefficient is not zero
+		v[3]=max(0, min(v[0],(v[2]/v[1])));          												//planned production can never be more then the maximum productive capacity given input availability, and can never be negative
+	else																							//if input tech coefficient is zero (no inputs needed for production)
+		v[3]=max(0, v[0]);																			//planned preduction can never be negative
+	
 	SORT("CAPITALS", "Capital_Good_Productivity", "DOWN");                                        	//rule for the use of capital goods, sorts firm's capital goods by productivity in a decreasing order
-	v[5]=0;                                                                                      	//initializes the CYCLE
-	CYCLE(cur, "CAPITALS")                                                                        	//CYCLE trought the capital goods of the firm
+	v[4]=0;                                                                                      	//initializes the CYCLE
+	CYCLE(cur, "CAPITALS")                                                                        	//CYCLE trought the firm's capital goods 
 	{
-		v[6]=VS(cur, "capital_good_productive_capacity");                                          	//capital productivity capacity
-		v[7]=max(0,(min(v[6], v[4])));                                                             	//maximum capacity of each capital goods, constrained by effective planned production, and it can not be negative
-		WRITES(cur, "Capital_Good_Production", v[7]);                                              	//the capacity of each capital goods is in fact its production
-		v[4]=v[4]-v[7];                                                                            	//it subracts the production of the first capital good from the effective planned production before going to the next capital good
-		v[5]=v[5]+v[7];                                                                            	//sums up the production of each capital good to determine firm's effective production
+		v[5]=VS(cur, "capital_good_productive_capacity");                                          	//capital productivity capacity
+		v[6]=max(0,(min(v[5], v[3])));                                                             	//maximum capacity of each capital goods, constrained by effective planned production, and it can not be negative
+		WRITES(cur, "Capital_Good_Production", v[6]);                                              	//writes the current capital good production
+		v[3]=v[3]-v[6];                                                                            	//subracts the production of the current capital good from the effective planned production before going to the next capital good
+		v[4]=v[4]+v[6];                                                                            	//sums up the production of each capital good to determine firm's effective production
 	}
-RESULT(v[5])
+RESULT(v[4])
 
 
 EQUATION("Firm_Input_Demand_Next_Period")

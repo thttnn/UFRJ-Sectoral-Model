@@ -1,3 +1,96 @@
+/*****EXOGENOUS VARIABLES*****/
+
+EQUATION("Sector_Effective_Orders")
+/*
+Sector Variable.
+Semi-Endogenous Real Demand
+Exogenous fixed rate of growth + quality growth + random shock
+*/
+	v[0]=VL("Sector_Effective_Orders",1);																//effective orders in the last period
+	v[1]=V("real_demand_growth");																		//exogenous rate of growth									
+	v[2]=V("demand_shock_standard_deviation");															//sd of demand shocks, set to zero if no demand shocks
+	v[3]=V("demand_shock_average");                     												//average demand shock, baseline=0;
+	v[4]=norm(v[3], v[2]);																				//demand shock at each time step
+	v[5]=V("elasticity_quality");
+	v[6]=VL("Sector_Avg_Quality", 1);																	//average quality in the last period
+	v[7]=VL("Sector_Avg_Quality", 2);																	//average quality in the last period in t-2
+	if(v[7]!=0)
+		v[8]=(v[6]-v[7])/v[7];
+	else
+		v[8]=1;
+	v[9]=v[0]*(1+v[1]+v[5]*v[8]+v[4]);
+RESULT(v[9])
+
+
+EQUATION("Price_Capital_Goods")
+/*
+Price of Capital Goods
+One of the first variables to be computated.
+It is adjusted annually in four possible ways:
+1-By sector's price growth
+2-By an exogenous growth rate
+3-By a combination of both.
+4-Not adjusted, fixed.
+User Instructions: 
+To use only productivity growth, set "capital_price_growth" paramater to zero and "capital_price_inflation_adjustment" above zero (as desired).
+To use only exogenous growth, set "capital_price_growth" paramater above zero (as desired) and "capital_price_inflation_adjustment" to zero.
+To use a combination of both, set both parameters as desired. 
+To use it fixed, set both parameters to zero.
+*/
+	v[0]=VL("Price_Capital_Goods",1);                                                          	 	//price of capital goods in the last period
+	v[1]=V("annual_period"); 																		//annual period parameter (baseline=4)
+	v[2]= fmod((double) t,v[1]);                                                         			//divide the time period by the annual period parameter
+	if(v[2]==0)                                                                      	 			//if the rest of the above division is zero (beggining of the year, adjust capital price)
+		{
+		v[3]=V("capital_price_growth");																//exogenous growth of capital price
+		v[4]=V("capital_price_inflation_adjustment");												//how capital price is adjusted based on sector inflation
+		v[6]=VL("Sector_Avg_Price", 1);                                								//sector average price in the last period
+		v[7]=VL("Sector_Avg_Price", (v[1]+1));                        								//sector average price five periods before
+		if(v[7]!=0)
+			v[8]=(v[6]-v[7])/v[7];                                                      			//annual growth of price index (annual inflation)
+		else
+			v[8]=0;
+		v[5]=v[0]*(1+v[3]+v[8]*v[4]);                                              					//current price will be the last period's multiplied by a rate of growth which is a combination of endogenous and exogenous growth rates
+		}
+	else                                                                             	 			//if the rest of the division is not zero, do not adjust wages
+		v[5]=v[0];                                                                       			//current capital price will be the last period's
+RESULT(v[5])
+
+
+EQUATION("Price_Inputs")
+/*
+Price of Inputs
+One of the first variables to be computated.
+It is adjusted annually in four possible ways:
+1-By sector' price growth
+2-By an exogenous growth rate
+3-By a combination of both above.
+4-Not adjusted, fixed. 
+User Instructions: 
+To use only productivity growth, set "input_price_growth" paramater to zero and "input_price_inflation_adjustment" above zero (as desired).
+To use only exogenous growth, set "input_price_growth" paramater above zero (as desired) and "input_price_inflation_adjustment" to zero.
+To use a combination of both, set both parameters as desired. 
+To use it fixed, set both parameters to zero.
+*/
+	v[0]=VL("Price_Inputs",1);                                                          	 		//input price in the last period
+	v[1]=V("annual_period");																		//annual period parameter (baseline=1)
+	v[2]= fmod((double) t,v[1]);                                                         			//divide the time period by the annual period parameter
+	if(v[2]==0)                                                                      	 			//if the rest of the above division is zero (beggining of the year, adjust wages)
+		{
+		v[3]=V("input_price_growth");																//exogenous growth of input price
+		v[4]=V("input_price_inflation_adjustment");													//how input price is adjusted based on sector inflation
+		v[6]=VL("Sector_Avg_Price", 1);                                								//sector average price in the last period
+		v[7]=VL("Sector_Avg_Price", (v[1]+1));                        								//sector average price five periods before
+		if(v[7]!=0)
+			v[8]=(v[6]-v[7])/v[7];                                                      			//annual growth of price index (annual inflation)
+		else
+			v[8]=0;
+		v[5]=v[0]*(1+v[3]+v[8]*v[4]);                                              					//current price will be the last period's multiplied by a rate of growth which is a combination of endogenous and exogenous growth rates
+		}
+	else                                                                             	 			//if the rest of the division is not zero, do not adjust wages
+		v[5]=v[0];                                                                       			//current input price will be the last period's
+RESULT(v[5])
+
 /*****SECTOR AVERAGES AND MAX*****/
 
 EQUATION("Sector_Avg_Competitiveness")
@@ -39,6 +132,7 @@ RESULT(MAX("Firm_Frontier_Productivity"))
 
 EQUATION("Sector_Max_Quality")
 RESULT(MAX("Firm_Quality"))
+
 EQUATION("Sector_Sales")                                                            
 RESULT(SUM("Firm_Sales"))
 

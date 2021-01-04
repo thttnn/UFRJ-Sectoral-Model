@@ -1,26 +1,5 @@
 //****************************************FIRM DEMAND, SALES AND INVENTORIES*************************************//
 
-EQUATION("Sector_Effective_Orders")
-/*
-Sector Variable.
-Semi-Endogenous Real Demand
-Exogenous fixed rate of growth + quality growth + random shock
-*/
-	v[0]=VL("Sector_Effective_Orders",1);																//effective orders in the last period
-	v[1]=V("real_demand_growth");																		//exogenous rate of growth									
-	v[2]=V("demand_shock_standard_deviation");															//sd of demand shocks, set to zero if no demand shocks
-	v[3]=V("demand_shock_average");                     												//average demand shock, baseline=0;
-	v[4]=norm(v[3], v[2]);																				//demand shock at each time step
-	v[5]=V("elasticity_quality");
-	v[6]=VL("Sector_Avg_Quality", 1);																	//average quality in the last period
-	v[7]=VL("Sector_Avg_Quality", 2);																	//average quality in the last period in t-2
-	if(v[7]!=0)
-		v[8]=(v[6]-v[7])/v[7];
-	else
-		v[8]=1;
-	v[9]=v[0]*(1+v[1]+v[5]*v[8]+v[4]);
-RESULT(v[9])
-
 
 EQUATION("Firm_Effective_Orders")
 /*
