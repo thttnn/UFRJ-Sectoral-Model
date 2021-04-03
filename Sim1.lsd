@@ -213,6 +213,7 @@ Label Root
 		Param: initial_liquidity_preference
 		Param: switch_randomize_initialization
 		Param: switch_exit
+		Param: sector_competitiveness_adjustment
 
 	}
 
@@ -233,15 +234,15 @@ Param: annual_period 0 n + n n	4
 Param: antecipation 0 n + n n	0
 Param: capital_output_ratio 0 n + n n	1
 Param: capital_price_growth 0 n + n n	0
-Param: capital_price_inflation_adjustment 0 n + n n	0.5
+Param: capital_price_inflation_adjustment 0 n + n n	0.9
 Param: demand_shock_average 0 n + n n	0
 Param: demand_shock_standard_deviation 0 n + n n	0.01
 Param: depreciation_period 0 n + n n	40
 Param: desired_degree_capacity_utilization 0 n + n n	0.9
 Param: desired_inventories_proportion 0 n + n n	0.1
-Param: elascitity_delay 0 n + n n	0
+Param: elascitity_delay 0 n + n n	1
 Param: elasticity_price 0 n + n n	1
-Param: elasticity_quality 0 n + n n	0.5
+Param: elasticity_quality 0 n + n n	1
 Param: expectations 0 n + n n	0.5
 Param: firm_debt_rate_adjustment 0 n + n n	0
 Param: firm_liquidity_preference_adjustment 0 n + n n	0
@@ -264,13 +265,13 @@ Param: interest_rate_long_term 0 n + n n	0.05
 Param: interest_rate_short_term 0 n + n n	0
 Param: investment_period 0 n + n n	4
 Param: learning_adjustment 0 n + n n	0
-Param: markup_passthrough_quality 0 n + n n	0
+Param: markup_passthrough_quality 0 n + n n	1
 Param: markup_passthrough_tax 0 n + n n	0
 Param: markup_period 0 n + n n	4
 Param: number_object_firms 0 n + n n	30
 Param: payback_period 0 n + n n	0.5
 Param: process_product_adjustment 0 n + n n	0
-Param: profits_distribution_rate 0 n + n n	0
+Param: profits_distribution_rate 0 n + n n	0.8
 Param: real_demand_growth 0 n + n n	0.0025
 Param: risk_premium_adjustment 0 n + n n	0
 Param: rnd_revenue_proportion 0 n + n n	0.01
@@ -278,8 +279,8 @@ Param: std_dev_innovation 0 n + n n	0.001
 Param: strategic_price_weight 0 n + n n	0.5
 Param: survival_period 0 n + n n	0
 Param: switch_entry 0 n + n n	0
-Param: tech_opportunity_productivity 0 n + n n	0.001
-Param: tech_opportunity_quality 0 n + n n	0.001
+Param: tech_opportunity_productivity 0 n + n n	0.0025
+Param: tech_opportunity_quality 0 n + n n	0.003
 Param: wage_passthrough_employment 0 n + n n	0.5
 Param: wage_passthrough_inflation 0 n + n n	0.5
 Param: wage_passthrough_productivity 0 n + n n	1
@@ -318,15 +319,16 @@ Var: Sector_Productive_Capacity_Exit 0 n + n n
 Var: Sector_Profit_Rate 0 s + n n
 Var: Sector_Profits 0 s + n n
 Var: Sector_Sales 0 n + n n
-Var: Sector_Stock_Deposits 0 n + n n
-Var: Sector_Stock_Loans 0 n + n n
+Var: Sector_Stock_Deposits 0 s + n n
+Var: Sector_Stock_Loans 0 s + n n
 Var: Sector_Sum_Market_Share 0 n + n n
 Var: Sector_Turbulence 0 s + n n
 Var: Sector_Wages 0 s + n n
-Param: initial_desired_debt_rate 0 n + n n	0.5
+Param: initial_desired_debt_rate 0 n + n n	0.6
 Param: initial_liquidity_preference 0 n + n n	0
 Param: switch_randomize_initialization 0 n + n n	1
 Param: switch_exit 0 n + n n	1
+Param: sector_competitiveness_adjustment 0 n + n n	0.1
 
 Object: FIRMS C	1
 Var: Firm_Available_Funds_After_Replacement 0 n + n n
@@ -494,7 +496,7 @@ END_DESCRIPTION
 Parameter_capital_price_inflation_adjustment
 (no description available)
 _INIT_
-All 1 instances equal to 0.5.
+All 1 instances equal to 0.9.
 END_DESCRIPTION
 
 Parameter_demand_shock_average
@@ -530,7 +532,7 @@ END_DESCRIPTION
 Parameter_elascitity_delay
 (no description available)
 _INIT_
-All 1 instances equal to 0.
+All 1 instances equal to 1.
 END_DESCRIPTION
 
 Parameter_elasticity_price
@@ -542,7 +544,7 @@ END_DESCRIPTION
 Parameter_elasticity_quality
 (no description available)
 _INIT_
-All 1 instances equal to 0.5.
+All 1 instances equal to 1.
 END_DESCRIPTION
 
 Parameter_expectations
@@ -716,7 +718,7 @@ END_DESCRIPTION
 Parameter_profits_distribution_rate
 (no description available)
 _INIT_
-All 1 instances equal to 0.
+All 1 instances equal to 0.8.
 END_DESCRIPTION
 
 Parameter_real_demand_growth
@@ -770,7 +772,7 @@ END_DESCRIPTION
 Parameter_tech_opportunity_quality
 (no description available)
 _INIT_
-All 1 instances equal to 0.001.
+All 1 instances equal to 0.0025.
 END_DESCRIPTION
 
 Parameter_wage_passthrough_employment
@@ -1068,6 +1070,12 @@ Parameter_switch_exit
 (no description available)
 _INIT_
 All 1 instances equal to 1.
+END_DESCRIPTION
+
+Parameter_sector_competitiveness_adjustment
+(no description available)
+_INIT_
+All 1 instances equal to 0.1.
 END_DESCRIPTION
 
 Object_FIRMS

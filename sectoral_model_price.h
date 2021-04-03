@@ -27,6 +27,7 @@ Firm Variable
 		v[11]=v[4];												
 RESULT(v[11])
 
+
 EQUATION("Firm_Wage")
 /*
 Nominal Wage of the firm. It increases year by year depending on firm's avg productivity.
@@ -164,9 +165,10 @@ Firm Variable
 */
 	v[0]=VL("Firm_Market_Share", 1);                												//firm's market share in the last period
 	v[1]=V("Sector_Avg_Competitiveness");          													//sector average competitiveness
+	v[2]=V("sector_competitiveness_adjustment");										
 	v[3]=V("Firm_Competitiveness");                 												//firm's competitiveness
 	if(v[1]!=0)                                     												//if the sector average competitiveness is not zero
-		v[4]=v[0]+v[0]*((v[3]/v[1])-1);             												//firm's market share will be the last period's inscresed by the adjustment paramter times the ratio between firm's competitiveness and sector average competitiveness
+		v[4]=v[0]+v[2]*v[0]*((v[3]/v[1])-1);             												//firm's market share will be the last period's inscresed by the adjustment paramter times the ratio between firm's competitiveness and sector average competitiveness
 	else                                            												//if the sector average competitiveness is zero
 		v[4]=0;                                     												//firm's market share will be zero (testar, remover)
 
