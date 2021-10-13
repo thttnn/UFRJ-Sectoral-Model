@@ -137,6 +137,9 @@ Root Variable
 Determines the order in which the variables will be calculated in each time step. It is the logical sequence of the model in each time step.
 */
 
+/*****ENTRY*****/
+V("Sector_Entry_Condition");
+
 /*****PRICE, COSTS, COMPETITIVENESS AND MARKET-SHARE*****/   
 V("Price_Capital_Goods");								//autonomous
 V("Price_Inputs");										//autonomous                        
@@ -238,6 +241,7 @@ V("Firm_Stock_Deposits");
 V("Firm_Debt_Rate");                                       
 
 /*****SECTOR RESULTS*****/
+V("Exit");
 V("Sector_Profit_Rate");                             	
 V("Sector_Normalized_HHI");                            	
 V("Sector_Turbulence");               	

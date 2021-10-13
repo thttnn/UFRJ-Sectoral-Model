@@ -112,6 +112,7 @@ Label Root
 			Var: Firm_Process_RND_Share
 			Var: Firm_Effective_Markup
 			Var: Firm_Profit_Rate
+			Param: firm_innovation_probability
 
 		}
 
@@ -172,7 +173,6 @@ Label Root
 		Var: Exit
 		Var: Exit_Defaulted_Loans
 		Var: Exit_Deposits_Distributed
-		Var: Exit_Productive_Capacity
 		Var: Price_Capital_Goods
 		Var: Price_Inputs
 		Var: Sector_Avg_Competitiveness
@@ -198,9 +198,6 @@ Label Root
 		Var: Sector_Max_Quality
 		Var: Sector_Normalized_HHI
 		Var: Sector_Productive_Capacity
-		Var: Sector_Productive_Capacity_Available
-		Var: Sector_Productive_Capacity_Entry
-		Var: Sector_Productive_Capacity_Exit
 		Var: Sector_Profit_Rate
 		Var: Sector_Profits
 		Var: Sector_Sales
@@ -214,6 +211,7 @@ Label Root
 		Param: switch_randomize_initialization
 		Param: switch_exit
 		Param: sector_competitiveness_adjustment
+		Param: innovation_probability_adjustment
 
 	}
 
@@ -278,16 +276,15 @@ Param: rnd_revenue_proportion 0 n + n n	0.01
 Param: std_dev_innovation 0 n + n n	0.001
 Param: strategic_price_weight 0 n + n n	0.5
 Param: survival_period 0 n + n n	0
-Param: switch_entry 0 n + n n	1
+Param: switch_entry 0 n + n n	0
 Param: tech_opportunity_productivity 0 n + n n	0.0025
-Param: tech_opportunity_quality 0 n + n n	0.003
+Param: tech_opportunity_quality 0 n + n n	0.002
 Param: wage_passthrough_employment 0 n + n n	0.5
 Param: wage_passthrough_inflation 0 n + n n	0.5
 Param: wage_passthrough_productivity 0 n + n n	1
 Var: Exit 0 n + n n
 Var: Exit_Defaulted_Loans 0 n + n n
 Var: Exit_Deposits_Distributed 0 n + n n
-Var: Exit_Productive_Capacity 0 n + n n
 Var: Price_Capital_Goods 1 s + n n	0
 Var: Price_Inputs 1 s + n n	0
 Var: Sector_Avg_Competitiveness 1 n + n n	0
@@ -313,9 +310,6 @@ Var: Sector_Max_Productivity 1 n + n n	0
 Var: Sector_Max_Quality 1 n + n n	0
 Var: Sector_Normalized_HHI 0 s + n n
 Var: Sector_Productive_Capacity 1 s + n n	0
-Var: Sector_Productive_Capacity_Available 1 n + n n	0
-Var: Sector_Productive_Capacity_Entry 0 n + n n
-Var: Sector_Productive_Capacity_Exit 0 n + n n
 Var: Sector_Profit_Rate 0 s + n n
 Var: Sector_Profits 0 s + n n
 Var: Sector_Sales 0 n + n n
@@ -329,6 +323,7 @@ Param: initial_liquidity_preference 0 n + n n	0
 Param: switch_randomize_initialization 0 n + n n	1
 Param: switch_exit 0 n + n n	1
 Param: sector_competitiveness_adjustment 0 n + n n	0.1
+Param: innovation_probability_adjustment 0 n + n n	1
 
 Object: FIRMS C	1
 Var: Firm_Available_Funds_After_Replacement 0 n + n n
@@ -409,6 +404,7 @@ Var: Firm_Innovation_RND_Share 1 s + n n	0
 Var: Firm_Process_RND_Share 1 s + n n	0
 Var: Firm_Effective_Markup 0 s + n n
 Var: Firm_Profit_Rate 0 n + n n
+Param: firm_innovation_probability 0 s + n n	0
 
 Object: CAPITALS C	1
 Var: Capital_Good_Acumulated_Production 1 n + n n	0
@@ -598,7 +594,7 @@ END_DESCRIPTION
 Parameter_initial_process_product_share
 
 _INIT_
-All 1 instances equal to 0.5.
+All 1 instances equal to 0.5
 END_DESCRIPTION
 
 Parameter_initial_productivity
@@ -754,7 +750,7 @@ END_DESCRIPTION
 Parameter_switch_entry
 
 _INIT_
-All 1 instances equal to 1
+All 1 instances equal to 0
 END_DESCRIPTION
 
 Parameter_tech_opportunity_productivity
@@ -766,7 +762,7 @@ END_DESCRIPTION
 Parameter_tech_opportunity_quality
 
 _INIT_
-All 1 instances equal to 0.0025.
+All 1 instances equal to 0.002
 END_DESCRIPTION
 
 Parameter_wage_passthrough_employment
@@ -796,10 +792,6 @@ Variable_Exit_Defaulted_Loans
 END_DESCRIPTION
 
 Variable_Exit_Deposits_Distributed
-
-END_DESCRIPTION
-
-Variable_Exit_Productive_Capacity
 
 END_DESCRIPTION
 
@@ -927,24 +919,6 @@ _INIT_
 All 1 instances equal to 0.
 END_DESCRIPTION
 
-Variable_Sector_Productive_Capacity_Available
-This variable acumulates the productive capacity that exited the sector minus the productive capacity used by new possible firms
-This variable acumulates the productive capacity that exited the sector minus the productive capacity used by new possible firms
-_INIT_
-All 1 instances equal to 0.
-END_DESCRIPTION
-
-Variable_Sector_Productive_Capacity_Entry
-Sector Variable
-In this variable a new firm enters if there is market space available and the entry condiion is met
-Sector Variable
-In this variable a new firm enters if there is market space available and the entry condiion is met
-END_DESCRIPTION
-
-Variable_Sector_Productive_Capacity_Exit
-
-END_DESCRIPTION
-
 Variable_Sector_Profit_Rate
 Sector Variable for Analysis
 Sector Variable for Analysis
@@ -1008,6 +982,12 @@ Parameter_sector_competitiveness_adjustment
 
 _INIT_
 All 1 instances equal to 0.1.
+END_DESCRIPTION
+
+Parameter_innovation_probability_adjustment
+
+_INIT_
+All 1 instances equal to 1
 END_DESCRIPTION
 
 Object_FIRMS
@@ -1414,6 +1394,12 @@ Net profits over total capital (last period)
 Analysis Variable
 Net profits over total capital (last period)
 Analysis Variable
+END_DESCRIPTION
+
+Parameter_firm_innovation_probability
+
+_INIT_
+All 1 instances equal to 0
 END_DESCRIPTION
 
 Object_CAPITALS
