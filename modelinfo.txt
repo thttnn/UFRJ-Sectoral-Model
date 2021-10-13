@@ -9,3 +9,8 @@ UFRJ Sectoral Model
 #
 595x438+483+413
 919x540+292+150
+Test_Entry.lsd
+SECTORS
+1
+35
+0.34375

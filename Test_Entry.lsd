@@ -320,7 +320,7 @@ Var: Sector_Turbulence 0 s + n n
 Var: Sector_Wages 0 s + n n
 Param: initial_desired_debt_rate 0 n + n n	0.6
 Param: initial_liquidity_preference 0 n + n n	0
-Param: switch_randomize_initialization 0 n + n n	1
+Param: switch_randomize_initialization 0 n + n n	0
 Param: switch_exit 0 n + n n	1
 Param: sector_competitiveness_adjustment 0 n + n n	0.1
 Param: innovation_probability_adjustment 0 n + n n	1
@@ -672,7 +672,7 @@ END_DESCRIPTION
 Parameter_markup_passthrough_quality
 
 _INIT_
-All 1 instances equal to 1.
+All 1 instances equal to 1
 END_DESCRIPTION
 
 Parameter_markup_passthrough_tax
@@ -969,7 +969,7 @@ END_DESCRIPTION
 Parameter_switch_randomize_initialization
 
 _INIT_
-All 1 instances equal to 1.
+All 1 instances equal to 0
 END_DESCRIPTION
 
 Parameter_switch_exit
