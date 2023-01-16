@@ -1,1 +1,1 @@
-make.exe -j 8 -f makefileNW 2> makemessage.txt
+make.exe -j 8 -f makefile 2> makemessage.txt
