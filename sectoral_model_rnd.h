@@ -9,6 +9,8 @@ The new productivity is the maximum among the previous one and the ones possibly
 	v[1]=V("Firm_Imitation_Productivity");          //productivity achievied with imitation in that period
 	v[2]=V("Firm_Innovation_Productivity");         //productivity achievied with innovation in that period
 	v[3]=max(v[0],max(v[1],v[2]));             		//current frontier productivity is the maximum between the three
+
+
 RESULT(v[3])
 
 
@@ -75,8 +77,10 @@ Product Imitation. The sucess depends on the amount of recources alocated to imi
 	
 	if(RND<v[4])                              	//draws a random number. if it is lower then imitation probability
      	v[5]=VL("Sector_Max_Quality", 1);  		//imitation has succeded and the firm can copy the maximum quality of the sector in the last period
-  	else                                      	//if the random number is not lower than imitation probability
+    else                                      	//if the random number is not lower than imitation probability
      	v[5]=0;                                 //imitation failed and return a quality zero
+     
+                             
 RESULT(v[5])
 
 

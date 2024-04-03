@@ -302,7 +302,7 @@ Var: Sector_Capacity_Utilization 0 s + n n
 Var: Sector_Demand_Met 0 s + n n
 Var: Sector_Effective_Orders 4 s + n n	0	0	0	0
 Var: Sector_Effective_Production 0 s + n n
-Var: Sector_Employment 4 s + n n	0	0	0	0
+Var: Sector_Employment 5 s + n n	0	0	0	0	0
 Var: Sector_Entry_Condition 0 n + n n
 Var: Sector_Income 0 s + n n
 Var: Sector_Income_Growth 0 s + n p
@@ -438,7 +438,7 @@ MODELREPORT report_Sim1.html
 DESCRIPTION
 
 Object_Root
-(no description available)
+
 END_DESCRIPTION
 
 Variable_Initialization
@@ -452,379 +452,365 @@ It also writes the dependent parameters and lagged values. User do not need to d
 Finally, it also creates objects based on control parameters. 1 object of each kind must be defined by the user first.
 It is set in a specific simple configuration: 3 sectors and 3 income classes. Next step is to generalize this variable for N sectors.
 Additionally, there is a strong hypothesis here: all sector are equals, except for how their demand is calculated.
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Time_Step
 Root Variable
 Determines the order in which the variables will be calculated in each time step. It is the logical sequence of the model in each time step.
-_INIT_
-
 END_DESCRIPTION
 
 Object_SECTORS
-(no description available)
-_INIT_
 
 END_DESCRIPTION
 
 Parameter_annual_period
-(no description available)
+
 _INIT_
 All 1 instances equal to 4.
 END_DESCRIPTION
 
 Parameter_antecipation
-(no description available)
+
 _INIT_
 All 1 instances equal to 0.5.
 END_DESCRIPTION
 
 Parameter_capital_output_ratio
-(no description available)
+
 _INIT_
 All 1 instances equal to 2.
 END_DESCRIPTION
 
 Parameter_capital_price_growth
-(no description available)
+
 _INIT_
 All 1 instances equal to 0.
 END_DESCRIPTION
 
 Parameter_capital_price_inflation_adjustment
-(no description available)
+
 _INIT_
 All 1 instances equal to 0.9.
 END_DESCRIPTION
 
 Parameter_demand_shock_average
-(no description available)
+
 _INIT_
 All 1 instances equal to 0.
 END_DESCRIPTION
 
 Parameter_demand_shock_standard_deviation
-(no description available)
+
 _INIT_
 All 1 instances equal to 0.01.
 END_DESCRIPTION
 
 Parameter_depreciation_period
-(no description available)
+
 _INIT_
 All 1 instances equal to 60.
 END_DESCRIPTION
 
 Parameter_desired_degree_capacity_utilization
-(no description available)
+
 _INIT_
 All 1 instances equal to 0.9.
 END_DESCRIPTION
 
 Parameter_desired_inventories_proportion
-(no description available)
+
 _INIT_
 All 1 instances equal to 0.1.
 END_DESCRIPTION
 
 Parameter_elascitity_delay
-(no description available)
+
 _INIT_
 All 1 instances equal to 1.
 END_DESCRIPTION
 
 Parameter_elasticity_price
-(no description available)
+
 _INIT_
 All 1 instances equal to 1.
 END_DESCRIPTION
 
 Parameter_elasticity_quality
-(no description available)
+
 _INIT_
 All 1 instances equal to 1.
 END_DESCRIPTION
 
 Parameter_expectations
-(no description available)
+
 _INIT_
 All 1 instances equal to 0.5.
 END_DESCRIPTION
 
 Parameter_firm_debt_rate_adjustment
-(no description available)
+
 _INIT_
 All 1 instances equal to 0.
 END_DESCRIPTION
 
 Parameter_firm_liquidity_preference_adjustment
-(no description available)
+
 _INIT_
 All 1 instances equal to 0.
 END_DESCRIPTION
 
 Parameter_indirect_tax_rate
-(no description available)
+
 _INIT_
 All 1 instances equal to 0.
 END_DESCRIPTION
 
 Parameter_initial_capital_price_scale
-(no description available)
+
 _INIT_
 All 1 instances equal to 10.
 END_DESCRIPTION
 
 Parameter_initial_demand_proportion
-(no description available)
+
 _INIT_
 All 1 instances equal to 2.
 END_DESCRIPTION
 
 Parameter_initial_innovation_imitation_share
-(no description available)
+
 _INIT_
 All 1 instances equal to 0.5.
 END_DESCRIPTION
 
 Parameter_initial_input_price
-(no description available)
+
 _INIT_
 All 1 instances equal to 1.
 END_DESCRIPTION
 
 Parameter_initial_markup
-(no description available)
+
 _INIT_
 All 1 instances equal to 1.5.
 END_DESCRIPTION
 
 Parameter_initial_process_product_share
-(no description available)
+
 _INIT_
 All 1 instances equal to 0.5.
 END_DESCRIPTION
 
 Parameter_initial_productivity
-(no description available)
+
 _INIT_
 All 1 instances equal to 1.
 END_DESCRIPTION
 
 Parameter_initial_quality
-(no description available)
+
 _INIT_
 All 1 instances equal to 1.
 END_DESCRIPTION
 
 Parameter_initial_wage
-(no description available)
+
 _INIT_
 All 1 instances equal to 1.
 END_DESCRIPTION
 
 Parameter_innovation_imitation_adjustment
-(no description available)
+
 _INIT_
 All 1 instances equal to 0.01.
 END_DESCRIPTION
 
 Parameter_input_price_growth
-(no description available)
+
 _INIT_
 All 1 instances equal to 0.
 END_DESCRIPTION
 
 Parameter_input_price_inflation_adjustment
-(no description available)
+
 _INIT_
 All 1 instances equal to 1.
 END_DESCRIPTION
 
 Parameter_input_tech_coefficient
-(no description available)
+
 _INIT_
 All 1 instances equal to 0.4.
 END_DESCRIPTION
 
 Parameter_interest_rate_deposits
-(no description available)
+
 _INIT_
 All 1 instances equal to 0.005.
 END_DESCRIPTION
 
 Parameter_interest_rate_long_term
-(no description available)
+
 _INIT_
 All 1 instances equal to 0.05.
 END_DESCRIPTION
 
 Parameter_interest_rate_short_term
-(no description available)
+
 _INIT_
 All 1 instances equal to 0.01.
 END_DESCRIPTION
 
 Parameter_investment_period
-(no description available)
+
 _INIT_
 All 1 instances equal to 6.
 END_DESCRIPTION
 
 Parameter_learning_adjustment
-(no description available)
+
 _INIT_
 All 1 instances equal to 0.2.
 END_DESCRIPTION
 
 Parameter_markup_passthrough_quality
-(no description available)
+
 _INIT_
 All 1 instances equal to 1.
 END_DESCRIPTION
 
 Parameter_markup_passthrough_tax
-(no description available)
+
 _INIT_
 All 1 instances equal to 1.
 END_DESCRIPTION
 
 Parameter_markup_period
-(no description available)
+
 _INIT_
 All 1 instances equal to 4.
 END_DESCRIPTION
 
 Parameter_number_object_firms
-(no description available)
+
 _INIT_
 All 1 instances equal to 30.
 END_DESCRIPTION
 
 Parameter_payback_period
-(no description available)
+
 _INIT_
 All 1 instances equal to 0.5.
 END_DESCRIPTION
 
 Parameter_process_product_adjustment
-(no description available)
+
 _INIT_
 All 1 instances equal to 0.
 END_DESCRIPTION
 
 Parameter_profits_distribution_rate
-(no description available)
+
 _INIT_
 All 1 instances equal to 0.8.
 END_DESCRIPTION
 
 Parameter_real_demand_growth
-(no description available)
+
 _INIT_
 All 1 instances equal to 0.0025.
 END_DESCRIPTION
 
 Parameter_risk_premium_adjustment
-(no description available)
+
 _INIT_
 All 1 instances equal to 1.
 END_DESCRIPTION
 
 Parameter_rnd_revenue_proportion
-(no description available)
+
 _INIT_
 All 1 instances equal to 0.05.
 END_DESCRIPTION
 
 Parameter_std_dev_innovation
-(no description available)
+
 _INIT_
 All 1 instances equal to 0.001.
 END_DESCRIPTION
 
 Parameter_strategic_price_weight
-(no description available)
+
 _INIT_
 All 1 instances equal to 0.5.
 END_DESCRIPTION
 
 Parameter_survival_period
-(no description available)
+
 _INIT_
 All 1 instances equal to 0.
 END_DESCRIPTION
 
 Parameter_switch_entry
-(no description available)
+
 _INIT_
 All 1 instances equal to 0.
 END_DESCRIPTION
 
 Parameter_tech_opportunity_productivity
-(no description available)
+
 _INIT_
 All 1 instances equal to 0.001.
 END_DESCRIPTION
 
 Parameter_tech_opportunity_quality
-(no description available)
+
 _INIT_
 All 1 instances equal to 0.0025.
 END_DESCRIPTION
 
 Parameter_wage_passthrough_employment
-(no description available)
+
 _INIT_
 All 1 instances equal to 0.5.
 END_DESCRIPTION
 
 Parameter_wage_passthrough_inflation
-(no description available)
+
 _INIT_
 All 1 instances equal to 0.5.
 END_DESCRIPTION
 
 Parameter_wage_passthrough_productivity
-(no description available)
+
 _INIT_
 All 1 instances equal to 1.
 END_DESCRIPTION
 
 Variable_Exit
 This variable counts productive capacity that exited the sector in each time step. Firm objects are deleted inside that variable due to two possibilities: small market share or high debt rate. In the second case, if entry conitions are met, the firm can be bought by a new one.
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Exit_Defaulted_Loans
-(no description available)
-_INIT_
 
 END_DESCRIPTION
 
 Variable_Exit_Deposits_Distributed
-(no description available)
-_INIT_
 
 END_DESCRIPTION
 
 Variable_Exit_Productive_Capacity
-(no description available)
-_INIT_
 
 END_DESCRIPTION
 
 Variable_Price_Capital_Goods
-(no description available)
+
 _INIT_
 All 1 instances equal to 1.
 END_DESCRIPTION
 
 Variable_Price_Inputs
-(no description available)
+
 _INIT_
 All 1 instances equal to 1.
 END_DESCRIPTION
@@ -837,20 +823,14 @@ END_DESCRIPTION
 
 Variable_Sector_Avg_Debt_Rate
 Sector average debt rate will be the average of firms productivity weighted by their market shares
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Sector_Avg_Desired_Debt_Rate
 Sector average debt rate will be the average of firms productivity weighted by their market shares
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Sector_Avg_Markup
 Average markup of the sector, weighted by firm's effective market share
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Sector_Avg_Price
@@ -861,34 +841,24 @@ END_DESCRIPTION
 
 Variable_Sector_Avg_Productivity
 Sector average productivity will be the average of firms productivity weighted by their market shares
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Sector_Avg_Quality
-(no description available)
-_INIT_
 
 END_DESCRIPTION
 
 Variable_Sector_Avg_Wage
 Sector average nominal wage, weighted by firm's market share
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Sector_Capacity_Utilization
 Sector Capacity Utilization
 Sector Capacity Utilization
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Sector_Demand_Met
 Percentage of demand fulfilled by each sector
 Percentage of demand fulfilled by each sector
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Sector_Effective_Orders
@@ -899,56 +869,40 @@ All 1 instances equal to 0.
 END_DESCRIPTION
 
 Variable_Sector_Effective_Production
-Sum of the Effective Production 
-_INIT_
-
+Sum of the Effective Production
 END_DESCRIPTION
 
 Variable_Sector_Employment
 Sum up firm's employment, given by firm's effective production over firm's avg productivity
 Sum up firm's employment, given by firm's effective production over firm's avg productivity
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Sector_Entry_Condition
 Can only be 0 or 1, if all enter conditions are met.
 Can only be 0 or 1, if all enter conditions are met.
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Sector_Income
 Sum of wages and profits
 Sum of wages and profits
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Sector_Income_Growth
 Annual growth of generated nominal income by the sector
 Annual growth of generated nominal income by the sector
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Sector_Indirect_Tax
 Sum of the indirect taxes paid by firms in the sector
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Sector_Inflation
 Annual growth of the sector average price
 Annual growth of the sector average price
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Sector_Inventories
-Sum of the Inventories 
-_INIT_
-
+Sum of the Inventories
 END_DESCRIPTION
 
 Variable_Sector_Max_Productivity
@@ -965,12 +919,10 @@ END_DESCRIPTION
 
 Variable_Sector_Normalized_HHI
 Sector Variable for Analysis
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Sector_Productive_Capacity
-Sum of the Productive Capacity 
+Sum of the Productive Capacity
 _INIT_
 All 1 instances equal to 0.
 END_DESCRIPTION
@@ -987,121 +939,93 @@ Sector Variable
 In this variable a new firm enters if there is market space available and the entry condiion is met
 Sector Variable
 In this variable a new firm enters if there is market space available and the entry condiion is met
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Sector_Productive_Capacity_Exit
-(no description available)
-_INIT_
 
 END_DESCRIPTION
 
 Variable_Sector_Profit_Rate
 Sector Variable for Analysis
 Sector Variable for Analysis
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Sector_Profits
 Sum of the net profits of firms in the sector
 Sum of the net profits of firms in the sector
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Sector_Sales
 Sum up the sales of all firms in the sector
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Sector_Stock_Deposits
 Sum of the stock of deposits of each firm in the sector
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Sector_Stock_Loans
 Sum of the stock of laons of each firm in the sector
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Sector_Sum_Market_Share
 Sum of the Market shares: this variable works to verify the Fischer Equation
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Sector_Turbulence
 Sector Variable for Analysis
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Sector_Wages
 Sum of wages of firms in the sector
 Sum of wages of firms in the sector
-_INIT_
-
 END_DESCRIPTION
 
 Parameter_initial_desired_debt_rate
-(no description available)
+
 _INIT_
 All 1 instances equal to 0.5.
 END_DESCRIPTION
 
 Parameter_initial_liquidity_preference
-(no description available)
+
 _INIT_
 All 1 instances equal to 0.05.
 END_DESCRIPTION
 
 Parameter_switch_randomize_initialization
-(no description available)
+
 _INIT_
 All 1 instances equal to 1.
 END_DESCRIPTION
 
 Parameter_switch_exit
-(no description available)
+
 _INIT_
 All 1 instances equal to 1.
 END_DESCRIPTION
 
 Parameter_sector_competitiveness_adjustment
-(no description available)
+
 _INIT_
 All 1 instances equal to 0.1.
 END_DESCRIPTION
 
 Object_FIRMS
-(no description available)
-_INIT_
 
 END_DESCRIPTION
 
 Variable_Firm_Available_Funds_After_Replacement
 Available funds after replacement investment will be the available funds for replacement minus the amount of effective replacmenet investment.
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Firm_Available_Funds_Replacement
 Available funds for replacement investment will be the available funds minus the amount of effective expansion investment.
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Firm_Available_Loans
 Firm available debt depends on the difference between desired stock of debt and current stock of debt. 
 If current stock of debt is greater than desired, the firm must repay some debt reducing the amount of external funds for investment. 
 If the current amount is smaller than desired, that difference is available to the firm as external finance, but that does not mean that the class will increase effective debt by this amount.
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Firm_Avg_Debt_Rate
@@ -1117,15 +1041,13 @@ All 10 instances equal to 0.1.
 END_DESCRIPTION
 
 Variable_Firm_Avg_Productivity
-Firm's productivity will be an average of each capital good productivity weighted by their repective production	
+Firm's productivity will be an average of each capital good productivity weighted by their repective production
 _INIT_
 All 1 instances equal to 1.
 END_DESCRIPTION
 
 Variable_Firm_Capacity_Utilization
 Firm effective production over firm productive capacity
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Firm_Capital
@@ -1141,11 +1063,8 @@ All 1 instances equal to 1.
 END_DESCRIPTION
 
 Variable_Firm_Debt_Payment
- 
 Sum up total debt payment on all firm's loans. Amortizations are fixed for each loan. 
 This variable also adjusts the total amount of each loan and delete loan objects if all debt is paid.
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Firm_Debt_Rate
@@ -1168,12 +1087,10 @@ END_DESCRIPTION
 
 Variable_Firm_Demand_Loans
 Firm demand for loans is the amount that internal funds can not pay
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Firm_Demand_Productive_Capacity_Expansion
-Effective productive capacity demanded, in real values 
+Effective productive capacity demanded, in real values
 _INIT_
 All 1 instances equal to 0.
 END_DESCRIPTION
@@ -1186,8 +1103,6 @@ END_DESCRIPTION
 
 Variable_Firm_Deposits_Return
 Firm interest receivment on deposits
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Firm_Desired_Debt_Rate
@@ -1199,15 +1114,11 @@ All 1 instances equal to 0.5.
 END_DESCRIPTION
 
 Variable_Firm_Desired_Expansion_Investment_Expenses
-Nominal value of desired new capital goods. 
-_INIT_
-
+Nominal value of desired new capital goods.
 END_DESCRIPTION
 
 Variable_Firm_Desired_Investment_Expenses
 Nominal value of total desired investment expenses, including replacement and expansion.
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Firm_Desired_Market_Share
@@ -1224,33 +1135,23 @@ END_DESCRIPTION
 
 Variable_Firm_Desired_Replacement_Investment_Expenses
 Nominal value of derired new capital goods for modernization replacement
-_INIT_
-All 1 instances equal to 0.
 END_DESCRIPTION
 
 Variable_Firm_Distributed_Profits
 Amount of profits distributed to the income classes
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Firm_Effective_Expansion_Investment_Expenses
 Nominal value of new capital goods, restricted to the amount of funds available.
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Firm_Effective_Investment_Expenses
 Nominal value of total effective investment expenses, including replacement and expansion.
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Firm_Effective_Loans
 Firm effective loans is the amount demanded.
 This variable also creates the object LOAN.
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Firm_Effective_Market_Share
@@ -1268,107 +1169,76 @@ END_DESCRIPTION
 
 Variable_Firm_Effective_Production
 This variable calculates the effective production of each firm, based on already constrained planned production. Here, it alocates production in capital goods vintages, in order of productivity.
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Firm_Expected_Sales
 Firm's expected sales are calculated from an average of effective sales from the two previous periods, applying a expected growth rate. This expected growth rate is obtained from comparing the average of the two previous periods with the average of the two before that, adjusted by an expectation parameter.
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Firm_Expected_Sales_Long_Term
 The sectors update their productive capacity from year to year, time it takes for new capacity to be produced and to be available for use. The variation in the desired productive capacity is then defined according to the expected orders for the following year. Expected orders are calculated from the average of actual orders for the last six periods and the growth projection for six periods thereafter. This projection is determined on the basis of the difference between the averages of orders for the last six periods and the six periods prior to them, on which a doubling annual extrapolation factor applies.
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Firm_Financial_Obligations
 Firm Financial Obligations in the current period is the sum of interest payment and debt payment
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Firm_Frontier_Productivity
-The new productivity is the maximum among the previous one and the ones possibly obtained imitation and innovation.  
+The new productivity is the maximum among the previous one and the ones possibly obtained imitation and innovation.
 _INIT_
 All 10 instances equal to 1.
 END_DESCRIPTION
 
 Variable_Firm_Imitation_Productivity
 Imitation process. The sucess depends on the amount of recources alocated to imitation. Firms search for best productivity and best quality of the sector, trying to copy if succeded.
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Firm_Imitation_Quality
 Imitation process. The sucess depends on the amount of recources alocated to imitation. Firms search for best quality of the sector, trying to copy if succeded.
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Firm_Indirect_Tax
 Indirect Tax of the firm is the revenue multiplied by the tax parameter
 Indirect Tax of the firm is the revenue multiplied by the tax parameter
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Firm_Innovation_Productivity
 Innovation process. The sucess depends on the amount ou recources alocated to innovation. Firms search for new productivity and porduct quality and the result depends on a random distribution with exonegous parameters.
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Firm_Innovation_Quality
 Innovation process. The sucess depends on the amount ou recources alocated to innovation. Firms search for new quality and the result depends on a random distribution with exonegous parameters.
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Firm_Input_Demand_Next_Period
 The demand for inputs of each sector of intermediate goods, which should be produced during current period and to be used in the next period, is calculated based on the necessity of programed production, in which a expected growth rate is applied and the remaing stock is discounted. 
 The expected growth rate is defined by the average of effective orders of the last two periods, extrapolated by a expectation parameter.
 The intermediate goods sectors demand exactly the amount they will need to produce in the next period, without discouting the initial stock, which is now know, since the intermediate goods production in the current period will be defined by the demand for inputs of all sectors and not the programed production of the intermediate sector.
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Firm_Interest_Payment
- 
 Sum up total interest payment on all firm's loans. Interest rates are fixed for each loan. 
 switch_interest_payment
 0-->pre-fixed interest
 1-->pos-fixed interest
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Firm_Interest_Rate_Long_Term
 Interest rate paid by the firm depends on a individual spread over basic interest rate. The firm's spread is based on the average debt rate of the firm.
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Firm_Interest_Rate_Short_Term
 Interest rate paid by the firm depends on a individual spread over basic interest rate. The firm's spread is based on the average debt rate of the firm.
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Firm_Internal_Funds
 Firm internal funds.
 Current stock of deposits minus retained liquidity. 
 Can be negative, if retained profits is negative (in that case, no retained liquidity). In that case, firm will incur in new debt to finance losses and pay for advanced production costs.
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Firm_Investment_Period
 This variable writes for each firm, if it is investment period or not, assuming 1 or 0.
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Firm_Liquidity_Preference
@@ -1388,8 +1258,6 @@ END_DESCRIPTION
 
 Variable_Firm_Max_Productivity
 Maximum productivity among firm's capital goods
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Firm_Net_Profits
@@ -1400,14 +1268,10 @@ END_DESCRIPTION
 
 Variable_Firm_Net_Revenue
 Firm's net revenue, discounting taxes and R&D expenses.
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Firm_Planned_Production
-It's calculated from expected sales for the period, considering the proportion of sales that is desired to be kept as inventories and discounting the acumulated stock of inventories in the last period. 
-_INIT_
-
+It's calculated from expected sales for the period, considering the proportion of sales that is desired to be kept as inventories and discounting the acumulated stock of inventories in the last period.
 END_DESCRIPTION
 
 Variable_Firm_Price
@@ -1425,53 +1289,39 @@ END_DESCRIPTION
 
 Variable_Firm_Productive_Capacity_Depreciation
 Sum up the firm's productive capacity that was depreciated in each time step, not only investment period, and delete depreciated capital goods.
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Firm_Quality
-The new quality is the maximum among the previous one and the ones possibly obtained imitation and innovation. 
+The new quality is the maximum among the previous one and the ones possibly obtained imitation and innovation.
 _INIT_
 All 1 instances equal to 1.
 END_DESCRIPTION
 
 Variable_Firm_Effective_Replacement_Investment_Expenses
-Nominal value of desired new capital goods for modernization. 
-_INIT_
-
+Nominal value of desired new capital goods for modernization.
 END_DESCRIPTION
 
 Variable_Firm_Retained_Deposits
 Firm retained profits at current period. To be summed in the stock of deposits at the end of period
 Based on the liquidity preference. If liquidity preference is zero, retained deposits is zero.
 Can not be negative, meaning that firm will not incur in new debt to finance retained liquidity.
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Firm_Retained_Profits
 Profit retained by the sector after being distributed to class and paid interest on the debt and separate the expense for depreciation.
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Firm_Revenue
 Revenue depends on sales and price
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Firm_RND_Expenses
 Firm's R&D expenses, subtracted from the revenue after taxes.
 It will be distributed to income class as wages.
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Firm_Sales
 The observed sales are defined by the minimum between the effective orders and the effective production plus inventories of each sector.In the case of intermediate sectors, the sale of inputs from their inventories to meet the extraordinary demand at the beginning of the period should be added to the total sold.In the case of the agricultural sector, the observed sales are equal to the current production.
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Firm_Stock_Deposits
@@ -1500,26 +1350,18 @@ END_DESCRIPTION
 
 Variable_Firm_Stock_Loans_Long_Term
 Firm Stock of Long Term Loans
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Firm_Stock_Loans_Short_Term
 Firm Stock of Short Term Loans
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Firm_Total_Funds
 Total available funds for the firm in the current period is the internal funds plus effective new loans
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Firm_Variable_Cost
 Variable unit cost is the wage cost (nominal wages over productivity) plus intermediate costs
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Firm_Wage
@@ -1530,26 +1372,22 @@ All 1 instances equal to 0.
 END_DESCRIPTION
 
 Parameter_id_firm_number
-(no description available)
+
 _INIT_
 All 1 instances equal to 1.
 END_DESCRIPTION
 
 Parameter_firm_date_birth
-(no description available)
+
 _INIT_
 All 1 instances equal to 0.
 END_DESCRIPTION
 
 Variable_Firm_Demand_Capital_Goods_Expansion
-Effective productive capacity demanded, in real values 
-_INIT_
-
+Effective productive capacity demanded, in real values
 END_DESCRIPTION
 
 Variable_Firm_Demand_Capital_Goods_Replacement
-
-_INIT_
 
 END_DESCRIPTION
 
@@ -1568,9 +1406,7 @@ All 1 instances equal to 0.
 END_DESCRIPTION
 
 Variable_Firm_Effective_Markup
-(no description available)
-_INIT_
-All 1 instances equal to 0.
+
 END_DESCRIPTION
 
 Variable_Firm_Profit_Rate
@@ -1578,13 +1414,9 @@ Net profits over total capital (last period)
 Analysis Variable
 Net profits over total capital (last period)
 Analysis Variable
-_INIT_
-
 END_DESCRIPTION
 
 Object_CAPITALS
-(no description available)
-_INIT_
 
 END_DESCRIPTION
 
@@ -1596,90 +1428,84 @@ END_DESCRIPTION
 
 Variable_Capital_Good_Production
 Depends on the rule form using capital goods and the firm's effective production
-_INIT_
-
 END_DESCRIPTION
 
 Variable_Capital_Good_Productivity
 Capital good's productivity increase with accumulated production due to a learning process.
-_INIT_
-
 END_DESCRIPTION
 
 Parameter_capital_good_date_birth
-(no description available)
+
 _INIT_
 All 1 instances equal to 0.
 END_DESCRIPTION
 
 Parameter_capital_good_depreciation_period
-(no description available)
+
 _INIT_
 All 1 instances equal to 60.
 END_DESCRIPTION
 
 Parameter_capital_good_productive_capacity
-(no description available)
+
 _INIT_
 All 1 instances equal to 0.
 END_DESCRIPTION
 
 Parameter_capital_good_productivity_initial
-(no description available)
+
 _INIT_
 All 1 instances equal to 1.
 END_DESCRIPTION
 
 Parameter_capital_good_to_replace
-(no description available)
+
 _INIT_
 All 1 instances equal to 0.
 END_DESCRIPTION
 
 Parameter_id_capital_good_number
-(no description available)
+
 _INIT_
 All 1 instances equal to 0.
 END_DESCRIPTION
 
 Object_LOANS
-(no description available)
-_INIT_
 
 END_DESCRIPTION
 
 Parameter_firm_loan_fixed_amortization
-(no description available)
+
 _INIT_
 All 1 instances equal to 0.
 END_DESCRIPTION
 
 Parameter_firm_loan_fixed_object
-(no description available)
+
 _INIT_
 All 10 instances equal to 1.
 END_DESCRIPTION
 
 Parameter_firm_loan_interest_rate
-(no description available)
+
 _INIT_
 All 1 instances equal to 0.
 END_DESCRIPTION
 
 Parameter_firm_loan_total_amount
-(no description available)
+
 _INIT_
 All 1 instances equal to 0.
 END_DESCRIPTION
 
 Parameter_id_firm_loan_long_term
-(no description available)
+
 _INIT_
 All 1 instances equal to 0.
 END_DESCRIPTION
 
 Parameter_id_firm_loan_short_term
-(no description available)
+
 _INIT_
 All 1 instances equal to 0.
 END_DESCRIPTION
